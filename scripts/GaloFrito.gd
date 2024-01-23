@@ -55,7 +55,6 @@ func play_animation(movement):
 		if attack_ip == false:
 			animation.play("fly")
 
-	
 func player():
 	pass
 	
@@ -99,7 +98,8 @@ func enemy_attack():
 		print("Levando dano")
 		enemy_attack_cooldown = false
 		$AttackCoolDown.start()
-	
+		
+	print("fritooo HEALTH", health)
 func _on_attack_cool_down_timeout():
 	enemy_attack_cooldown = true
 
@@ -111,12 +111,12 @@ func attack():
 		if dir == "right" or dir == "none":
 			animation.flip_h = false
 			animation.play("attack")
+			$AttackDeal.start()
 		if dir == "left":
 			animation.flip_h = true
 			animation.play("attack")
 			$AttackDeal.start()
 	
-
 func _on_attack_deal_timeout():
 	$AttackDeal.stop()
 	global.player_current_attack = false

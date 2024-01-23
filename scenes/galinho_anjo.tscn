@@ -59,18 +59,6 @@ region = Rect2(0, 0, 16, 32)
 atlas = ExtResource("2_nsj13")
 region = Rect2(16, 0, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_64any"]
-atlas = ExtResource("2_nsj13")
-region = Rect2(0, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v4we8"]
-atlas = ExtResource("2_nsj13")
-region = Rect2(16, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lhqhh"]
-atlas = ExtResource("2_nsj13")
-region = Rect2(32, 0, 16, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_hhlhx"]
 atlas = ExtResource("2_nsj13")
 region = Rect2(0, 0, 16, 32)
@@ -84,6 +72,18 @@ atlas = ExtResource("2_nsj13")
 region = Rect2(16, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_drsc7"]
+atlas = ExtResource("2_nsj13")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64any"]
+atlas = ExtResource("2_nsj13")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4we8"]
+atlas = ExtResource("2_nsj13")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhqhh"]
 atlas = ExtResource("2_nsj13")
 region = Rect2(32, 0, 16, 32)
 
@@ -153,20 +153,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_64any")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v4we8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lhqhh")
-}],
-"loop": true,
-"name": &"side_walk",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_hhlhx")
 }, {
 "duration": 1.0,
@@ -181,16 +167,30 @@ animations = [{
 "loop": true,
 "name": &"take_damage",
 "speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64any")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4we8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhqhh")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w0lbt"]
-radius = 91.0879
+radius = 83.0241
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hrn0j"]
-size = Vector2(1353.75, 242)
+size = Vector2(683, 286)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d4acq"]
-radius = 128.016
+radius = 105.802
 
 [node name="GalinhoAnjo" type="CharacterBody2D"]
 script = ExtResource("1_wqeau")
@@ -198,8 +198,7 @@ script = ExtResource("1_wqeau")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(11.7395, 9.6532)
 sprite_frames = SubResource("SpriteFrames_ojr4e")
-animation = &"idle"
-frame_progress = 0.224382
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-7, 50)
@@ -208,7 +207,7 @@ shape = SubResource("CircleShape2D_w0lbt")
 [node name="DetectionArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
-position = Vector2(2, 29)
+position = Vector2(-0.5, 51)
 shape = SubResource("RectangleShape2D_hrn0j")
 
 [node name="Hitbox" type="Area2D" parent="."]
@@ -217,7 +216,11 @@ shape = SubResource("RectangleShape2D_hrn0j")
 position = Vector2(-7, 49)
 shape = SubResource("CircleShape2D_d4acq")
 
+[node name="TakeDamageCoolDown" type="Timer" parent="."]
+wait_time = 0.5
+
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]
+[connection signal="timeout" from="TakeDamageCoolDown" to="." method="_on_take_damage_cool_down_timeout"]

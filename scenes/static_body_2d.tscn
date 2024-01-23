@@ -14,7 +14,7 @@ size = Vector2(1.00424, 0.969073)
 position = Vector2(177, 115)
 
 [node name="GalinhoAnjo" parent="." instance=ExtResource("2_f3oft")]
-position = Vector2(694, 73)
+position = Vector2(808, 60)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
