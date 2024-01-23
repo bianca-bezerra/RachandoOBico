@@ -1,0 +1,6 @@
+Introducing a versatile pixel-art chicken character asset pack perfect for 2D platformers! 
+This comprehensive pack includes 8 dynamic animations: Sleeping, Idle, Peck, Walk, Attack, Die, Damage, and Jumping.
+
+You'll receive individual PNG spritesheets and GIFs for each animation, allowing for easy implementation into your game. 
+Best of all, these assets are royalty-free for commercial projects and can be modified to suit your needs.
+ However, please refrain from reselling or distributing the assets individually. Your support is appreciated!
