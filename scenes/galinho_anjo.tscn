@@ -1,90 +1,90 @@
 [gd_scene load_steps=28 format=3 uid="uid://ccokwqnapxih8"]
 
-[ext_resource type="Texture2D" uid="uid://djufjkix2kru8" path="res://assets/BadChickenAssetPack/Chickens/BlueChicken-Sheet.png" id="1_7jf6g"]
 [ext_resource type="Script" path="res://scripts/galinho_anjo.gd" id="1_wqeau"]
+[ext_resource type="Texture2D" uid="uid://djufjkix2kru8" path="res://assets/BadChickenAssetPack/Chickens/BlueChicken-Sheet.png" id="2_nsj13"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b04ft"]
-atlas = ExtResource("1_7jf6g")
+atlas = ExtResource("2_nsj13")
 region = Rect2(0, 64, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j452v"]
-atlas = ExtResource("1_7jf6g")
+atlas = ExtResource("2_nsj13")
 region = Rect2(16, 64, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rtq7f"]
-atlas = ExtResource("1_7jf6g")
+atlas = ExtResource("2_nsj13")
 region = Rect2(32, 64, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c2hxn"]
-atlas = ExtResource("1_7jf6g")
+atlas = ExtResource("2_nsj13")
 region = Rect2(0, 96, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ccfk1"]
-atlas = ExtResource("1_7jf6g")
+atlas = ExtResource("2_nsj13")
 region = Rect2(16, 96, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_maj2r"]
-atlas = ExtResource("1_7jf6g")
+atlas = ExtResource("2_nsj13")
 region = Rect2(32, 96, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h21mn"]
-atlas = ExtResource("1_7jf6g")
+atlas = ExtResource("2_nsj13")
 region = Rect2(48, 96, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_saphk"]
-atlas = ExtResource("1_7jf6g")
+atlas = ExtResource("2_nsj13")
 region = Rect2(64, 96, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1daaa"]
-atlas = ExtResource("1_7jf6g")
+atlas = ExtResource("2_nsj13")
 region = Rect2(80, 96, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4c50s"]
-atlas = ExtResource("1_7jf6g")
+atlas = ExtResource("2_nsj13")
 region = Rect2(0, 32, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i6y6i"]
-atlas = ExtResource("1_7jf6g")
+atlas = ExtResource("2_nsj13")
 region = Rect2(16, 32, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n60go"]
-atlas = ExtResource("1_7jf6g")
+atlas = ExtResource("2_nsj13")
 region = Rect2(32, 32, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2s460"]
-atlas = ExtResource("1_7jf6g")
+atlas = ExtResource("2_nsj13")
 region = Rect2(0, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bia37"]
-atlas = ExtResource("1_7jf6g")
+atlas = ExtResource("2_nsj13")
 region = Rect2(16, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_64any"]
-atlas = ExtResource("1_7jf6g")
+atlas = ExtResource("2_nsj13")
 region = Rect2(0, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v4we8"]
-atlas = ExtResource("1_7jf6g")
+atlas = ExtResource("2_nsj13")
 region = Rect2(16, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lhqhh"]
-atlas = ExtResource("1_7jf6g")
+atlas = ExtResource("2_nsj13")
 region = Rect2(32, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hhlhx"]
-atlas = ExtResource("1_7jf6g")
+atlas = ExtResource("2_nsj13")
 region = Rect2(0, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_naetp"]
-atlas = ExtResource("1_7jf6g")
+atlas = ExtResource("2_nsj13")
 region = Rect2(32, 96, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sf6vy"]
-atlas = ExtResource("1_7jf6g")
+atlas = ExtResource("2_nsj13")
 region = Rect2(16, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_drsc7"]
-atlas = ExtResource("1_7jf6g")
+atlas = ExtResource("2_nsj13")
 region = Rect2(32, 0, 16, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ojr4e"]
@@ -199,6 +199,7 @@ script = ExtResource("1_wqeau")
 scale = Vector2(11.7395, 9.6532)
 sprite_frames = SubResource("SpriteFrames_ojr4e")
 animation = &"idle"
+frame_progress = 0.224382
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-7, 50)
@@ -218,3 +219,5 @@ shape = SubResource("CircleShape2D_d4acq")
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]
