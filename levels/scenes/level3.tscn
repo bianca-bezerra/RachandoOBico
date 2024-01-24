@@ -1,23 +1,23 @@
-[gd_scene load_steps=26 format=3 uid="uid://c533ed1ouc50v"]
+[gd_scene load_steps=27 format=3 uid="uid://c533ed1ouc50v"]
 
-[ext_resource type="Texture2D" uid="uid://bvbxgrdtyhl0r" path="res://assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_pwl6l"]
-[ext_resource type="Texture2D" uid="uid://ciu5bpv7aeda8" path="res://assets/Seasonal Tilesets/1 - Grassland/Extra_plants (16 x 16).png" id="2_pkjkg"]
-[ext_resource type="Texture2D" uid="uid://gb0e8x3ufwqd" path="res://assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="3_y5xid"]
-[ext_resource type="Texture2D" uid="uid://dtch6wersns4" path="res://assets/Rocky Roads/Deco/rock.png" id="4_mhy4g"]
-[ext_resource type="Texture2D" uid="uid://b7iajcsf4m2by" path="res://assets/Rocky Roads/Deco/water_a_8frames.png" id="5_23n83"]
-[ext_resource type="Texture2D" uid="uid://hshamq1hcsuu" path="res://assets/Seasonal Tilesets/5 - Misc. universal tiles/House (112 x 96).png" id="6_hknjq"]
-[ext_resource type="Texture2D" uid="uid://dhwqohki3hvm7" path="res://assets/Seasonal Tilesets/5 - Misc. universal tiles/Flowers (16 x 16).png" id="7_qgl02"]
-[ext_resource type="Texture2D" uid="uid://s1gdb1wgoil8" path="res://assets/Seasonal Tilesets/5 - Misc. universal tiles/Blocks (16 x 16).png" id="8_ugnyy"]
-[ext_resource type="Texture2D" uid="uid://ca3jpt54gnsk5" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/5 - Sky_color.png" id="9_f4r4y"]
-[ext_resource type="Texture2D" uid="uid://c20dtdwqcek4g" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/4 - Cloud_cover_2.png" id="10_tlasm"]
-[ext_resource type="Shader" path="res://levels/level_3.gdshader" id="11_2xf5i"]
-[ext_resource type="Texture2D" uid="uid://dlt6fmv5cq22v" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="11_47jxf"]
-[ext_resource type="Texture2D" uid="uid://cqkdedjp0dbvn" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/2 - Hills.png" id="12_65crt"]
-[ext_resource type="Texture2D" uid="uid://bsccwwmh5y0tn" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="13_bfwja"]
-[ext_resource type="PackedScene" uid="uid://c4s4qhls174ct" path="res://scenes/galo_frito.tscn" id="14_yajvu"]
+[ext_resource type="Texture2D" uid="uid://bvbxgrdtyhl0r" path="res://assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_3tje3"]
+[ext_resource type="Texture2D" uid="uid://ciu5bpv7aeda8" path="res://assets/Seasonal Tilesets/1 - Grassland/Extra_plants (16 x 16).png" id="2_qvamq"]
+[ext_resource type="Texture2D" uid="uid://gb0e8x3ufwqd" path="res://assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="3_6w2ci"]
+[ext_resource type="Texture2D" uid="uid://dtch6wersns4" path="res://assets/Rocky Roads/Deco/rock.png" id="4_2apps"]
+[ext_resource type="Texture2D" uid="uid://b7iajcsf4m2by" path="res://assets/Rocky Roads/Deco/water_a_8frames.png" id="5_jug70"]
+[ext_resource type="Texture2D" uid="uid://hshamq1hcsuu" path="res://assets/Seasonal Tilesets/5 - Misc. universal tiles/House (112 x 96).png" id="6_7bd5e"]
+[ext_resource type="Texture2D" uid="uid://dhwqohki3hvm7" path="res://assets/Seasonal Tilesets/5 - Misc. universal tiles/Flowers (16 x 16).png" id="7_0dr64"]
+[ext_resource type="Texture2D" uid="uid://s1gdb1wgoil8" path="res://assets/Seasonal Tilesets/5 - Misc. universal tiles/Blocks (16 x 16).png" id="8_2qigf"]
+[ext_resource type="Texture2D" uid="uid://ca3jpt54gnsk5" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/5 - Sky_color.png" id="9_aq11g"]
+[ext_resource type="Texture2D" uid="uid://c20dtdwqcek4g" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/4 - Cloud_cover_2.png" id="10_ssr72"]
+[ext_resource type="Shader" path="res://level_3.gdshader" id="11_4rmeu"]
+[ext_resource type="Texture2D" uid="uid://dlt6fmv5cq22v" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="12_ssyn6"]
+[ext_resource type="Texture2D" uid="uid://cqkdedjp0dbvn" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/2 - Hills.png" id="13_xs3cj"]
+[ext_resource type="Texture2D" uid="uid://bsccwwmh5y0tn" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="14_lx4wq"]
+[ext_resource type="PackedScene" uid="uid://c4s4qhls174ct" path="res://scenes/galo_frito.tscn" id="15_j8yu4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ea1ms"]
-texture = ExtResource("1_pwl6l")
+texture = ExtResource("1_3tje3")
 3:1/0 = 0
 3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:1/0/physics_layer_0/angular_velocity = 0.0
@@ -147,7 +147,7 @@ texture = ExtResource("1_pwl6l")
 4:8/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b7m2t"]
-texture = ExtResource("2_pkjkg")
+texture = ExtResource("2_qvamq")
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
@@ -201,7 +201,7 @@ texture = ExtResource("2_pkjkg")
 8:3/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uj043"]
-texture = ExtResource("3_y5xid")
+texture = ExtResource("3_6w2ci")
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
@@ -345,13 +345,13 @@ texture = ExtResource("3_y5xid")
 18:5/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a1fqw"]
-texture = ExtResource("4_mhy4g")
+texture = ExtResource("4_2apps")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8wms1"]
-texture = ExtResource("5_23n83")
+texture = ExtResource("5_jug70")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -450,7 +450,7 @@ texture = ExtResource("5_23n83")
 15:1/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2yeyp"]
-texture = ExtResource("6_hknjq")
+texture = ExtResource("6_7bd5e")
 2:0/0 = 0
 2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:0/0/physics_layer_0/angular_velocity = 0.0
@@ -669,7 +669,7 @@ texture = ExtResource("6_hknjq")
 14:5/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e7q11"]
-texture = ExtResource("7_qgl02")
+texture = ExtResource("7_0dr64")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -684,7 +684,7 @@ texture = ExtResource("7_qgl02")
 3:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uo8py"]
-texture = ExtResource("8_ugnyy")
+texture = ExtResource("8_2qigf")
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
@@ -743,7 +743,11 @@ sources/6 = SubResource("TileSetAtlasSource_e7q11")
 sources/7 = SubResource("TileSetAtlasSource_uo8py")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fabtk"]
-shader = ExtResource("11_2xf5i")
+shader = ExtResource("11_4rmeu")
+shader_parameter/move_speed = 0.04
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jj6h1"]
+shader = ExtResource("11_4rmeu")
 shader_parameter/move_speed = 0.04
 
 [node name="Level3" type="Node2D"]
@@ -763,7 +767,7 @@ motion_mirroring = Vector2(432, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/5"]
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("9_f4r4y")
+texture = ExtResource("9_aq11g")
 centered = false
 
 [node name="4" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -773,7 +777,7 @@ motion_mirroring = Vector2(432, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/4"]
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("10_tlasm")
+texture = ExtResource("10_ssr72")
 centered = false
 
 [node name="3" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -785,7 +789,7 @@ motion_mirroring = Vector2(432, 0)
 texture_repeat = 2
 material = SubResource("ShaderMaterial_fabtk")
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("11_47jxf")
+texture = ExtResource("12_ssyn6")
 centered = false
 
 [node name="2" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -795,7 +799,7 @@ motion_mirroring = Vector2(432, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/2"]
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("12_65crt")
+texture = ExtResource("13_xs3cj")
 centered = false
 
 [node name="1" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -806,7 +810,7 @@ motion_mirroring = Vector2(432, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/1"]
 modulate = Color(1, 1, 1, 0.596078)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("13_bfwja")
+texture = ExtResource("14_lx4wq")
 centered = false
 
 [node name="5_2" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -814,9 +818,20 @@ motion_mirroring = Vector2(432, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/5_2"]
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("9_f4r4y")
+texture = ExtResource("9_aq11g")
 centered = false
 offset = Vector2(0, -250)
 
-[node name="GaloFrito" parent="." instance=ExtResource("14_yajvu")]
+[node name="3_2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(432, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/3_2"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_jj6h1")
+position = Vector2(0, -200)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("12_ssyn6")
+centered = false
+
+[node name="GaloFrito" parent="." instance=ExtResource("15_j8yu4")]
 position = Vector2(71, 218)

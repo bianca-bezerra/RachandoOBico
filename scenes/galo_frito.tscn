@@ -365,8 +365,9 @@ one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.63214, 0.6658)
-zoom = Vector2(2, 2)
+zoom = Vector2(1.5, 1.5)
 limit_left = 0
+limit_smoothed = true
 position_smoothing_enabled = true
 
 [connection signal="body_entered" from="HitboxPlayer" to="." method="_on_hitbox_player_body_entered"]
