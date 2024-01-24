@@ -364,15 +364,6 @@ texture = ExtResource("7_an1f1")
 position = Vector2(1794, -338)
 texture = ExtResource("7_an1f1")
 
-[node name="GalinhoDemonio" parent="." instance=ExtResource("8_mh4bj")]
-position = Vector2(1705, 513)
-
-[node name="GalinhoDemonio2" parent="." instance=ExtResource("8_mh4bj")]
-position = Vector2(1382, 501)
-
-[node name="GalinhoDemonio3" parent="." instance=ExtResource("8_mh4bj")]
-position = Vector2(1119, 501)
-
 [node name="GalinhoDemonio4" parent="." instance=ExtResource("8_mh4bj")]
 position = Vector2(608, -81)
 

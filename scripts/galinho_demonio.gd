@@ -72,6 +72,7 @@ func take_damage():
 			can_take_damage = false
 			if health <= 0:
 				self.queue_free()
+				global.level2_completed = true
 	print("DEMON HEALTH", health)
 
 func _on_take_damage_cool_down_timeout():
