@@ -72,4 +72,4 @@ position = Vector2(981.5, 179.75)
 scale = Vector2(1.05, 1.07143)
 sprite_frames = SubResource("SpriteFrames_tiw5l")
 animation = &"fly_away"
-frame_progress = 0.8509
+frame_progress = 0.636767

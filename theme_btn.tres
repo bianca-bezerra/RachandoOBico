@@ -1,0 +1,44 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://dmbl0ph8uyprm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gy5a"]
+bg_color = Color(0.866667, 0.894118, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+expand_margin_top = 5.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_syqvv"]
+bg_color = Color(0.866667, 0.894118, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+expand_margin_top = 5.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtoh3"]
+bg_color = Color(0.984314, 0.776471, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+expand_margin_top = 5.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hsc85"]
+bg_color = Color(0.737255, 0.576471, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+expand_margin_top = 5.0
+expand_margin_bottom = 2.0
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/styles/focus = SubResource("StyleBoxFlat_2gy5a")
+Button/styles/hover = SubResource("StyleBoxFlat_syqvv")
+Button/styles/normal = SubResource("StyleBoxFlat_xtoh3")
+Button/styles/pressed = SubResource("StyleBoxFlat_hsc85")
