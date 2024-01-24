@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://s68h8r5g13gx"]
+
+[ext_resource type="Texture2D" uid="uid://ifkbvxbveput" path="res://assets/0x72_DungeonTilesetII_v1.6/0x72_DungeonTilesetII_v1.6/frames/wizzard_f_idle_anim_f0.png" id="1_0bohf"]
+[ext_resource type="Texture2D" uid="uid://cau0l5gg03yej" path="res://assets/0x72_DungeonTilesetII_v1.6/0x72_DungeonTilesetII_v1.6/frames/wizzard_f_idle_anim_f1.png" id="2_q0cvw"]
+[ext_resource type="Texture2D" uid="uid://ctxe0lsumixn8" path="res://assets/0x72_DungeonTilesetII_v1.6/0x72_DungeonTilesetII_v1.6/frames/wizzard_f_idle_anim_f2.png" id="3_wy1ww"]
+[ext_resource type="Texture2D" uid="uid://hnwnq3xo2bkr" path="res://assets/0x72_DungeonTilesetII_v1.6/0x72_DungeonTilesetII_v1.6/frames/wizzard_f_idle_anim_f3.png" id="4_s266j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wibbg"]
+atlas = ExtResource("1_0bohf")
+region = Rect2(0, 0, 16, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hx7fb"]
+atlas = ExtResource("2_q0cvw")
+region = Rect2(0, 0, 16, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vk15"]
+atlas = ExtResource("3_wy1ww")
+region = Rect2(0, 0, 16, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8hbe"]
+atlas = ExtResource("4_s266j")
+region = Rect2(0, 0, 16, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xdwql"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wibbg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hx7fb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vk15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8hbe")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Velha" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xdwql")
+animation = &"idle"
+frame_progress = 0.298419
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
