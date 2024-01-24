@@ -4,9 +4,10 @@ extends CharacterBody2D
 var attack_mode = false
 
 #Motion
-var speed = 2
+var speed = 75
 var gravity = 20
 var current_direction
+var jump_force = 5
 
 #Player
 @onready var player = get_node("/root/Level1/GaloFrito")
@@ -29,8 +30,10 @@ func _physics_process(delta):
 			velocity.y = 1000
 	
 	if attack_mode:
-		var target_position = (player.position.x - position.x)
-		velocity.x = target_position * speed
+		var target_position_x = (player.position.x - position.x)
+		var target_position_y = (player.position.y - position.y)
+		velocity.x = target_position_x * speed * delta
+		velocity.y = target_position_y * jump_force
 		
 		if velocity.x > 0.0:
 			current_direction = "right"

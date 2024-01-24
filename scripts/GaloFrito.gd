@@ -100,7 +100,6 @@ func enemy_attack():
 		enemy_attack_cooldown = false
 		$AttackCoolDown.start()
 		
-	print("fritooo HEALTH", health)
 func _on_attack_cool_down_timeout():
 	enemy_attack_cooldown = true
 

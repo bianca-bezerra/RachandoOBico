@@ -344,15 +344,12 @@ script = ExtResource("1_e5jvl")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.64226, 1.56522)
 sprite_frames = SubResource("SpriteFrames_bssdy")
-animation = &"walk"
-frame_progress = 0.362922
+animation = &"death"
+frame_progress = 0.0144052
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_w62ct")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(53, -120)
 
 [node name="HitboxPlayer" type="Area2D" parent="."]
 
@@ -366,6 +363,11 @@ wait_time = 0.835
 [node name="AttackDeal" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(0.63214, 0.6658)
+limit_left = 0
+position_smoothing_enabled = true
 
 [connection signal="body_entered" from="HitboxPlayer" to="." method="_on_hitbox_player_body_entered"]
 [connection signal="body_exited" from="HitboxPlayer" to="." method="_on_hitbox_player_body_exited"]

@@ -20,10 +20,9 @@ global="*res://scripts/global.gd"
 
 [display]
 
-window/size/viewport_width=840
-window/size/viewport_height=480
+window/size/viewport_width=600
+window/size/viewport_height=360
 window/stretch/mode="viewport"
-window/stretch/scale=2.46
 
 [input]
 

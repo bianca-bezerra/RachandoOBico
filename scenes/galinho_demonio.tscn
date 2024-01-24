@@ -184,37 +184,37 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_10gx3"]
-radius = 58.0
+radius = 25.9615
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vx2ce"]
-size = Vector2(417, 174)
+size = Vector2(258.5, 129)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k5lf5"]
-radius = 77.2334
+radius = 42.4264
 
 [node name="GalinhoDemonio" type="CharacterBody2D"]
 script = ExtResource("1_fbgc3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(7.08316, 6.56143)
+scale = Vector2(3.58188, 3.36899)
 sprite_frames = SubResource("SpriteFrames_t4am2")
 animation = &"take_damage"
 frame_progress = 0.549747
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-5, 40)
+position = Vector2(-3, 23)
 shape = SubResource("CircleShape2D_10gx3")
 
 [node name="DetectionArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
-position = Vector2(-3, 37)
+position = Vector2(-1, 25)
 shape = SubResource("RectangleShape2D_vx2ce")
 
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(-4, 38)
+position = Vector2(-4, 23)
 shape = SubResource("CircleShape2D_k5lf5")
 
 [node name="TakeDamageCoolDown" type="Timer" parent="."]

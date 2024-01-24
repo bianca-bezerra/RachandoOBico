@@ -4,8 +4,10 @@ extends CharacterBody2D
 var attack_mode = false
 
 #Motion
-var speed = 2
+var speed = 100
 var gravity = 20
+var current_direction
+var jump_force = 10
 
 #Player
 @onready var player = get_node("/root/Level1/GaloFrito")
@@ -28,8 +30,19 @@ func _physics_process(delta):
 			velocity.y = 1000
 	
 	if attack_mode:
-		var target_position = (player.position.x - position.x)
-		velocity.x = target_position * speed
+		var target_position_x = (player.position.x - position.x)
+		var target_position_y = (player.position.y - position.y)
+		velocity.x = target_position_x * speed * delta
+		velocity.y = target_position_y * jump_force
+		
+		if velocity.x > 0.0:
+			current_direction = "right"
+			$AnimatedSprite2D.flip_h = true
+			$AnimatedSprite2D.play("walk")
+		else:
+			current_direction = "left"
+			$AnimatedSprite2D.flip_h = false
+			$AnimatedSprite2D.play("walk")
 	move_and_slide()
 
 func _on_detection_area_body_entered(body):
