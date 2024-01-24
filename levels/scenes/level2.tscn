@@ -1,16 +1,17 @@
-[gd_scene load_steps=17 format=3 uid="uid://dd4b52212fpja"]
+[gd_scene load_steps=19 format=3 uid="uid://dd4b52212fpja"]
 
-[ext_resource type="Texture2D" uid="uid://blqfcvnfnn6ei" path="res://assets/Rocky Roads/Tilesets/tileset_lava.png" id="1_y1ge3"]
-[ext_resource type="Texture2D" uid="uid://cml15cofmpshs" path="res://assets/Rocky Roads/Deco/clouds.png" id="2_lx6ls"]
-[ext_resource type="Texture2D" uid="uid://ckqrdotcd0u3e" path="res://assets/Rocky Roads/Deco/lava.png" id="3_6f5ul"]
-[ext_resource type="PackedScene" uid="uid://c4s4qhls174ct" path="res://scenes/galo_frito.tscn" id="4_nh4of"]
-[ext_resource type="Texture2D" uid="uid://cilax841w4fyh" path="res://assets/Rocky Roads/Deco/clouds_rose.png" id="4_o4o51"]
-[ext_resource type="Texture2D" uid="uid://dtiqe7s4i0cko" path="res://assets/Rocky Roads/Tilesets/tileset_dirt.png" id="5_ahoml"]
-[ext_resource type="Texture2D" uid="uid://o28w7vppra73" path="res://assets/Rocky Roads/Backgrounds/mountains_b.png" id="7_50mno"]
-[ext_resource type="PackedScene" uid="uid://jwivbp0tr6bm" path="res://scenes/galinho_demonio.tscn" id="8_mbvky"]
+[ext_resource type="Script" path="res://levels/scripts/level2.gd" id="1_pr4l3"]
+[ext_resource type="Texture2D" uid="uid://blqfcvnfnn6ei" path="res://assets/Rocky Roads/Tilesets/tileset_lava.png" id="1_xlml7"]
+[ext_resource type="Texture2D" uid="uid://cml15cofmpshs" path="res://assets/Rocky Roads/Deco/clouds.png" id="2_dghyk"]
+[ext_resource type="Texture2D" uid="uid://ckqrdotcd0u3e" path="res://assets/Rocky Roads/Deco/lava.png" id="3_1pfws"]
+[ext_resource type="Texture2D" uid="uid://cilax841w4fyh" path="res://assets/Rocky Roads/Deco/clouds_rose.png" id="4_rydnr"]
+[ext_resource type="Texture2D" uid="uid://dtiqe7s4i0cko" path="res://assets/Rocky Roads/Tilesets/tileset_dirt.png" id="5_n0b6x"]
+[ext_resource type="PackedScene" uid="uid://c4s4qhls174ct" path="res://scenes/galo_frito.tscn" id="6_fbd6u"]
+[ext_resource type="Texture2D" uid="uid://o28w7vppra73" path="res://assets/Rocky Roads/Backgrounds/mountains_b.png" id="7_an1f1"]
+[ext_resource type="PackedScene" uid="uid://jwivbp0tr6bm" path="res://scenes/galinho_demonio.tscn" id="8_mh4bj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xfdfw"]
-texture = ExtResource("1_y1ge3")
+texture = ExtResource("1_xlml7")
 3:3/0 = 0
 3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:3/0/physics_layer_0/angular_velocity = 0.0
@@ -134,7 +135,7 @@ texture = ExtResource("1_y1ge3")
 11:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.82843, -1.41422, 13.0815, 3.88909, 24.0416, -8.13173, 8, -8, -24.0416, -8.13173, -8, 3.88909)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q8lvp"]
-texture = ExtResource("2_lx6ls")
+texture = ExtResource("2_dghyk")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -170,14 +171,14 @@ texture = ExtResource("2_lx6ls")
 3:2/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kbf1s"]
-texture = ExtResource("3_6f5ul")
+texture = ExtResource("3_1pfws")
 0:0/size_in_atlas = Vector2i(24, 3)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jxk35"]
-texture = ExtResource("4_o4o51")
+texture = ExtResource("4_rydnr")
 0:1/size_in_atlas = Vector2i(3, 1)
 0:1/0 = 0
 0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -192,7 +193,7 @@ texture = ExtResource("4_o4o51")
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7n8lu"]
-texture = ExtResource("5_ahoml")
+texture = ExtResource("5_n0b6x")
 2:1/0 = 0
 2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:1/0/physics_layer_0/angular_velocity = 0.0
@@ -297,7 +298,7 @@ texture = ExtResource("5_ahoml")
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m3axo"]
-texture = ExtResource("3_6f5ul")
+texture = ExtResource("3_1pfws")
 0:2/size_in_atlas = Vector2i(24, 1)
 0:2/0 = 0
 0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -316,7 +317,11 @@ sources/5 = SubResource("TileSetAtlasSource_m3axo")
 a = Vector2(-46, -16)
 b = Vector2(71, -16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i4qcq"]
+size = Vector2(78, 43)
+
 [node name="Level2" type="Node2D"]
+script = ExtResource("1_pr4l3")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_gjhex")
@@ -328,45 +333,56 @@ layer_0/tile_data = PackedInt32Array(-65540, 65536, 4, -196612, 65536, 3, -26214
 shape = SubResource("SegmentShape2D_sedm0")
 one_way_collision_margin = 0.0
 
-[node name="GaloFrito" parent="." instance=ExtResource("4_nh4of")]
+[node name="GaloFrito" parent="." instance=ExtResource("6_fbd6u")]
 position = Vector2(-4, -37)
 
 [node name="MountainsB" type="Sprite2D" parent="."]
 position = Vector2(645, -333)
-texture = ExtResource("7_50mno")
+texture = ExtResource("7_an1f1")
 
 [node name="MountainsB2" type="Sprite2D" parent="."]
 position = Vector2(447, -333)
-texture = ExtResource("7_50mno")
+texture = ExtResource("7_an1f1")
 
 [node name="MountainsB3" type="Sprite2D" parent="."]
 position = Vector2(900, -333)
-texture = ExtResource("7_50mno")
+texture = ExtResource("7_an1f1")
 
 [node name="MountainsB4" type="Sprite2D" parent="."]
 position = Vector2(1151, -338)
-texture = ExtResource("7_50mno")
+texture = ExtResource("7_an1f1")
 
 [node name="MountainsB5" type="Sprite2D" parent="."]
 position = Vector2(1410, -338)
-texture = ExtResource("7_50mno")
+texture = ExtResource("7_an1f1")
 
 [node name="MountainsB6" type="Sprite2D" parent="."]
 position = Vector2(1666, -338)
-texture = ExtResource("7_50mno")
+texture = ExtResource("7_an1f1")
 
 [node name="MountainsB7" type="Sprite2D" parent="."]
 position = Vector2(1794, -338)
-texture = ExtResource("7_50mno")
+texture = ExtResource("7_an1f1")
 
-[node name="GalinhoDemonio" parent="." instance=ExtResource("8_mbvky")]
+[node name="GalinhoDemonio" parent="." instance=ExtResource("8_mh4bj")]
 position = Vector2(1705, 513)
 
-[node name="GalinhoDemonio2" parent="." instance=ExtResource("8_mbvky")]
+[node name="GalinhoDemonio2" parent="." instance=ExtResource("8_mh4bj")]
 position = Vector2(1382, 501)
 
-[node name="GalinhoDemonio3" parent="." instance=ExtResource("8_mbvky")]
+[node name="GalinhoDemonio3" parent="." instance=ExtResource("8_mh4bj")]
 position = Vector2(1119, 501)
 
-[node name="GalinhoDemonio4" parent="." instance=ExtResource("8_mbvky")]
+[node name="GalinhoDemonio4" parent="." instance=ExtResource("8_mh4bj")]
 position = Vector2(608, -81)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1872, -198.5)
+shape = SubResource("RectangleShape2D_i4qcq")
+
+[node name="WaitTime" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="WaitTime" to="." method="_on_wait_time_timeout"]

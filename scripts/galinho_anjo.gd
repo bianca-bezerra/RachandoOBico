@@ -35,6 +35,7 @@ func _physics_process(delta):
 		velocity.x = target_position_x * speed * delta
 		velocity.y = target_position_y * jump_force
 		
+	if velocity.length() > 0.0:
 		if velocity.x > 0.0:
 			current_direction = "right"
 			$AnimatedSprite2D.flip_h = true
@@ -43,7 +44,9 @@ func _physics_process(delta):
 			current_direction = "left"
 			$AnimatedSprite2D.flip_h = false
 			$AnimatedSprite2D.play("walk")
-	
+	else:
+		velocity = Vector2(0,0)
+			
 	take_damage()
 	move_and_slide()
 
