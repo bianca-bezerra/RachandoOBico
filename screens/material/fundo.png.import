@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ldt4s2h8yvv6"
-path="res://.godot/imported/galinhacortada.png-d82930d847fbbe205af82a3470e7223e.ctex"
+uid="uid://dt6b364qbn8cm"
+path="res://.godot/imported/fundo.png-8b6f9fd9fff362fbafbeb26471dd573a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://galinhacortada.png"
-dest_files=["res://.godot/imported/galinhacortada.png-d82930d847fbbe205af82a3470e7223e.ctex"]
+source_file="res://screens/material/fundo.png"
+dest_files=["res://.godot/imported/fundo.png-8b6f9fd9fff362fbafbeb26471dd573a.ctex"]
 
 [params]
 
