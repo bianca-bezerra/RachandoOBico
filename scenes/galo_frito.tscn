@@ -333,22 +333,22 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w62ct"]
-radius = 42.107
+radius = 15.0333
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0o0mx"]
-radius = 60.0333
+radius = 20.0
 
 [node name="GaloFrito" type="CharacterBody2D"]
 script = ExtResource("1_e5jvl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(4.83807, 4.61702)
+scale = Vector2(1.64226, 1.56522)
 sprite_frames = SubResource("SpriteFrames_bssdy")
 animation = &"walk"
 frame_progress = 0.362922
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 8)
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_w62ct")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -357,7 +357,7 @@ position = Vector2(53, -120)
 [node name="HitboxPlayer" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxPlayer"]
-position = Vector2(1, 8)
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_0o0mx")
 
 [node name="AttackCoolDown" type="Timer" parent="."]

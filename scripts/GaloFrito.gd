@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 #Motion
 @export var speed = 300
-@export var jump_force = 600
-var gravity = 20
+@export var jump_force = 700
+var gravity = 30
 var current_direction = "none"
 
 #Animation
@@ -28,6 +28,7 @@ func  _physics_process(delta):
 		health = 0
 		print("MORREU")
 		self.queue_free()
+
 		
 	enemy_attack()
 	attack()
@@ -53,7 +54,7 @@ func play_animation(movement):
 				animation.play("idle")
 	if !is_on_floor():
 		if attack_ip == false:
-			animation.play("fly")
+			animation.play("jump")
 
 func player():
 	pass
@@ -65,7 +66,7 @@ func player_movement():
 		if velocity.y > 1000:
 			velocity.y = 1000
 			
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor() == true:
 		velocity.y = -jump_force
 
 	elif Input.is_action_pressed("ui_right"):

@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://db18pdo0kqlux"]
+
+[sub_resource type="GDScript" id="GDScript_lnuy2"]
+script/source = "extends Control
+
+
+
+func _on_play_pressed():
+	get_tree().change_scene_to_file(\"res://levels/level1.tscn\")
+
+
+func _on_options_pressed():
+	pass # Replace with function body.
+
+
+func _on_quit_pressed():
+	get_tree().quit()
+"
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_lnuy2")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.5
+offset_top = -20.0
+offset_right = 20.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4.76357, 2.91073)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]

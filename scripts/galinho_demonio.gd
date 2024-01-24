@@ -61,6 +61,5 @@ func take_damage():
 				self.queue_free()
 	print("ANJO HEALTH", health)
 
-
 func _on_take_damage_cool_down_timeout():
 	can_take_damage = true
