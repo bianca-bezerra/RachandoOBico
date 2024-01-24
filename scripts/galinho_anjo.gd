@@ -13,9 +13,9 @@ var jump_force = 5
 @onready var player = get_node("/root/Level1/GaloFrito")
 
 #Combat System
-var health = 200
+var health = 0
 var player_inattack_range = false
-var damage_rate = 20
+var damage_rate = 30
 var can_take_damage = true
 
 
@@ -75,6 +75,7 @@ func take_damage():
 			if health <= 0:
 				self.queue_free()
 				$AnimatedSprite2D.play("death")
+				global.level1_completed = true
 	print("ANJO HEALTH", health)
 
 func _on_take_damage_cool_down_timeout():

@@ -10,7 +10,7 @@ var current_direction
 var jump_force = 10
 
 #Player
-@onready var player = get_node("/root/Level1/GaloFrito")
+@onready var player = get_node("/root/Level2/GaloFrito")
 
 #Combat System
 var health = 200

@@ -1,0 +1,75 @@
+[gd_scene load_steps=12 format=3 uid="uid://bvu01k7urjwil"]
+
+[ext_resource type="Texture2D" uid="uid://dbeeau1kk65wh" path="res://assets/ChickenPack/ChickenPack/SpriteSheet/ChickenDamage-Sheet.png" id="1_ie820"]
+[ext_resource type="Texture2D" uid="uid://c2bljhocno2sa" path="res://assets/ChickenPack/ChickenPack/SpriteSheet/ChickenFly-Sheet.png" id="2_g6da5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4s05"]
+atlas = ExtResource("1_ie820")
+region = Rect2(20, 0, 20, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2ltd"]
+atlas = ExtResource("1_ie820")
+region = Rect2(0, 0, 20, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mywvx"]
+atlas = ExtResource("1_ie820")
+region = Rect2(40, 0, 20, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_um5kb"]
+atlas = ExtResource("2_g6da5")
+region = Rect2(0, 0, 32, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0jkr"]
+atlas = ExtResource("2_g6da5")
+region = Rect2(32, 0, 32, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvq5k"]
+atlas = ExtResource("2_g6da5")
+region = Rect2(64, 0, 32, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ravjl"]
+atlas = ExtResource("2_g6da5")
+region = Rect2(96, 0, 32, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4ndg"]
+atlas = ExtResource("2_g6da5")
+region = Rect2(128, 0, 32, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tiw5l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4s05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2ltd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mywvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_um5kb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0jkr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvq5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ravjl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4ndg")
+}],
+"loop": true,
+"name": &"fly_away",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D"]
+position = Vector2(981.5, 179.75)
+scale = Vector2(1.05, 1.07143)
+sprite_frames = SubResource("SpriteFrames_tiw5l")
+animation = &"fly_away"
+frame_progress = 0.8509

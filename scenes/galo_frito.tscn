@@ -344,8 +344,7 @@ script = ExtResource("1_e5jvl")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.64226, 1.56522)
 sprite_frames = SubResource("SpriteFrames_bssdy")
-animation = &"death"
-frame_progress = 0.914667
+animation = &"fly"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
@@ -366,6 +365,7 @@ one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.63214, 0.6658)
+zoom = Vector2(2, 2)
 limit_left = 0
 position_smoothing_enabled = true
 
