@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://bu3tkle4bnw0g"]
+
+[ext_resource type="Texture2D" uid="uid://drnbjxfyxmw1t" path="res://assets/vassoura_asset/IMG-2510.png" id="1_2mhg2"]
+[ext_resource type="Texture2D" uid="uid://b1r3dgcbuq5pk" path="res://assets/vassoura_asset/IMG-2512.png" id="2_xsr02"]
+[ext_resource type="Texture2D" uid="uid://d18rdd6w60r2c" path="res://assets/vassoura_asset/IMG-2513.png" id="3_q68x7"]
+[ext_resource type="Texture2D" uid="uid://dqbb3rx8dkyud" path="res://assets/vassoura_asset/IMG-2515.png" id="4_5jpws"]
+[ext_resource type="Texture2D" uid="uid://cg4iu5ik4qanl" path="res://assets/vassoura_asset/IMG-2516.png" id="5_8jc4g"]
+[ext_resource type="Texture2D" uid="uid://bviuu54r71q3j" path="res://assets/vassoura_asset/IMG-2517.png" id="6_qjk0x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pjicw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2mhg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xsr02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_q68x7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5jpws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8jc4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qjk0x")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 13.0
+}]
+
+[node name="Batida" type="AnimatedSprite2D"]
+position = Vector2(15.1197, -7.10043)
+scale = Vector2(0.030277, 0.033833)
+sprite_frames = SubResource("SpriteFrames_pjicw")
+animation = &"hit"
+frame_progress = 0.887771
+
+[node name="ShootingPoint" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(292.094, -365.68)

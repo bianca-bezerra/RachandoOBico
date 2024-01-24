@@ -1,0 +1,270 @@
+[gd_scene load_steps=46 format=3 uid="uid://s68h8r5g13gx"]
+
+[ext_resource type="Script" path="res://scripts/Mago.gd" id="1_ge886"]
+[ext_resource type="Texture2D" uid="uid://bcxc8oy5f4w07" path="res://assets/Little Mage1-1/Little Mage/Stomping/Stomping1.png" id="1_resy4"]
+[ext_resource type="Texture2D" uid="uid://ca72jfwivmly2" path="res://assets/Little Mage1-1/Little Mage/Stomping/Stomping2.png" id="2_xphjb"]
+[ext_resource type="Texture2D" uid="uid://cxbkumeqnxdsw" path="res://assets/Little Mage1-1/Little Mage/Stomping/Stomping3.png" id="3_e1yt7"]
+[ext_resource type="Texture2D" uid="uid://bo06lsha2j5os" path="res://assets/Little Mage1-1/Little Mage/Stomping/Stomping4.png" id="4_io4vb"]
+[ext_resource type="Texture2D" uid="uid://csifycnlqkyy2" path="res://assets/Little Mage1-1/Little Mage/Stomping/Stomping5.png" id="5_2mk3j"]
+[ext_resource type="Texture2D" uid="uid://glp0kpeeiqgr" path="res://assets/Little Mage1-1/Little Mage/Stomping/Stomping6.png" id="6_7sgec"]
+[ext_resource type="Texture2D" uid="uid://bgtbmi8wxgrpt" path="res://assets/Little Mage1-1/Little Mage/Dying/Dying1.png" id="7_y17m6"]
+[ext_resource type="Texture2D" uid="uid://csgaqhaxhmlqv" path="res://assets/Little Mage1-1/Little Mage/Dying/Dying2.png" id="8_qh6bi"]
+[ext_resource type="Texture2D" uid="uid://b5wbks2wmvw6" path="res://assets/Little Mage1-1/Little Mage/Dying/Dying3.png" id="9_onjru"]
+[ext_resource type="Texture2D" uid="uid://cx3d35fjs6ko6" path="res://assets/Little Mage1-1/Little Mage/Dying/Dying4.png" id="10_jp0ky"]
+[ext_resource type="Texture2D" uid="uid://d1j84l5vrvjsp" path="res://assets/Little Mage1-1/Little Mage/Dying/Dying5.png" id="11_rt77a"]
+[ext_resource type="Texture2D" uid="uid://bb8fvemx3jgb5" path="res://assets/Little Mage1-1/Little Mage/Dying/Dying6.png" id="12_6r5vh"]
+[ext_resource type="Texture2D" uid="uid://bevstrrmha5x2" path="res://assets/Little Mage1-1/Little Mage/Falling/Falling1.png" id="13_muwqk"]
+[ext_resource type="Texture2D" uid="uid://cnhmfa11yuqxg" path="res://assets/Little Mage1-1/Little Mage/Falling/Falling2.png" id="14_gfsm8"]
+[ext_resource type="Texture2D" uid="uid://gp0yp3eg6fcs" path="res://assets/Little Mage1-1/Little Mage/Falling/Falling3.png" id="15_hb7i5"]
+[ext_resource type="Texture2D" uid="uid://b4786jkclslht" path="res://assets/Little Mage1-1/Little Mage/Falling/Falling4.png" id="16_74nob"]
+[ext_resource type="Texture2D" uid="uid://23f5vsdav40h" path="res://assets/Little Mage1-1/Little Mage/Falling/Falling5.png" id="17_18vbk"]
+[ext_resource type="Texture2D" uid="uid://cnc8bagg027ip" path="res://assets/Little Mage1-1/Little Mage/Falling/Falling6.png" id="18_ia83j"]
+[ext_resource type="Texture2D" uid="uid://ctgvnfisuql65" path="res://assets/Little Mage1-1/Little Mage/Hit/Hit1.png" id="19_f7p8o"]
+[ext_resource type="Texture2D" uid="uid://duno6g6i8nvo4" path="res://assets/Little Mage1-1/Little Mage/Hit/Hit2.png" id="20_1b71v"]
+[ext_resource type="Texture2D" uid="uid://dst6dp1e8kcrq" path="res://assets/Little Mage1-1/Little Mage/Hit/Hit3.png" id="21_8vefn"]
+[ext_resource type="Texture2D" uid="uid://b3b25euoemvg3" path="res://assets/Little Mage1-1/Little Mage/Idle/Idle1.png" id="22_f4dnq"]
+[ext_resource type="Texture2D" uid="uid://b4x0bwbydkiur" path="res://assets/Little Mage1-1/Little Mage/Idle/Idle2.png" id="23_q5ykw"]
+[ext_resource type="Texture2D" uid="uid://bws5uhp5b5b4q" path="res://assets/Little Mage1-1/Little Mage/Idle/Idle3.png" id="24_rbbtc"]
+[ext_resource type="Texture2D" uid="uid://d3hdixf6rwtlj" path="res://assets/Little Mage1-1/Little Mage/Idle/Idle4.png" id="25_6prd2"]
+[ext_resource type="Texture2D" uid="uid://cbarn1rhuis7m" path="res://assets/Little Mage1-1/Little Mage/Idle/Idle5.png" id="26_jktfj"]
+[ext_resource type="Texture2D" uid="uid://dwygsegquy0lf" path="res://assets/Little Mage1-1/Little Mage/Idle/Idle6.png" id="27_m0sgj"]
+[ext_resource type="Texture2D" uid="uid://u4r2vtllfy62" path="res://assets/Little Mage1-1/Little Mage/Role/Role1.png" id="28_gsy5d"]
+[ext_resource type="Texture2D" uid="uid://bho38o5u2lhcd" path="res://assets/old_man/16x16.png" id="29_evg5n"]
+[ext_resource type="Texture2D" uid="uid://y38gso5ebyn0" path="res://assets/Little Mage1-1/Little Mage/Run/Run1.png" id="30_a5427"]
+[ext_resource type="Texture2D" uid="uid://c14xu8k07hh2m" path="res://assets/Little Mage1-1/Little Mage/Run/Run2.png" id="31_0rpsq"]
+[ext_resource type="Texture2D" uid="uid://dnt2y0jhd8pbi" path="res://assets/Little Mage1-1/Little Mage/Run/Run3.png" id="32_bk5hw"]
+[ext_resource type="Texture2D" uid="uid://coytkw0kj74mm" path="res://assets/Little Mage1-1/Little Mage/Run/Run4.png" id="33_n7uex"]
+[ext_resource type="Texture2D" uid="uid://csphfadoa4rlc" path="res://assets/Little Mage1-1/Little Mage/Run/Run5.png" id="34_4u272"]
+[ext_resource type="Texture2D" uid="uid://bwwtvfvvq46b4" path="res://assets/Little Mage1-1/Little Mage/Run/Run6.png" id="35_v7liv"]
+[ext_resource type="PackedScene" uid="uid://bw4oqjuqvioqf" path="res://scenes/vassoura.tscn" id="37_f0f4d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnsic"]
+atlas = ExtResource("29_evg5n")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jsjm"]
+atlas = ExtResource("29_evg5n")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sste5"]
+atlas = ExtResource("29_evg5n")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbmqy"]
+atlas = ExtResource("29_evg5n")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wysyq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_resy4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xphjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_e1yt7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_io4vb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2mk3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7sgec")
+}],
+"loop": true,
+"name": &"angry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_y17m6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qh6bi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_onjru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jp0ky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rt77a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6r5vh")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_muwqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_gfsm8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_hb7i5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_74nob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_18vbk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ia83j")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_f7p8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_1b71v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_8vefn")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_f4dnq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_q5ykw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_rbbtc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_6prd2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_jktfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_m0sgj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_6r5vh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rt77a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jp0ky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_onjru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qh6bi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_gsy5d")
+}],
+"loop": true,
+"name": &"rise",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnsic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jsjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sste5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbmqy")
+}],
+"loop": true,
+"name": &"shine",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_a5427")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_0rpsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_bk5hw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_n7uex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_4u272")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_v7liv")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45gxs"]
+size = Vector2(17, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55g51"]
+size = Vector2(232.196, 94)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kcge1"]
+radius = 18.0278
+
+[node name="Mago" type="CharacterBody2D"]
+script = ExtResource("1_ge886")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5625, 1.625)
+sprite_frames = SubResource("SpriteFrames_wysyq")
+animation = &"hit"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -1.5)
+shape = SubResource("RectangleShape2D_45gxs")
+
+[node name="Vassoura" parent="." instance=ExtResource("37_f0f4d")]
+
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(4.5, -11)
+scale = Vector2(0.960396, 0.509091)
+shape = SubResource("RectangleShape2D_55g51")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_kcge1")
+
+[node name="TakeDamageCoolDown" type="Timer" parent="."]
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]
+[connection signal="timeout" from="TakeDamageCoolDown" to="." method="_on_take_damage_cool_down_timeout"]

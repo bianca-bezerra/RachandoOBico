@@ -1,7 +1,7 @@
 extends Node2D
 
 var allowed_levelup = false
-@onready var player = get_node("/root/Level1/GaloFrito")
+@onready var player = get_node("/root/GaloFrito")
 
 func _on_area_2d_body_entered(body):
 	if body.has_method("player") and global.level1_completed == true:

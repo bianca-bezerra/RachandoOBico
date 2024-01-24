@@ -72,7 +72,7 @@ func take_damage():
 			can_take_damage = false
 			if health <= 0:
 				self.queue_free()
-	print("ANJO HEALTH", health)
+	print("DEMON HEALTH", health)
 
 func _on_take_damage_cool_down_timeout():
 	can_take_damage = true

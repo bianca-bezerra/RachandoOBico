@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://s68h8r5g13gx"]
-
-[node name="Velha" type="CharacterBody2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://dphar1cyirtdo"]
+
+[ext_resource type="Script" path="res://scripts/projetil.gd" id="1_k66u2"]
+[ext_resource type="Texture2D" uid="uid://d16yfgdrbek5b" path="res://assets/Small slash FX/small_sting_hit.png" id="2_8vok1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykcbs"]
+atlas = ExtResource("2_8vok1")
+region = Rect2(0, 0, 26, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6aes"]
+atlas = ExtResource("2_8vok1")
+region = Rect2(26, 0, 26, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkoq6"]
+atlas = ExtResource("2_8vok1")
+region = Rect2(52, 0, 26, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcr3k"]
+atlas = ExtResource("2_8vok1")
+region = Rect2(78, 0, 26, 53)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_usti4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykcbs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6aes")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkoq6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcr3k")
+}],
+"loop": true,
+"name": &"impacto",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jcfrp"]
+radius = 15.0333
+
+[node name="Projetil" type="Area2D"]
+script = ExtResource("1_k66u2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(7, -3.75)
+scale = Vector2(1.53846, 0.858491)
+sprite_frames = SubResource("SpriteFrames_usti4")
+animation = &"impacto"
+frame = 3
+frame_progress = 0.830706
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, -4)
+shape = SubResource("CircleShape2D_jcfrp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -121,8 +121,4 @@ func _on_attack_deal_timeout():
 	$AttackDeal.stop()
 	global.player_current_attack = false
 	attack_ip = false
-
-func level_up():
-	if global.level1_completed:
-		health += 100
 		
