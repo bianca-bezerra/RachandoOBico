@@ -336,7 +336,7 @@ animations = [{
 radius = 14.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0o0mx"]
-radius = 22.0227
+radius = 19.0263
 
 [node name="GaloFrito" type="CharacterBody2D"]
 script = ExtResource("1_e5jvl")
@@ -366,20 +366,42 @@ wait_time = 0.4
 wait_time = 0.4
 one_shot = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
-scale = Vector2(0.63214, 0.6658)
-zoom = Vector2(1.5, 1.5)
-limit_left = 0
-limit_smoothed = true
-position_smoothing_enabled = true
-
 [node name="RayRight" type="RayCast2D" parent="."]
 position = Vector2(12, 0)
-target_position = Vector2(4, 0)
+target_position = Vector2(6, 0)
 
 [node name="RayLeft" type="RayCast2D" parent="."]
 position = Vector2(-15, 0)
-target_position = Vector2(-4, 0)
+target_position = Vector2(-6, 0)
+
+[node name="RayUp" type="RayCast2D" parent="."]
+target_position = Vector2(0, -20)
+
+[node name="RayDown" type="RayCast2D" parent="."]
+target_position = Vector2(0, 17)
+
+[node name="Ray2" type="RayCast2D" parent="."]
+target_position = Vector2(11, 11)
+
+[node name="Ray1" type="RayCast2D" parent="."]
+target_position = Vector2(-12, 11)
+
+[node name="Ray3" type="RayCast2D" parent="."]
+target_position = Vector2(14, -14)
+
+[node name="Ray4" type="RayCast2D" parent="."]
+target_position = Vector2(-13, -16)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+process_mode = 3
+modulate = Color(0.607843, 0, 0.607843, 1)
+position = Vector2(21, 0)
+gizmo_extents = 1.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
+limit_left = 0
+limit_right = 10000
 
 [connection signal="body_entered" from="HitboxPlayer" to="." method="_on_hitbox_player_body_entered"]
 [connection signal="body_exited" from="HitboxPlayer" to="." method="_on_hitbox_player_body_exited"]

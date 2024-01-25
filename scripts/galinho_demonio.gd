@@ -4,45 +4,52 @@ extends CharacterBody2D
 var attack_mode = false
 
 #Motion
-var speed = 100
-var gravity = 20
+var speed = 90
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var current_direction
-var jump_force = 10
+var jump_force = 50
 
 #Player
 @onready var player = get_node("/root/Level2/GaloFrito")
 
 #Combat System
-var health = 200
+@onready var BULLET = preload("res://ovo.tscn")
+var health = 0
+var damage_rate = 30
 var player_inattack_range = false
-var damage_rate = 20
 var can_take_damage = true
 
-
-func _ready():
-	$AnimatedSprite2D.play("idle")
+@onready var animation = $AnimatedSprite2D
 
 func _physics_process(delta):
-	take_damage()
+
 	if !is_on_floor():
-		velocity.y += gravity
-		if velocity.y > 1000:
-			velocity.y = 1000
-	
-	if attack_mode:
-		var target_position_x = (player.position.x - position.x)
-		var target_position_y = (player.position.y - position.y)
-		velocity.x = target_position_x * speed * delta
-		velocity.y = target_position_y * jump_force
+		velocity.y += gravity * delta
 		
-		if velocity.x > 0.0:
-			current_direction = "right"
-			$AnimatedSprite2D.flip_h = true
-			$AnimatedSprite2D.play("walk")
-		else:
-			current_direction = "left"
-			$AnimatedSprite2D.flip_h = false
-			$AnimatedSprite2D.play("walk")
+	var target = player
+	var direction = (target.position - position).normalized()
+
+	if attack_mode:
+		
+		velocity.x = direction.x * speed
+
+		if velocity.length() > 0.0:
+			if velocity.x > 0.0:
+				
+				current_direction = "right"
+				animation.flip_h = true  
+				animation.play("walk")
+				
+			elif velocity.x < 0.0:
+				
+				current_direction = "left"
+				animation.flip_h = false 
+				animation.play("walk")
+	else:
+		velocity.x = 0
+		animation.play("idle")
+	
+	take_damage()
 	move_and_slide()
 
 func _on_detection_area_body_entered(body):
@@ -65,15 +72,23 @@ func _on_hitbox_body_exited(body):
 		player_inattack_range = false
 
 func take_damage():
+
 	if player_inattack_range == true and global.player_current_attack == true:
+		
 		if can_take_damage == true:
 			health -= damage_rate
+			print("tomei dano")
 			$TakeDamageCoolDown.start()
 			can_take_damage = false
+			
 			if health <= 0:
-				self.queue_free()
+				set_physics_process(false)
+				$AnimatedSprite2D.play("death")
+				$Timer.start()
 				global.level2_completed = true
-	print("DEMON HEALTH", health)
 
 func _on_take_damage_cool_down_timeout():
 	can_take_damage = true
+
+func _on_timer_timeout():
+	queue_free()

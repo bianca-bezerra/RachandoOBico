@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="CrackingTheBeak"
+run/main_scene="res://screens/scenes/title_screen.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,8 +21,8 @@ global="*res://scripts/global.gd"
 
 [display]
 
-window/size/viewport_width=700
-window/size/viewport_height=520
+window/size/viewport_width=600
+window/size/viewport_height=420
 window/stretch/mode="viewport"
 
 [input]

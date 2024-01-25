@@ -1,18 +1,14 @@
 extends Control
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 
 func _on_restart_btn_pressed():
-	get_tree().change_scene_to_file("res://screens/scenes/title_screen.tscn");
+	if global.level1_completed:
+		get_tree().change_scene_to_file("res://levels/scenes/level2.tscn");
+	elif global.level2_completed:
+		get_tree().change_scene_to_file("res://levels/scenes/level3.tscn");
+	else:
+		get_tree().change_scene_to_file("res://screens/scenes/title_screen.tscn");
 
 
 func _on_quit_btn_pressed():

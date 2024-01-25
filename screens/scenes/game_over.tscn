@@ -1,70 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://5odj8qtn14tx"]
+[gd_scene load_steps=7 format=3 uid="uid://5odj8qtn14tx"]
 
 [ext_resource type="Texture2D" uid="uid://dlbunm1hdj6cd" path="res://screens/material/game_over.png" id="1_fag16"]
 [ext_resource type="Script" path="res://screens/scripts/game_over.gd" id="1_kjs1y"]
 [ext_resource type="Theme" uid="uid://dmbl0ph8uyprm" path="res://screens/material/theme_btn.tres" id="2_jtmbi"]
+[ext_resource type="FontFile" uid="uid://cb64tb4mbh747" path="res://assets/m5x7.ttf" id="4_3lci1"]
+[ext_resource type="PackedScene" uid="uid://c2h31kabj4hom" path="res://fadein.tscn" id="5_cs5i1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s4o5q"]
-
-[sub_resource type="Animation" id="Animation_2qnf3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("VBoxContainer:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_co2im"]
-resource_name = "fade_in"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1.56917, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("VBoxContainer:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.6, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_4dgp5"]
-_data = {
-"RESET": SubResource("Animation_2qnf3"),
-"fade_in": SubResource("Animation_co2im")
-}
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -109,6 +51,8 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_s4o5q")
 [node name="restart_btn" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_jtmbi")
+theme_override_fonts/font = ExtResource("4_3lci1")
+theme_override_font_sizes/font_size = 16
 text = "RESTART"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
@@ -122,14 +66,12 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_s4o5q")
 [node name="quit_btn" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_jtmbi")
+theme_override_fonts/font = ExtResource("4_3lci1")
+theme_override_font_sizes/font_size = 16
 text = "QUIT
 "
 
-[node name="anim" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_4dgp5")
-}
-autoplay = "fade_in"
+[node name="anim" parent="." instance=ExtResource("5_cs5i1")]
 
 [connection signal="pressed" from="VBoxContainer/restart_btn" to="." method="_on_restart_btn_pressed"]
 [connection signal="pressed" from="VBoxContainer/quit_btn" to="." method="_on_quit_btn_pressed"]

@@ -124,7 +124,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"death",
-"speed": 5.0
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -196,17 +196,21 @@ radius = 23.0
 script = ExtResource("1_wqeau")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.2, 0.839216, 1, 1)
 position = Vector2(-5.80668, -14.7295)
 scale = Vector2(1.72584, 1.6081)
 sprite_frames = SubResource("SpriteFrames_ojr4e")
-animation = &"idle"
-frame_progress = 0.505773
+animation = &"walk"
+frame_progress = 0.337537
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+modulate = Color(1, 0.835294, 1, 1)
 position = Vector2(-7, -9)
 shape = SubResource("CircleShape2D_w0lbt")
 
 [node name="DetectionArea" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 position = Vector2(-6, -8)
@@ -215,14 +219,20 @@ shape = SubResource("RectangleShape2D_hrn0j")
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+visible = false
 position = Vector2(-7, -7)
 shape = SubResource("CircleShape2D_d4acq")
 
 [node name="TakeDamageCoolDown" type="Timer" parent="."]
 wait_time = 0.5
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]
 [connection signal="timeout" from="TakeDamageCoolDown" to="." method="_on_take_damage_cool_down_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

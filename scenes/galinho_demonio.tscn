@@ -219,8 +219,11 @@ shape = SubResource("CircleShape2D_k5lf5")
 
 [node name="TakeDamageCoolDown" type="Timer" parent="."]
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]
 [connection signal="timeout" from="TakeDamageCoolDown" to="." method="_on_take_damage_cool_down_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

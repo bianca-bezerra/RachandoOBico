@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c533ed1ouc50v"]
+[gd_scene load_steps=28 format=3 uid="uid://c533ed1ouc50v"]
 
 [ext_resource type="Texture2D" uid="uid://bvbxgrdtyhl0r" path="res://assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_3tje3"]
 [ext_resource type="Texture2D" uid="uid://ciu5bpv7aeda8" path="res://assets/Seasonal Tilesets/1 - Grassland/Extra_plants (16 x 16).png" id="2_qvamq"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cqkdedjp0dbvn" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/2 - Hills.png" id="13_xs3cj"]
 [ext_resource type="Texture2D" uid="uid://bsccwwmh5y0tn" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="14_lx4wq"]
 [ext_resource type="PackedScene" uid="uid://c4s4qhls174ct" path="res://scenes/galo_frito.tscn" id="15_j8yu4"]
+[ext_resource type="PackedScene" uid="uid://s68h8r5g13gx" path="res://scenes/Mago.tscn" id="16_hg52q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ea1ms"]
 texture = ExtResource("1_3tje3")
@@ -835,3 +836,6 @@ centered = false
 
 [node name="GaloFrito" parent="." instance=ExtResource("15_j8yu4")]
 position = Vector2(71, 218)
+
+[node name="Mago" parent="." instance=ExtResource("16_hg52q")]
+position = Vector2(356, 212)
