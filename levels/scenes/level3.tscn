@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://s1gdb1wgoil8" path="res://assets/Seasonal Tilesets/5 - Misc. universal tiles/Blocks (16 x 16).png" id="8_2qigf"]
 [ext_resource type="Texture2D" uid="uid://ca3jpt54gnsk5" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/5 - Sky_color.png" id="9_aq11g"]
 [ext_resource type="Texture2D" uid="uid://c20dtdwqcek4g" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/4 - Cloud_cover_2.png" id="10_ssr72"]
-[ext_resource type="Shader" path="res://level_3.gdshader" id="11_4rmeu"]
+[ext_resource type="Shader" path="res://shader/level_3.gdshader" id="11_4rmeu"]
 [ext_resource type="Texture2D" uid="uid://dlt6fmv5cq22v" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="12_ssyn6"]
 [ext_resource type="Texture2D" uid="uid://cqkdedjp0dbvn" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/2 - Hills.png" id="13_xs3cj"]
 [ext_resource type="Texture2D" uid="uid://bsccwwmh5y0tn" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="14_lx4wq"]

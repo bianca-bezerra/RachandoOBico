@@ -5,12 +5,14 @@ extends CharacterBody2D
 @export var jump_force = -400
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var current_direction = "none"
+var direction
 
 #Animation
 @onready var animation = $AnimatedSprite2D
 
 #Combat System
-@onready var BULLET = preload("res://ovo.tscn")
+@onready var OVO = preload("res://scenes/ovo.tscn")
+
 var enemy_inattack_range = false
 var enemy_attack_cooldown = true
 var health = 10
@@ -20,9 +22,10 @@ var damage_rate = 1
 var attack_ip = false
 var is_ondamage = false
 
+
 	
 func  _physics_process(delta):
-		
+	
 	player_movement(delta)
 	attack()
 	enemy_attack()
@@ -132,7 +135,7 @@ func attack():
 			animation.play("attack")
 			
 			$AttackDeal.start()
-		shoot()
+
 func _on_attack_deal_timeout():
 	$AttackDeal.stop()
 	global.player_current_attack = false
@@ -145,10 +148,4 @@ func take_damage(knoback_force := Vector2.ZERO,duration := 0.15):
 		knockback_vector = knoback_force
 		var knoback_tween = get_tree().create_tween()
 		knoback_tween.tween_property(self, "knockback_vector", Vector2.ZERO, duration)
-
-func shoot():
-	var new_bullet = BULLET.instantiate()
-	$Marker2D.add_child(new_bullet)
-	new_bullet.global_position = global_position
-	new_bullet.global_rotation = global_rotation
 

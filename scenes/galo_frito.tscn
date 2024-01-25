@@ -339,6 +339,7 @@ radius = 14.0
 radius = 19.0263
 
 [node name="GaloFrito" type="CharacterBody2D"]
+position = Vector2(146, 100)
 script = ExtResource("1_e5jvl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -392,16 +393,9 @@ target_position = Vector2(14, -14)
 [node name="Ray4" type="RayCast2D" parent="."]
 target_position = Vector2(-13, -16)
 
-[node name="Marker2D" type="Marker2D" parent="."]
-process_mode = 3
-modulate = Color(0.607843, 0, 0.607843, 1)
-position = Vector2(21, 0)
-gizmo_extents = 1.0
-
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)
 limit_left = 0
-limit_right = 10000
 
 [connection signal="body_entered" from="HitboxPlayer" to="." method="_on_hitbox_player_body_entered"]
 [connection signal="body_exited" from="HitboxPlayer" to="." method="_on_hitbox_player_body_exited"]

@@ -4,16 +4,15 @@ extends CharacterBody2D
 var attack_mode = false
 
 #Motion
-var speed = 100
+var speed = 130
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var current_direction
 var jump_force = 50
 
 #Player
 @onready var player = get_node("/root/Level1/GaloFrito")
 
 #Combat System
-@onready var BULLET = preload("res://ovo.tscn")
+@onready var BULLET = preload("res://scenes/ovo.tscn")
 var health = 0
 var damage_rate = 30
 var player_inattack_range = false
@@ -29,7 +28,6 @@ func _physics_process(delta):
 	var target = player
 	var direction = (target.position - position).normalized()
 	
-
 	if attack_mode:
 		
 		velocity.x = direction.x * speed
@@ -37,13 +35,11 @@ func _physics_process(delta):
 		if velocity.length() > 0.0:
 			if velocity.x > 0.0:
 				
-				current_direction = "right"
 				animation.flip_h = true  
 				animation.play("walk")
 				
 			elif velocity.x < 0.0:
 				
-				current_direction = "left"
 				animation.flip_h = false 
 				animation.play("walk")
 	else:

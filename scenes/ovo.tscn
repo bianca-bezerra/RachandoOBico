@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwghpwq333bjv"]
+
+[ext_resource type="Script" path="res://scripts/ovo.gd" id="1_gr6xa"]
+[ext_resource type="Texture2D" uid="uid://dtch6wersns4" path="res://assets/Rocky Roads/Deco/rock.png" id="2_yn1a4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ho3pt"]
+size = Vector2(17, 18)
+
+[node name="Ovo" type="Area2D"]
+script = ExtResource("1_gr6xa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(190.172, 136.805)
+scale = Vector2(2.47852, 2.64941)
+texture = ExtResource("2_yn1a4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(188, 141)
+shape = SubResource("RectangleShape2D_ho3pt")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
