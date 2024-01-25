@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 #Motion
 @export var speed = 300
-@export var jump_force = 700
-var gravity = 30
+@export var jump_force = 500
+var gravity = 20
 var current_direction = "none"
 
 #Animation
@@ -12,24 +12,17 @@ var current_direction = "none"
 #Combat System
 var enemy_inattack_range = false
 var enemy_attack_cooldown = true
-var health = 10000
+var health = 10
+var knockback_vector := Vector2.ZERO
 var is_alive = true
-var damage_rate = 20
+var damage_rate = 1
 var attack_ip = false
+var is_ondamage = false
 
 	
 func  _physics_process(delta):
 	player_movement()
 	attack()
-	enemy_attack()
-	
-	if health <= 0:
-		is_alive = false
-		health = 0
-		print("MORREU")
-		self.queue_free()
-
-		
 	enemy_attack()
 	attack()
 	
@@ -78,10 +71,13 @@ func player_movement():
 		current_direction = "left"
 		play_animation(1)
 		velocity.x = -speed
-
+	
 	else:
 		play_animation(0)
 		velocity.x = 0
+	
+	if knockback_vector != Vector2.ZERO:
+		velocity = knockback_vector
 		
 	move_and_slide()
 	
@@ -95,8 +91,17 @@ func _on_hitbox_player_body_exited(body):
 
 func enemy_attack():
 	if enemy_inattack_range == true and enemy_attack_cooldown == true:
-		health -= damage_rate
-		print("Levando dano")
+		
+		if health <= 0:
+			is_alive = false
+			health = 0
+			self.queue_free()
+		else:
+			if $RayRight.is_colliding():
+				take_damage(Vector2(-1000,-400))
+			elif $RayLeft.is_colliding():
+				take_damage(Vector2(1000,-400))
+		
 		enemy_attack_cooldown = false
 		$AttackCoolDown.start()
 		
@@ -121,4 +126,13 @@ func _on_attack_deal_timeout():
 	$AttackDeal.stop()
 	global.player_current_attack = false
 	attack_ip = false
+
+func take_damage(knoback_force := Vector2.ZERO,duration := 0.25):
+	is_ondamage = true
+	health -= damage_rate
+	if knoback_force != Vector2.ZERO:
+		knockback_vector = knoback_force
+		var knoback_tween = get_tree().create_tween()
+		knoback_tween.tween_property(self, "knockback_vector", Vector2.ZERO, duration)
+		
 		

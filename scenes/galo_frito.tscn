@@ -333,34 +333,37 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w62ct"]
-radius = 15.0333
+radius = 14.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0o0mx"]
-radius = 20.0
+radius = 22.0227
 
 [node name="GaloFrito" type="CharacterBody2D"]
 script = ExtResource("1_e5jvl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1.64226, 1.56522)
+position = Vector2(-1.7113, -1.7174)
+scale = Vector2(1.47113, 1.40166)
 sprite_frames = SubResource("SpriteFrames_bssdy")
-animation = &"fly"
+animation = &"take_damage"
+frame = 1
+frame_progress = 0.255394
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
+position = Vector2(-1, -3)
 shape = SubResource("CircleShape2D_w62ct")
 
 [node name="HitboxPlayer" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxPlayer"]
-position = Vector2(0, 1)
+position = Vector2(-1, -1)
 shape = SubResource("CircleShape2D_0o0mx")
 
 [node name="AttackCoolDown" type="Timer" parent="."]
-wait_time = 0.835
+wait_time = 0.4
 
 [node name="AttackDeal" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.4
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -369,6 +372,14 @@ zoom = Vector2(1.5, 1.5)
 limit_left = 0
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[node name="RayRight" type="RayCast2D" parent="."]
+position = Vector2(12, 0)
+target_position = Vector2(4, 0)
+
+[node name="RayLeft" type="RayCast2D" parent="."]
+position = Vector2(-15, 0)
+target_position = Vector2(-4, 0)
 
 [connection signal="body_entered" from="HitboxPlayer" to="." method="_on_hitbox_player_body_entered"]
 [connection signal="body_exited" from="HitboxPlayer" to="." method="_on_hitbox_player_body_exited"]
