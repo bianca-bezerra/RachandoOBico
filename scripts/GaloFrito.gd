@@ -2,9 +2,11 @@ extends CharacterBody2D
 
 #Motion
 @export var speed = 300
-@export var jump_force = -400
+@export var jump_force = -300
+@export var double_jump_force : float = -300;
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var current_direction = "none"
+var has_double_jumped : bool = false;
 
 #Animation
 @onready var animation = $AnimatedSprite2D
@@ -33,7 +35,15 @@ func play_animation(movement):
 	var dir = current_direction
 	var animation = $AnimatedSprite2D
 	
-	if dir == "right":
+	if !is_on_floor():
+		if attack_ip == false:
+			if dir == "right":
+				animation.flip_h = false
+			elif dir == "left":
+				animation.flip_h = true
+			animation.play("jump")
+			
+	elif dir == "right":
 		animation.flip_h = false
 		if movement == 1:
 			animation.play("walk")
@@ -41,16 +51,14 @@ func play_animation(movement):
 			if attack_ip == false:
 				animation.play("idle")
 			
-	if dir == "left":
+	elif dir == "left":
 		animation.flip_h = true
 		if movement == 1:
 			animation.play("walk")
 		elif movement == 0:
 			if attack_ip == false:
 				animation.play("idle")
-	if !is_on_floor():
-		if attack_ip == false:
-			animation.play("jump")
+	
 
 func player():
 	pass
@@ -61,9 +69,15 @@ func player_movement(delta):
 		velocity.y += gravity * delta
 		if velocity.y > 1000:
 			velocity.y = 1000
+	else:
+		has_double_jumped = false;
 			
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor() == true:
-		velocity.y = jump_force
+	if Input.is_action_just_pressed("ui_accept"):
+		if is_on_floor() == true:
+			velocity.y = jump_force
+		elif not has_double_jumped:
+			velocity.y = double_jump_force;
+			has_double_jumped = false;
 
 	elif Input.is_action_pressed("ui_right"):
 		current_direction = "right"
