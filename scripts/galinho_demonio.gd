@@ -21,6 +21,9 @@ var can_take_damage = true
 @onready var animation = $AnimatedSprite2D
 
 func _physics_process(delta):
+	
+	if is_on_floor():
+		velocity.y = jump_force;
 
 	if !is_on_floor():
 		velocity.y += gravity * delta

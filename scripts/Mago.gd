@@ -13,7 +13,7 @@ var jump_force = 50
 @onready var player = get_node("/root/Level3/GaloFrito")
 
 #Combat System
-@onready var BULLET = preload("res://ovo.tscn")
+#@onready var BULLET = preload("res://ovo.tscn")
 var health = 0
 var damage_rate = 30
 var player_inattack_range = false

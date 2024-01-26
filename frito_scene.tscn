@@ -409,7 +409,7 @@ sprite_frames = SubResource("SpriteFrames_4kaxo")
 animation = &"emotion"
 frame_progress = 0.159443
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer1" type="Timer" parent="."]
 wait_time = 2.5
 
 [node name="Glow" type="AnimatedSprite2D" parent="."]
@@ -419,4 +419,15 @@ sprite_frames = SubResource("SpriteFrames_54p7v")
 animation = &"glow"
 frame_progress = 0.533034
 
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="TimerProxAnimation" type="Timer" parent="."]
+wait_time = 10.0
+
+[connection signal="timeout" from="Timer1" to="." method="_on_timer_1_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TimerProxAnimation" to="." method="_on_timer_prox_animation_timeout"]
