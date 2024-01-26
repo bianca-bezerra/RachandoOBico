@@ -341,9 +341,6 @@ radius = 19.0263
 [node name="GaloFrito" type="CharacterBody2D"]
 position = Vector2(146, 100)
 script = ExtResource("1_e5jvl")
-speed = null
-jump_force = null
-double_jump_force = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1.7113, -1.7174)
@@ -401,6 +398,9 @@ limit_left = 0
 
 [node name="PlayDeath" type="Timer" parent="."]
 wait_time = 5.0
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(25, -1)
 
 [connection signal="body_entered" from="HitboxPlayer" to="." method="_on_hitbox_player_body_entered"]
 [connection signal="body_exited" from="HitboxPlayer" to="." method="_on_hitbox_player_body_exited"]

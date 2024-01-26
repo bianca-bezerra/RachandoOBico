@@ -361,9 +361,6 @@ one_way_collision_margin = 0.0
 
 [node name="GaloFrito" parent="." instance=ExtResource("6_fbd6u")]
 position = Vector2(59, -122)
-speed = 300
-jump_force = -300
-double_jump_force = -300.0
 
 [node name="GalinhoDemonio4" parent="." instance=ExtResource("8_mh4bj")]
 position = Vector2(1200, -238)

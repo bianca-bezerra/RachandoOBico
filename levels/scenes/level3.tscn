@@ -836,9 +836,6 @@ centered = false
 
 [node name="GaloFrito" parent="." instance=ExtResource("15_j8yu4")]
 position = Vector2(71, 218)
-speed = 300
-jump_force = -300
-double_jump_force = -300.0
 
 [node name="Mago" parent="." instance=ExtResource("16_hg52q")]
 position = Vector2(356, 212)

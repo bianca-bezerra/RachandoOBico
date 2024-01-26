@@ -142,6 +142,7 @@ func attack():
 	if Input.is_action_just_pressed("attack"):
 		global.player_current_attack = true
 		attack_ip = true
+		shoot()
 		if dir == "right" or dir == "none":
 			animation.flip_h = false
 			animation.play("attack")
@@ -152,7 +153,7 @@ func attack():
 			animation.play("attack")
 			
 			$AttackDeal.start()
-
+	
 func _on_attack_deal_timeout():
 	$AttackDeal.stop()
 	global.player_current_attack = false
@@ -165,3 +166,7 @@ func take_damage(knoback_force := Vector2.ZERO,duration := 0.15):
 		knockback_vector = knoback_force
 		var knoback_tween = get_tree().create_tween()
 		knoback_tween.tween_property(self, "knockback_vector", Vector2.ZERO, duration)
+
+func shoot():
+	var ovo_instace = OVO.instantiate()
+	$Marker2D.add_child(ovo_instace)
