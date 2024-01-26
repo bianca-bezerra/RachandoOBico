@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://i50uvivelmhf"]
+[gd_scene load_steps=43 format=3 uid="uid://i50uvivelmhf"]
 
 [ext_resource type="Script" path="res://frito_scene.gd" id="1_4i1pm"]
 [ext_resource type="Texture2D" uid="uid://3j1w52md0l2g" path="res://assets/sprite (1).png" id="1_4l3bo"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://dlt6fmv5cq22v" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="9_twk3a"]
 [ext_resource type="Texture2D" uid="uid://dawhddkhsq8vn" path="res://assets/pipo-popupemotes032.png" id="11_8vdnn"]
 [ext_resource type="Texture2D" uid="uid://cckw6jfh2fslp" path="res://assets/sparkle.png" id="12_ncjtf"]
+[ext_resource type="Texture2D" uid="uid://dy02mcf7q8n68" path="res://assets/pipo-popupemotes082.png" id="13_3hl6p"]
+[ext_resource type="Texture2D" uid="uid://dvk08id2yhja4" path="res://assets/pipo-popupemotes083.png" id="14_a6tux"]
 
 [sub_resource type="Animation" id="Animation_4wixo"]
 length = 0.001
@@ -331,6 +333,64 @@ animations = [{
 "speed": 11.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yb6w"]
+atlas = ExtResource("13_3hl6p")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qt4c"]
+atlas = ExtResource("13_3hl6p")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0i51"]
+atlas = ExtResource("13_3hl6p")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s2uhw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yb6w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qt4c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0i51")
+}],
+"loop": true,
+"name": &"emoticon",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbtdb"]
+atlas = ExtResource("14_a6tux")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqa67"]
+atlas = ExtResource("14_a6tux")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfgb0"]
+atlas = ExtResource("14_a6tux")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b8gbw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbtdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqa67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfgb0")
+}],
+"loop": true,
+"name": &"emoticon",
+"speed": 5.0
+}]
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(62, 152)
 scale = Vector2(2.71349, 2.76419)
@@ -426,6 +486,25 @@ wait_time = 2.0
 
 [node name="TimerProxAnimation" type="Timer" parent="."]
 wait_time = 10.0
+
+[node name="Anjo" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-6.63352, -18.4503)
+rotation = -0.496871
+scale = Vector2(0.546066, 0.533916)
+sprite_frames = SubResource("SpriteFrames_s2uhw")
+animation = &"emoticon"
+frame = 2
+frame_progress = 0.372335
+
+[node name="Diabo" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(11.8266, -19.5016)
+rotation = 0.390288
+scale = Vector2(0.594794, 0.547596)
+sprite_frames = SubResource("SpriteFrames_b8gbw")
+animation = &"emoticon"
+frame_progress = 0.38718
 
 [connection signal="timeout" from="Timer1" to="." method="_on_timer_1_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

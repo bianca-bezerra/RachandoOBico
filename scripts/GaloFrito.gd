@@ -165,4 +165,3 @@ func take_damage(knoback_force := Vector2.ZERO,duration := 0.15):
 		knockback_vector = knoback_force
 		var knoback_tween = get_tree().create_tween()
 		knoback_tween.tween_property(self, "knockback_vector", Vector2.ZERO, duration)
-

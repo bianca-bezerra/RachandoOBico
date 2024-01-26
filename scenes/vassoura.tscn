@@ -16,6 +16,8 @@ shape = SubResource("CircleShape2D_xf8xl")
 
 [node name="Batida" parent="Marker2D" instance=ExtResource("2_fvmtf")]
 unique_name_in_owner = true
+frame = 4
+frame_progress = 0.627834
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

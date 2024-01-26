@@ -22,8 +22,7 @@ func _ready():
 	queue_text("That's the biggest corn he have ever seen in his entire long life (he's two months old, but still)")
 
 func _physics_process(delta):
-	if texts.is_empty():
-			emit_signal("ready")
+	
 	match current_state:
 		State.READY:
 			if !texts.is_empty():
@@ -48,6 +47,7 @@ func hide_textbox():
 	
 func queue_text(next_text):
 	texts.push_back(next_text)
+
 	
 func show_textbox():
 	start_symbol.text = "*"

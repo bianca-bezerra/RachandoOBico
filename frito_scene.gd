@@ -24,7 +24,10 @@ func play_reaction():
 func play_glow():
 	$Glow.visible = true
 	$Glow.play("glow")
-	
+
+func play_2_reaction():
+	if animation2_finished:
+		pass
 func _on_timer_1_timeout():
 	if !animation2_finished:
 			play_reaction()
@@ -38,5 +41,4 @@ func _on_timer_2_timeout():
 		var text1 = texto1.instantiate()
 		root.add_child(text1)
 		text1_instantiated = true
-		if text1.emit_signal("ready"):
-			print("acabou")
+		
