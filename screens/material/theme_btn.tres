@@ -1,52 +1,25 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://dmbl0ph8uyprm"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dmbl0ph8uyprm"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gy5a"]
-bg_color = Color(0.866667, 0.894118, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-expand_margin_left = 5.0
-expand_margin_top = 5.0
-expand_margin_right = 5.0
-expand_margin_bottom = 5.0
+[ext_resource type="FontFile" uid="uid://cb64tb4mbh747" path="res://assets/m5x7.ttf" id="1_03ngw"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_syqvv"]
-bg_color = Color(0.866667, 0.894118, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-expand_margin_left = 5.0
-expand_margin_top = 5.0
-expand_margin_right = 5.0
-expand_margin_bottom = 5.0
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i1oqn"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtoh3"]
-bg_color = Color(0.984314, 0.776471, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-expand_margin_left = 5.0
-expand_margin_top = 5.0
-expand_margin_right = 5.0
-expand_margin_bottom = 5.0
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7iifu"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hsc85"]
-bg_color = Color(0.737255, 0.576471, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-expand_margin_left = 5.0
-expand_margin_top = 5.0
-expand_margin_right = 5.0
-expand_margin_bottom = 5.0
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_asfok"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dkugd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y6w4a"]
 
 [resource]
 Button/colors/font_color = Color(1, 1, 1, 1)
-Button/styles/focus = SubResource("StyleBoxFlat_2gy5a")
-Button/styles/hover = SubResource("StyleBoxFlat_syqvv")
-Button/styles/normal = SubResource("StyleBoxFlat_xtoh3")
-Button/styles/pressed = SubResource("StyleBoxFlat_hsc85")
+Button/colors/font_focus_color = Color(0.94902, 0.94902, 0, 1)
+Button/colors/font_pressed_color = Color(1, 0.290196, 0, 1)
+Button/font_sizes/font_size = 43
+Button/fonts/font = ExtResource("1_03ngw")
+Button/styles/disabled = SubResource("StyleBoxEmpty_i1oqn")
+Button/styles/focus = SubResource("StyleBoxEmpty_7iifu")
+Button/styles/hover = SubResource("StyleBoxEmpty_asfok")
+Button/styles/normal = SubResource("StyleBoxEmpty_dkugd")
+Button/styles/pressed = SubResource("StyleBoxEmpty_y6w4a")

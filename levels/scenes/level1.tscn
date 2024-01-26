@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bgo55odat2te2"]
+[gd_scene load_steps=34 format=3 uid="uid://bgo55odat2te2"]
 
 [ext_resource type="Texture2D" uid="uid://drc13q37a5bug" path="res://assets/Rocky Roads/Tilesets/tileset_snow.png" id="1_08its"]
 [ext_resource type="Script" path="res://levels/scripts/level1.gd" id="1_n1v7x"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bk7nd65cecilj" path="res://assets/Seasonal Tilesets/4 - Winter World/Background parts/1 - Snowy_foreground_area.png" id="16_0g4l7"]
 [ext_resource type="Shader" path="res://shader/level_3.gdshader" id="17_fc51x"]
 [ext_resource type="Texture2D" uid="uid://2qfyeelq5tab" path="res://assets/Seasonal Tilesets/3 - Tropics/Background parts/3 - Floating_clouds.png" id="17_ouopn"]
+[ext_resource type="PackedScene" uid="uid://b1u7yxjvhlbx" path="res://screens/scenes/pause_menu.tscn" id="19_0t8ew"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ih6p1"]
 tile_data = PackedInt32Array(0, 458752, 3, 1, 524288, 3, 2, 589824, 3)
@@ -1539,6 +1540,9 @@ material = SubResource("ShaderMaterial_0778d")
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("17_ouopn")
 centered = false
+
+[node name="pause_menu" parent="." instance=ExtResource("19_0t8ew")]
+visible = false
 
 [connection signal="timeout" from="WaitTime" to="." method="_on_wait_time_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
