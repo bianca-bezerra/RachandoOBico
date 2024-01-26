@@ -9,9 +9,10 @@ func _ready():
 	
 func _on_area_2d_body_entered(body):
 	
-	if body.has_method("player") and global.level2_completed == true:
+	if body.has_method("player") and global.level3_completed == true:
 		allowed_levelup = true
 		$WaitTime.start()
 
 func _on_wait_time_timeout():
-	get_tree().change_scene_to_file("res://levels/scenes/level3.tscn")
+	pass
+	#get_tree().change_scene_to_file("res://levels/scenes/level3.tscn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bgo55odat2te2"]
+[gd_scene load_steps=38 format=3 uid="uid://bgo55odat2te2"]
 
 [ext_resource type="Texture2D" uid="uid://drc13q37a5bug" path="res://assets/Rocky Roads/Tilesets/tileset_snow.png" id="1_08its"]
 [ext_resource type="Script" path="res://levels/scripts/level1.gd" id="1_n1v7x"]
@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bk7nd65cecilj" path="res://assets/Seasonal Tilesets/4 - Winter World/Background parts/1 - Snowy_foreground_area.png" id="16_0g4l7"]
 [ext_resource type="Shader" path="res://shader/level_3.gdshader" id="17_fc51x"]
 [ext_resource type="Texture2D" uid="uid://2qfyeelq5tab" path="res://assets/Seasonal Tilesets/3 - Tropics/Background parts/3 - Floating_clouds.png" id="17_ouopn"]
-[ext_resource type="PackedScene" uid="uid://b1u7yxjvhlbx" path="res://screens/scenes/pause_menu.tscn" id="19_0t8ew"]
+[ext_resource type="PackedScene" uid="uid://bhapp7jpo7spd" path="res://screens/scenes/pause_menu.tscn" id="19_0t8ew"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ih6p1"]
 tile_data = PackedInt32Array(0, 458752, 3, 1, 524288, 3, 2, 589824, 3)
@@ -1454,6 +1454,82 @@ radius = 40.0125
 shader = ExtResource("17_fc51x")
 shader_parameter/move_speed = 0.04
 
+[sub_resource type="Animation" id="Animation_7gg7a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2th8o"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_qxsm1"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6hmmg"]
+_data = {
+"RESET": SubResource("Animation_7gg7a"),
+"fade_in": SubResource("Animation_2th8o"),
+"fade_out": SubResource("Animation_qxsm1")
+}
+
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_n1v7x")
 
@@ -1544,6 +1620,23 @@ centered = false
 [node name="pause_menu" parent="." instance=ExtResource("19_0t8ew")]
 visible = false
 
+[node name="Transition" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6hmmg")
+}
+
+[node name="ColorRect" type="ColorRect" parent="Transition"]
+self_modulate = Color(0, 0, 0, 1)
+offset_right = 642.0
+offset_bottom = 325.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Animation" type="Timer" parent="."]
+
 [connection signal="timeout" from="WaitTime" to="." method="_on_wait_time_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Animation" to="." method="_on_animation_timeout"]

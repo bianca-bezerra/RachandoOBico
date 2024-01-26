@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dd4b52212fpja"]
+[gd_scene load_steps=30 format=3 uid="uid://dd4b52212fpja"]
 
 [ext_resource type="Script" path="res://levels/scripts/level2.gd" id="1_pr4l3"]
 [ext_resource type="Texture2D" uid="uid://blqfcvnfnn6ei" path="res://assets/Rocky Roads/Tilesets/tileset_lava.png" id="1_xlml7"]
@@ -344,6 +344,82 @@ shader_parameter/move_speed = 0.04
 shader = ExtResource("13_858oi")
 shader_parameter/move_speed = 0.04
 
+[sub_resource type="Animation" id="Animation_7gg7a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2th8o"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_qxsm1"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6hmmg"]
+_data = {
+"RESET": SubResource("Animation_7gg7a"),
+"fade_in": SubResource("Animation_2th8o"),
+"fade_out": SubResource("Animation_qxsm1")
+}
+
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_pr4l3")
 
@@ -498,6 +574,18 @@ position = Vector2(411, -318)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("14_5vbk2")
 centered = false
+
+[node name="Transition" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6hmmg")
+}
+
+[node name="ColorRect" type="ColorRect" parent="Transition"]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 2.0
+offset_top = -323.0
+offset_right = 644.0
+offset_bottom = 2.0
 
 [connection signal="timeout" from="WaitTime" to="." method="_on_wait_time_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

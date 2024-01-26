@@ -2,6 +2,10 @@ extends Node2D
 
 var allowed_levelup = false
 @onready var player = get_node("/root/GaloFrito")
+@onready var animation = $Transition
+
+func _ready():
+	animation.play("fade_in")
 
 func _on_area_2d_body_entered(body):
 	if body.has_method("player") and global.level1_completed == true:
@@ -10,4 +14,8 @@ func _on_area_2d_body_entered(body):
 			
 
 func _on_wait_time_timeout():
+	$Animation.start()
+	animation.play("fade_out")
+	
+func _on_animation_timeout():
 	get_tree().change_scene_to_file("res://levels/scenes/level2.tscn")

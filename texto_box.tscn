@@ -15,9 +15,11 @@ border_color = Color(1, 1, 1, 1)
 script = ExtResource("1_ob7pf")
 
 [node name="TextBoxContainer" type="MarginContainer" parent="."]
-offset_top = 180.0
-offset_right = 639.0
-offset_bottom = 319.0
+offset_left = 8.0
+offset_top = 162.0
+offset_right = 647.0
+offset_bottom = 332.0
+scale = Vector2(0.975298, 0.966205)
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
@@ -53,8 +55,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("1_72pj2")
 theme_override_font_sizes/font_size = 32
-text = "Placeholder
-"
+text = "Placeholaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 autowrap_mode = 3
 clip_text = true
 visible_characters = 0

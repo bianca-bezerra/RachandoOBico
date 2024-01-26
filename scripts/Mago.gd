@@ -83,10 +83,11 @@ func take_damage():
 			can_take_damage = false
 			
 			if health <= 0:
+				global.level3_completed = true
 				set_physics_process(false)
 				$AnimatedSprite2D.play("death")
 				$Timer.start()
-				global.level3_completed = true
+				
 
 func _on_take_damage_cool_down_timeout():
 	can_take_damage = true
