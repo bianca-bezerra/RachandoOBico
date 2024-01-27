@@ -7,13 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://cilax841w4fyh" path="res://assets/Rocky Roads/Deco/clouds_rose.png" id="4_rydnr"]
 [ext_resource type="Texture2D" uid="uid://dtiqe7s4i0cko" path="res://assets/Rocky Roads/Tilesets/tileset_dirt.png" id="5_n0b6x"]
 [ext_resource type="PackedScene" uid="uid://c4s4qhls174ct" path="res://scenes/galo_frito.tscn" id="6_fbd6u"]
-[ext_resource type="PackedScene" uid="uid://jwivbp0tr6bm" path="res://scenes/galinho_demonio.tscn" id="8_mh4bj"]
 [ext_resource type="Texture2D" uid="uid://dtjyisyu1k7fy" path="res://assets/Seasonal Tilesets/2 - Autumn Forest/Background parts/6 - Distant_trees.png" id="9_m3c3h"]
 [ext_resource type="Texture2D" uid="uid://vw28uj1evu2e" path="res://assets/Seasonal Tilesets/2 - Autumn Forest/Background parts/5 - Tree_row_BG_2.png" id="10_8a176"]
 [ext_resource type="Texture2D" uid="uid://6guqvu3yttnc" path="res://assets/Seasonal Tilesets/2 - Autumn Forest/Background parts/4 - Tree_row_BG_1.png" id="11_v8afl"]
 [ext_resource type="Shader" path="res://shader/level_3.gdshader" id="13_858oi"]
 [ext_resource type="Texture2D" uid="uid://egi85ew0jvuk" path="res://assets/Seasonal Tilesets/2 - Autumn Forest/Background parts/2 - Trees.png" id="13_wowxv"]
 [ext_resource type="Texture2D" uid="uid://dlt6fmv5cq22v" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="14_5vbk2"]
+[ext_resource type="PackedScene" uid="uid://ctf0ge5y2jweq" path="res://scenes/patrulheiro.tscn" id="14_aqqwi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xfdfw"]
 texture = ExtResource("1_xlml7")
@@ -438,9 +438,6 @@ one_way_collision_margin = 0.0
 [node name="GaloFrito" parent="." instance=ExtResource("6_fbd6u")]
 position = Vector2(59, -122)
 
-[node name="GalinhoDemonio4" parent="." instance=ExtResource("8_mh4bj")]
-position = Vector2(1200, -238)
-
 [node name="WaitTime" type="Timer" parent="."]
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -586,6 +583,10 @@ offset_left = 2.0
 offset_top = -323.0
 offset_right = 644.0
 offset_bottom = 2.0
+
+[node name="patrulheiro" parent="." node_paths=PackedStringArray("target") instance=ExtResource("14_aqqwi")]
+position = Vector2(1376, -13)
+target = NodePath("../GaloFrito")
 
 [connection signal="timeout" from="WaitTime" to="." method="_on_wait_time_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

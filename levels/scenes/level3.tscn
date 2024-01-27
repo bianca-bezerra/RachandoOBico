@@ -1,7 +1,7 @@
 [gd_scene load_steps=33 format=3 uid="uid://c533ed1ouc50v"]
 
 [ext_resource type="Texture2D" uid="uid://bvbxgrdtyhl0r" path="res://assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_3tje3"]
-[ext_resource type="Script" path="res://levels/scenes/level3.gd" id="1_11o0u"]
+[ext_resource type="Script" path="res://levels/scripts/level3.gd" id="1_11o0u"]
 [ext_resource type="Texture2D" uid="uid://ciu5bpv7aeda8" path="res://assets/Seasonal Tilesets/1 - Grassland/Extra_plants (16 x 16).png" id="2_qvamq"]
 [ext_resource type="Texture2D" uid="uid://gb0e8x3ufwqd" path="res://assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="3_6w2ci"]
 [ext_resource type="Texture2D" uid="uid://dtch6wersns4" path="res://assets/Rocky Roads/Deco/rock.png" id="4_2apps"]
