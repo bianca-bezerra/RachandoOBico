@@ -10,7 +10,7 @@ var has_double_jumped : bool = false;
 
 #Animation
 @onready var animation = $AnimatedSprite2D
-
+@onready var health_label = $Label
 #Combat System
 @onready var BULLET = preload("res://scenes/ovo.tscn")
 var enemy_inattack_range = false
@@ -149,7 +149,7 @@ func enemy_attack():
 			self.queue_free()
 			get_tree().change_scene_to_file("res://screens/scenes/game_over.tscn")
 		else:
-			animation.play("take_damage")
+			
 			if $RayRight.is_colliding() or $Ray2.is_colliding() or $Ray3.is_colliding():
 				take_damage(Vector2(-1000,-400))
 			elif $RayLeft.is_colliding() or $Ray1.is_colliding() or $Ray4.is_colliding():

@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://bc5d8muvtght8"]
+
+[ext_resource type="Script" path="res://texto_box_final.gd" id="1_vdand"]
+[ext_resource type="FontFile" uid="uid://cb64tb4mbh747" path="res://assets/m5x7.ttf" id="2_wojv0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cuutp"]
+bg_color = Color(0.00392157, 0.00392157, 0.00392157, 0.992157)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+
+[node name="TextBox" type="CanvasLayer"]
+script = ExtResource("1_vdand")
+
+[node name="TextBoxContainer" type="MarginContainer" parent="."]
+offset_left = 8.0
+offset_top = 162.0
+offset_right = 647.0
+offset_bottom = 332.0
+scale = Vector2(0.975298, 0.966205)
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Panel" type="Panel" parent="TextBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cuutp")
+
+[node name="MarginC" type="MarginContainer" parent="TextBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Panel" type="Panel" parent="TextBoxContainer/MarginC"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextBoxContainer/MarginC"]
+layout_mode = 2
+
+[node name="Start" type="Label" parent="TextBoxContainer/MarginC/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_wojv0")
+theme_override_font_sizes/font_size = 32
+text = "*"
+
+[node name="Text" type="Label" parent="TextBoxContainer/MarginC/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.6, 0.772549, 0.92549, 1)
+theme_override_fonts/font = ExtResource("2_wojv0")
+theme_override_font_sizes/font_size = 32
+text = "Placeholaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+autowrap_mode = 3
+clip_text = true
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="End" type="Label" parent="TextBoxContainer/MarginC/HBoxContainer"]
+custom_minimum_size = Vector2(10, 16)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_wojv0")
+theme_override_font_sizes/font_size = 32
+text = "v"
+clip_text = true

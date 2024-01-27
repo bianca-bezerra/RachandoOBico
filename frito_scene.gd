@@ -10,8 +10,12 @@ var text1_instantiated = false
 @onready var animation = $Transition
 @onready var texto1 = preload("res://texto_box.tscn")
 @onready var root = $"."
+@onready var cor = $ColorRect
 
 func _ready():
+	var tween = create_tween()
+	tween.tween_property(cor,"self_modulate",Color(0,0,0,0),2)
+	tween.tween_property(cor,"visible",false,0.5)
 	$AnimatedSprite2D.visible = false
 	$Glow.visible = false
 	$Anjo.visible = false
@@ -19,7 +23,7 @@ func _ready():
 	$Morte.visible = false
 	$Morto.visible = false
 	$Button.visible = false
-
+	$Button2.visible = false
 	
 func _physics_process(delta):
 	if !animation1_finished:
@@ -28,11 +32,13 @@ func _physics_process(delta):
 		
 func play_once_galinho():
 	$AnimationPlayer.play("frito_walk")
+	
 	animation1_finished = true
 	
 func play_reaction():
 	$AnimatedSprite2D.visible = true
 	$AnimatedSprite2D.play("emotion")
+	$Button2.visible = true
 	animation2_finished = true
 
 func play_glow():
@@ -98,3 +104,13 @@ func _on_button_mouse_exited():
 
 func _on_transition_animation_finished(anim_name):
 	get_tree().change_scene_to_file("res://levels/scenes/level1.tscn")
+
+func _on_button_2_pressed():
+	animation.play("fade_out")
+
+func _on_button_2_mouse_entered():
+	$Button2.icon = preload("res://assets/66_button UI.png")
+
+func _on_button_2_mouse_exited():
+	$Button2.icon = preload("res://assets/30_button UI.png")
+

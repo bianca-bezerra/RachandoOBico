@@ -76,5 +76,17 @@ position = Vector2(510, 205)
 texture = ExtResource("4_neyms")
 flip_h = true
 
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+self_modulate = Color(0, 0, 0, 0)
+top_level = true
+layout_mode = 0
+offset_left = -29.0
+offset_top = -43.0
+offset_right = 584.0
+offset_bottom = 314.0
+scale = Vector2(1.14851, 1.17261)
+color = Color(0, 0, 0, 1)
+
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/start_button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/quit_button" to="." method="_on_quit_button_pressed"]

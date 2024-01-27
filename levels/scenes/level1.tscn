@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bgo55odat2te2"]
+[gd_scene load_steps=49 format=3 uid="uid://bgo55odat2te2"]
 
 [ext_resource type="Texture2D" uid="uid://drc13q37a5bug" path="res://assets/Rocky Roads/Tilesets/tileset_snow.png" id="1_08its"]
 [ext_resource type="Script" path="res://levels/scripts/level1.gd" id="1_n1v7x"]
@@ -19,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://2qfyeelq5tab" path="res://assets/Seasonal Tilesets/3 - Tropics/Background parts/3 - Floating_clouds.png" id="17_ouopn"]
 [ext_resource type="PackedScene" uid="uid://bhapp7jpo7spd" path="res://screens/scenes/pause_menu.tscn" id="19_0t8ew"]
 [ext_resource type="PackedScene" uid="uid://v6j86p3m614s" path="res://galo_frito2.tscn" id="19_7ho5l"]
+[ext_resource type="Texture2D" uid="uid://bolr7k2wveq41" path="res://assets/Purple Portal Sprite Sheet.png" id="20_732i4"]
+[ext_resource type="PackedScene" uid="uid://bf4vfnaogv7pr" path="res://descricao.tscn" id="21_mb1u4"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ih6p1"]
 tile_data = PackedInt32Array(0, 458752, 3, 1, 524288, 3, 2, 589824, 3)
@@ -1530,6 +1532,70 @@ _data = {
 "fade_out": SubResource("Animation_qxsm1")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_crgsf"]
+atlas = ExtResource("20_732i4")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50dua"]
+atlas = ExtResource("20_732i4")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrsgc"]
+atlas = ExtResource("20_732i4")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uuhf"]
+atlas = ExtResource("20_732i4")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8uhw"]
+atlas = ExtResource("20_732i4")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_516yj"]
+atlas = ExtResource("20_732i4")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v65n7"]
+atlas = ExtResource("20_732i4")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wp7ee"]
+atlas = ExtResource("20_732i4")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pltg1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crgsf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50dua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrsgc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5uuhf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8uhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_516yj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v65n7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wp7ee")
+}],
+"loop": true,
+"name": &"portal",
+"speed": 5.0
+}]
+
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_n1v7x")
 
@@ -1552,6 +1618,7 @@ position = Vector2(679, 133)
 wait_time = 2.0
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 position = Vector2(984, 171)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -1633,6 +1700,26 @@ offset_bottom = 325.0
 [node name="Animation" type="Timer" parent="."]
 
 [node name="GaloFrito" parent="." instance=ExtResource("19_7ho5l")]
+
+[node name="Portal" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.65098)
+y_sort_enabled = true
+position = Vector2(985, 164)
+scale = Vector2(2.2832, 1.70312)
+sprite_frames = SubResource("SpriteFrames_pltg1")
+animation = &"portal"
+frame_progress = 0.0335748
+flip_h = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+self_modulate = Color(0, 0, 0, 0)
+offset_left = -74.0
+offset_top = -206.0
+offset_right = -34.0
+offset_bottom = -166.0
+scale = Vector2(39.6019, 19.9664)
+
+[node name="Label" parent="." instance=ExtResource("21_mb1u4")]
 
 [connection signal="timeout" from="WaitTime" to="." method="_on_wait_time_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

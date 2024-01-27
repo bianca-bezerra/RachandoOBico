@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf4vfnaogv7pr"]
+
+[ext_resource type="FontFile" uid="uid://da5ft7k0ubxgu" path="res://assets/monogram.ttf" id="1_30hhg"]
+[ext_resource type="Script" path="res://levels/scenes/Label.gd" id="2_phm62"]
+
+[node name="Label" type="Label"]
+custom_minimum_size = Vector2(300, 200)
+offset_left = 104.0
+offset_top = 344.0
+offset_right = 144.0
+offset_bottom = 367.0
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_30hhg")
+theme_override_font_sizes/font_size = 16
+autowrap_mode = 3
+visible_characters = 0
+visible_ratio = 0.0
+script = ExtResource("2_phm62")

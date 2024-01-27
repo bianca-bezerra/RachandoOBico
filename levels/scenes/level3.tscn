@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c533ed1ouc50v"]
+[gd_scene load_steps=35 format=3 uid="uid://c533ed1ouc50v"]
 
 [ext_resource type="Texture2D" uid="uid://bvbxgrdtyhl0r" path="res://assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_3tje3"]
 [ext_resource type="Script" path="res://levels/scripts/level3.gd" id="1_11o0u"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bsccwwmh5y0tn" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="14_lx4wq"]
 [ext_resource type="PackedScene" uid="uid://c4s4qhls174ct" path="res://scenes/galo_frito.tscn" id="15_j8yu4"]
 [ext_resource type="PackedScene" uid="uid://s68h8r5g13gx" path="res://scenes/Mago.tscn" id="16_hg52q"]
+[ext_resource type="PackedScene" uid="uid://bhapp7jpo7spd" path="res://screens/scenes/pause_menu.tscn" id="18_ihp35"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ea1ms"]
 texture = ExtResource("1_3tje3")
@@ -828,6 +829,9 @@ _data = {
 "fade_out": SubResource("Animation_qxsm1")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4n20p"]
+radius = 18.2483
+
 [node name="Level3" type="Node2D"]
 script = ExtResource("1_11o0u")
 
@@ -924,8 +928,31 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="Transition"]
+modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 offset_left = -20.0
 offset_top = 74.0
 offset_right = 622.0
 offset_bottom = 399.0
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(250, -205)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3, 0)
+shape = SubResource("CircleShape2D_4n20p")
+
+[node name="WaitTime" type="Timer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+self_modulate = Color(0, 0, 0, 0)
+offset_left = -49.0
+offset_top = -347.0
+offset_right = 684.0
+offset_bottom = 78.0
+
+[node name="pause_menu" parent="." instance=ExtResource("18_ihp35")]
+visible = false
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="WaitTime" to="." method="_on_wait_time_timeout"]

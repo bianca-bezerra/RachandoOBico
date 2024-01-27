@@ -312,7 +312,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"take_damage",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -346,8 +346,8 @@ script = ExtResource("1_e5jvl")
 position = Vector2(-1.7113, -1.7174)
 scale = Vector2(1.47113, 1.40166)
 sprite_frames = SubResource("SpriteFrames_bssdy")
-animation = &"death"
-frame_progress = 0.47283
+animation = &"take_damage"
+frame_progress = 0.412049
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -3)

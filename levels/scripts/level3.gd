@@ -3,6 +3,7 @@ extends Node2D
 var allowed_levelup = false
 @onready var player = get_node("/root/GaloFrito")
 @onready var animation = $Transition
+@onready var cor = $ColorRect
 
 func _ready():
 	animation.play("fade_in")
@@ -14,5 +15,9 @@ func _on_area_2d_body_entered(body):
 		$WaitTime.start()
 
 func _on_wait_time_timeout():
-	pass
-	#get_tree().change_scene_to_file("res://levels/scenes/level3.tscn")
+	var tween = create_tween()
+	tween.tween_property(cor,"self_modulate",Color(0,0,0),1.5)
+	tween.connect("finished", on_tween_finished)
+	
+func on_tween_finished():
+	get_tree().change_scene_to_file("res://frito_final_scene.tscn")
