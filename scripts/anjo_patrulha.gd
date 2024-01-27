@@ -13,10 +13,11 @@ const RIGHT = 1;
 const LEFT = -1;
 var direction := RIGHT;
 @export var move_speed := 50;
-#var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
 
 #Combat System
-const FIREBALL = preload("res://scenes/fireball.tscn");
+const FIREBALL = preload("res://scenes/iceball.tscn");
 @export var health_points := 1;
 var can_shoot = true;
 var damage_rate = 1
@@ -31,8 +32,8 @@ func _ready():
 	animation.flip_h = true;
 
 func _physics_process(delta):
-	#if !is_on_floor():
-	#	velocity.y += gravity * delta
+	if !is_on_floor():
+		velocity.y += gravity * delta
 	match(current_state):
 		EnemyState.PATROL : patrol_state();
 		EnemyState.ATTACK : attack_state();
@@ -153,7 +154,6 @@ func change_to_attack_state():
 
 #Animations ####################################################################
 func play_hurt_anim():
-	
 	$hit.visible = true;
 	$hit.flip_h = take_dir();
 	$hit.play("default");

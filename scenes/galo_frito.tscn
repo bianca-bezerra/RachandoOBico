@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://c4s4qhls174ct"]
+[gd_scene load_steps=55 format=3 uid="uid://c4s4qhls174ct"]
 
 [ext_resource type="Script" path="res://scripts/GaloFrito.gd" id="1_e5jvl"]
 [ext_resource type="Texture2D" uid="uid://brfwjd7p1p252" path="res://assets/ChickenPack/ChickenPack/SpriteSheet/Sprite-ChickenAttack-Sheet.png" id="2_llc33"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://dvbf1stu6cusd" path="res://assets/ChickenPack/ChickenPack/SpriteSheet/ChickenJumping-Sheet.png" id="6_0m755"]
 [ext_resource type="Texture2D" uid="uid://dbeeau1kk65wh" path="res://assets/ChickenPack/ChickenPack/SpriteSheet/ChickenDamage-Sheet.png" id="7_35eyv"]
 [ext_resource type="Texture2D" uid="uid://drqmkdqaxcgtc" path="res://assets/ChickenPack/ChickenPack/SpriteSheet/ChickenWalking.png" id="8_6mwjh"]
-[ext_resource type="AudioStream" uid="uid://d0un8xjx4g5ju" path="res://assets/Chicken Sound Effect in Best Quality (320 kbps) (mp3cut.net).mp3" id="9_mg30r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l8tnb"]
 atlas = ExtResource("2_llc33")
@@ -339,6 +338,28 @@ radius = 14.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_0o0mx"]
 radius = 19.0263
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_da7pf"]
+atlas = ExtResource("7_35eyv")
+region = Rect2(100, 0, 20, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4e5h"]
+atlas = ExtResource("7_35eyv")
+region = Rect2(80, 0, 20, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4u0ov"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_da7pf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4e5h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="GaloFrito" type="CharacterBody2D"]
 position = Vector2(146, 100)
 script = ExtResource("1_e5jvl")
@@ -348,7 +369,7 @@ position = Vector2(-1.7113, -1.7174)
 scale = Vector2(1.47113, 1.40166)
 sprite_frames = SubResource("SpriteFrames_bssdy")
 animation = &"take_damage"
-frame_progress = 0.953773
+frame_progress = 0.412049
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -3)
@@ -404,10 +425,13 @@ wait_time = 5.0
 position = Vector2(25, -1)
 
 [node name="AttackCoolDownExtra" type="Timer" parent="."]
-wait_time = 0.7
+wait_time = 1.5
 
-[node name="Pó" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_mg30r")
+[node name="hurt" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-2, -4)
+scale = Vector2(1.4, 1.45238)
+sprite_frames = SubResource("SpriteFrames_4u0ov")
 
 [connection signal="body_entered" from="HitboxPlayer" to="." method="_on_hitbox_player_body_entered"]
 [connection signal="body_exited" from="HitboxPlayer" to="." method="_on_hitbox_player_body_exited"]

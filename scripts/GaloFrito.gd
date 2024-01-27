@@ -15,7 +15,7 @@ var has_double_jumped : bool = false;
 @onready var BULLET = preload("res://scenes/ovo.tscn")
 var enemy_inattack_range = false
 var enemy_attack_cooldown = true
-var health = 7
+var health = 5
 var knockback_vector := Vector2.ZERO
 var is_alive = true
 var damage_rate = 1
@@ -105,6 +105,7 @@ func player_movement(delta):
 	move_and_slide()
 	
 func _on_hitbox_player_body_entered(body):
+	
 	if body.has_method("enemy"):
 		enemy_inattack_range = true
 	elif body.has_method("fireball"):
@@ -130,7 +131,7 @@ func fireball_attack():
 		get_tree().change_scene_to_file("res://screens/scenes/game_over.tscn")
 	
 	else:
-		animation.play("take_damage")
+		#animation.play("take_damage")
 		if $RayRight.is_colliding() or $Ray2.is_colliding() or $Ray3.is_colliding():
 			take_damage(Vector2(-1000,-400))
 		elif $RayLeft.is_colliding() or $Ray1.is_colliding() or $Ray4.is_colliding():
@@ -139,6 +140,18 @@ func fireball_attack():
 			take_damage(Vector2(400,0))
 		elif $RayDown.is_colliding():
 			take_damage(Vector2(0,-1000))
+			
+		animation.visible = false;
+		$hurt.visible = true;
+		if(current_direction == "left"):
+			$hurt.flip_h = true;
+		else:
+			$hurt.flip_h = false
+		$hurt.play("default")
+		await get_tree().create_timer(0.2).timeout;
+		animation.visible = true;
+		$hurt.visible = false;
+		
 			
 func enemy_attack():	
 	if enemy_inattack_range == true and enemy_attack_cooldown == true:
@@ -149,6 +162,7 @@ func enemy_attack():
 			self.queue_free()
 			get_tree().change_scene_to_file("res://screens/scenes/game_over.tscn")
 		else:
+			
 			if $RayRight.is_colliding() or $Ray2.is_colliding() or $Ray3.is_colliding():
 				take_damage(Vector2(-1000,-400))
 			elif $RayLeft.is_colliding() or $Ray1.is_colliding() or $Ray4.is_colliding():
@@ -168,8 +182,6 @@ func attack():
 	if can_attack:
 		var dir = current_direction
 		if Input.is_action_just_pressed("attack"):
-			$"Pó".play()
-			await $"Pó".finished
 			global.player_current_attack = true
 			attack_ip = true
 			if dir == "right" or dir == "none":
@@ -191,7 +203,7 @@ func _on_attack_deal_timeout():
 	global.player_current_attack = false
 	attack_ip = false
 
-func take_damage(knoback_force := Vector2.ZERO,duration := 0.2):
+func take_damage(knoback_force := Vector2.ZERO,duration := 0.15):
 	is_ondamage = true
 	health -= damage_rate
 	if knoback_force != Vector2.ZERO:

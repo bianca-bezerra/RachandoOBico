@@ -1,8 +1,7 @@
-[gd_scene load_steps=29 format=3 uid="uid://ccokwqnapxih8"]
+[gd_scene load_steps=28 format=3 uid="uid://ccokwqnapxih8"]
 
 [ext_resource type="Script" path="res://scripts/galinho_anjo.gd" id="1_wqeau"]
 [ext_resource type="Texture2D" uid="uid://djufjkix2kru8" path="res://assets/BadChickenAssetPack/Chickens/BlueChicken-Sheet.png" id="2_nsj13"]
-[ext_resource type="PackedScene" uid="uid://b87jobhh0mj84" path="res://texto_box_anjo.tscn" id="3_eyk78"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b04ft"]
 atlas = ExtResource("2_nsj13")
@@ -230,11 +229,6 @@ wait_time = 0.5
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.4
 
-[node name="TextBox" parent="." instance=ExtResource("3_eyk78")]
-visible = false
-
-[node name="TextoSumir" type="Timer" parent="."]
-
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
@@ -242,4 +236,3 @@ visible = false
 [connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]
 [connection signal="timeout" from="TakeDamageCoolDown" to="." method="_on_take_damage_cool_down_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="TextoSumir" to="." method="_on_texto_sumir_timeout"]

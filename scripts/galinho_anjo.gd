@@ -10,20 +10,18 @@ var jump_force = 50
 
 #Player
 @onready var player = get_node("/root/Level1/GaloFrito")
-@onready var text_box = preload("res://texto_box.tscn")
 
 #Combat System
 @onready var BULLET = preload("res://scenes/ovo.tscn")
-var health = 30
-var damage_rate = 2
+var health = 0
+var damage_rate = 30
 var player_inattack_range = false
 var can_take_damage = true
 
 @onready var animation = $AnimatedSprite2D
 
-
 func _physics_process(delta):
-	instance_text()
+
 	if !is_on_floor():
 		velocity.y += gravity * delta
 		
@@ -76,7 +74,7 @@ func take_damage():
 		
 		if can_take_damage == true:
 			health -= damage_rate
-			var tween = create_tween()
+			print("tomei dano")
 			$TakeDamageCoolDown.start()
 			can_take_damage = false
 			
@@ -91,8 +89,3 @@ func _on_take_damage_cool_down_timeout():
 
 func _on_timer_timeout():
 	queue_free()
-
-func instance_text():
-	if health == 0:
-		$TextBox.visible = true
-		

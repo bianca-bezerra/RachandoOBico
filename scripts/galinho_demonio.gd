@@ -94,7 +94,3 @@ func _on_take_damage_cool_down_timeout():
 
 func _on_timer_timeout():
 	queue_free()
-
-func instance_text():
-	if health == 0:
-		$TextBox.visible = true

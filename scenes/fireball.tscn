@@ -1,55 +1,89 @@
-[gd_scene load_steps=9 format=3 uid="uid://c6lrns3w6o7u4"]
+[gd_scene load_steps=14 format=3 uid="uid://c6lrns3w6o7u4"]
 
 [ext_resource type="Texture2D" uid="uid://cti6tdyd8pqe3" path="res://assets/Rocky Roads/Enemies/fireball.png" id="1_ihjeh"]
 [ext_resource type="Script" path="res://scripts/fireball.gd" id="1_xyp8r"]
+[ext_resource type="Texture2D" uid="uid://cax7a0g32cfcq" path="res://assets/Rocky Roads/Enemies/ice_spikes.png" id="2_g7wss"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lt6iv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsya2"]
 atlas = ExtResource("1_ihjeh")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qxbrq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrgxs"]
 atlas = ExtResource("1_ihjeh")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2qalj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnrey"]
 atlas = ExtResource("1_ihjeh")
 region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7t2n4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6dpe"]
 atlas = ExtResource("1_ihjeh")
 region = Rect2(48, 0, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_fjhx4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpthx"]
+atlas = ExtResource("2_g7wss")
+region = Rect2(96, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2peo"]
+atlas = ExtResource("2_g7wss")
+region = Rect2(64, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nul2j"]
+atlas = ExtResource("2_g7wss")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x10vj"]
+atlas = ExtResource("2_g7wss")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mqu1n"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lt6iv")
+"texture": SubResource("AtlasTexture_vsya2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qxbrq")
+"texture": SubResource("AtlasTexture_wrgxs")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2qalj")
+"texture": SubResource("AtlasTexture_hnrey")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7t2n4")
+"texture": SubResource("AtlasTexture_p6dpe")
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpthx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2peo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nul2j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x10vj")
+}],
+"loop": true,
+"name": &"ice",
 "speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bygk3"]
 radius = 5.0
-height = 14.0
+height = 24.0
 
 [node name="fireball" type="CharacterBody2D"]
 script = ExtResource("1_xyp8r")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_fjhx4")
-autoplay = "default"
-frame_progress = 0.723689
+sprite_frames = SubResource("SpriteFrames_mqu1n")
+animation = &"ice"
+frame_progress = 0.0270031
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
