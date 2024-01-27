@@ -1,7 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://jwivbp0tr6bm"]
+[gd_scene load_steps=29 format=3 uid="uid://jwivbp0tr6bm"]
 
 [ext_resource type="Script" path="res://scripts/galinho_demonio.gd" id="1_fbgc3"]
 [ext_resource type="Texture2D" uid="uid://dnmv3ldti7bqi" path="res://assets/BadChickenAssetPack/Chickens/RedChicken-Sheet.png" id="1_vj8hs"]
+[ext_resource type="PackedScene" uid="uid://b5nmosgemej8p" path="res://text_box_demonio.tscn" id="3_bxa0c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l41cp"]
 atlas = ExtResource("1_vj8hs")
@@ -220,6 +221,8 @@ shape = SubResource("CircleShape2D_k5lf5")
 [node name="TakeDamageCoolDown" type="Timer" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="TextBox" parent="." instance=ExtResource("3_bxa0c")]
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

@@ -13,7 +13,6 @@ height = 24.0
 script = ExtResource("1_gr6xa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(0.353556, 0.158854, 0.336949, 1)
 position = Vector2(-19, -26)
 scale = Vector2(0.0855856, 0.082)
 texture = ExtResource("2_2va84")

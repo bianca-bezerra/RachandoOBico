@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5nmosgemej8p"]
+
+[ext_resource type="PackedScene" uid="uid://b87jobhh0mj84" path="res://texto_box_anjo.tscn" id="1_l82p0"]
+[ext_resource type="Script" path="res://text_box_demonio.gd" id="2_bj2hk"]
+
+[node name="TextBox" instance=ExtResource("1_l82p0")]
+script = ExtResource("2_bj2hk")
+
+[node name="TextBoxContainer" parent="." index="0"]
+offset_left = 113.0
+offset_top = 206.0
+offset_right = 752.0
+offset_bottom = 376.0

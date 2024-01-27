@@ -168,6 +168,8 @@ func attack():
 	if can_attack:
 		var dir = current_direction
 		if Input.is_action_just_pressed("attack"):
+			$"Pó".play()
+			await $"Pó".finished
 			global.player_current_attack = true
 			attack_ip = true
 			if dir == "right" or dir == "none":

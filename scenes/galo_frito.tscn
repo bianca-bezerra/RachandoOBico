@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://c4s4qhls174ct"]
+[gd_scene load_steps=53 format=3 uid="uid://c4s4qhls174ct"]
 
 [ext_resource type="Script" path="res://scripts/GaloFrito.gd" id="1_e5jvl"]
 [ext_resource type="Texture2D" uid="uid://brfwjd7p1p252" path="res://assets/ChickenPack/ChickenPack/SpriteSheet/Sprite-ChickenAttack-Sheet.png" id="2_llc33"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dvbf1stu6cusd" path="res://assets/ChickenPack/ChickenPack/SpriteSheet/ChickenJumping-Sheet.png" id="6_0m755"]
 [ext_resource type="Texture2D" uid="uid://dbeeau1kk65wh" path="res://assets/ChickenPack/ChickenPack/SpriteSheet/ChickenDamage-Sheet.png" id="7_35eyv"]
 [ext_resource type="Texture2D" uid="uid://drqmkdqaxcgtc" path="res://assets/ChickenPack/ChickenPack/SpriteSheet/ChickenWalking.png" id="8_6mwjh"]
+[ext_resource type="AudioStream" uid="uid://d0un8xjx4g5ju" path="res://assets/Chicken Sound Effect in Best Quality (320 kbps) (mp3cut.net).mp3" id="9_mg30r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l8tnb"]
 atlas = ExtResource("2_llc33")
@@ -403,7 +404,10 @@ wait_time = 5.0
 position = Vector2(25, -1)
 
 [node name="AttackCoolDownExtra" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 0.7
+
+[node name="Pó" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_mg30r")
 
 [connection signal="body_entered" from="HitboxPlayer" to="." method="_on_hitbox_player_body_entered"]
 [connection signal="body_exited" from="HitboxPlayer" to="." method="_on_hitbox_player_body_exited"]
