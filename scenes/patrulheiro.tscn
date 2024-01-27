@@ -377,8 +377,6 @@ shape = SubResource("RectangleShape2D_vx2ce")
 position = Vector2(-1, 9)
 shape = SubResource("CircleShape2D_k5lf5")
 
-[node name="TakeDamageCoolDown" type="Timer" parent="."]
-
 [node name="Timer" type="Timer" parent="."]
 
 [node name="fireball_spawn_point" type="Marker2D" parent="."]
@@ -390,16 +388,14 @@ target_position = Vector2(0, 8)
 
 [node name="player_detector_right" type="RayCast2D" parent="."]
 position = Vector2(0, 8)
-target_position = Vector2(50, 0)
+target_position = Vector2(150, 0)
 
 [node name="player_detector_left" type="RayCast2D" parent="."]
 position = Vector2(0, 8)
-target_position = Vector2(-50, 0)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+target_position = Vector2(-150, 0)
 
 [node name="cooldown_fireball" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.8
 
 [node name="hurt" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -421,10 +417,12 @@ scale = Vector2(0.5, 0.416667)
 sprite_frames = SubResource("SpriteFrames_302sh")
 frame_progress = 0.494363
 
+[node name="death_point" type="Marker2D" parent="."]
+position = Vector2(1, 11)
+
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]
-[connection signal="timeout" from="TakeDamageCoolDown" to="." method="_on_take_damage_cool_down_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="cooldown_fireball" to="." method="_on_cooldown_fireball_timeout"]

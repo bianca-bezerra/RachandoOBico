@@ -1,0 +1,25 @@
+Pontuais:
+- Consertar flip do sprite de animação 
+- Colocar vida na tela (coraçõezinhos se não for muito difícil)
+- Adicionar um sprite animado de solzinho no level 3
+- Animação de hurt do anjinho
+
+Gerais:
+- Adicionar som
+- Melhorar tela de game over (se possível adicionar uma animação de frigideira fritando um ovo)
+- Melhorar tela de inicio (adicionar MUITAS animações, trocar background, trocar logo(quem sabe por uma caixa de texto com a fonte usada nos botôes))
+
+Extra:
+- Assets de AK47 (ou outra arma) para os galinhos
+- Desbloquear pulos infinitos quando matar todos os galinhos de um level (voltar ao normal no próximo), e aproveitar pra usar a animação de fly
+- Usar animações de sleeping e ciscando quando em estado de repouso por um período X de tempo (usar times? sprites?)
+- Adicionar score de tempo?
+- Arma esquenta? (Para de funcionar por um tempo após atirar muito)
+- Escudo?
+
+===================================================================
+
+Resolver antes do próximo push:
+
+- Mexer no código do frito pra ele levar dano das fireballs
+- Fazer com que o patrulha sofra dano dos projéteis

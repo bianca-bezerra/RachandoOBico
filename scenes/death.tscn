@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://21i413we6ll"]
+
+[ext_resource type="Texture2D" uid="uid://dnmv3ldti7bqi" path="res://assets/BadChickenAssetPack/Chickens/RedChicken-Sheet.png" id="1_ngj5y"]
+[ext_resource type="Script" path="res://scenes/death.gd" id="2_o6iqg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j05gj"]
+atlas = ExtResource("1_ngj5y")
+region = Rect2(0, 96, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50psr"]
+atlas = ExtResource("1_ngj5y")
+region = Rect2(16, 96, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14ikm"]
+atlas = ExtResource("1_ngj5y")
+region = Rect2(32, 96, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rtj7"]
+atlas = ExtResource("1_ngj5y")
+region = Rect2(48, 96, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qx3j"]
+atlas = ExtResource("1_ngj5y")
+region = Rect2(64, 96, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6a4w0"]
+atlas = ExtResource("1_ngj5y")
+region = Rect2(80, 96, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xdxc7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j05gj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50psr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14ikm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rtj7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qx3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6a4w0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="death" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_xdxc7")
+script = ExtResource("2_o6iqg")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.6
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

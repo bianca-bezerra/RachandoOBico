@@ -4,7 +4,7 @@ var travelled_distance = 0
 
 func _physics_process(delta):
 	const SPEED = 2
-	const RANGE = 2
+	const RANGE = 2;
 	var direction = Vector2.RIGHT.rotated(rotation)
 	position += direction * SPEED * delta
 	$AnimatedSprite2D.play("impacto")
@@ -14,5 +14,16 @@ func _physics_process(delta):
 
 func _on_body_entered(body):
 	queue_free()
-	if body.has_method("take_damage"):
-		body.take_damage()
+	if body.has_method("patrulha"):
+		body.hurt_state();
+	#if body.has_method("take_damage"):
+	#	body.take_damage()
+	
+func _on_body_exited(body):
+	queue_free()	
+	if body.has_method("patrulha"):
+		body.hurt_state();
+func ovo():
+	pass;
+
+

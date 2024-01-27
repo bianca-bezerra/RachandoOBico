@@ -436,7 +436,7 @@ shape = SubResource("SegmentShape2D_sedm0")
 one_way_collision_margin = 0.0
 
 [node name="GaloFrito" parent="." instance=ExtResource("6_fbd6u")]
-position = Vector2(59, -122)
+position = Vector2(934, -52)
 
 [node name="WaitTime" type="Timer" parent="."]
 
@@ -585,7 +585,7 @@ offset_right = 644.0
 offset_bottom = 2.0
 
 [node name="patrulheiro" parent="." node_paths=PackedStringArray("target") instance=ExtResource("14_aqqwi")]
-position = Vector2(1376, -13)
+position = Vector2(1529, -11)
 target = NodePath("../GaloFrito")
 
 [connection signal="timeout" from="WaitTime" to="." method="_on_wait_time_timeout"]

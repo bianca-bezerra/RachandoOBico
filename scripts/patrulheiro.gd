@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var fireball_spawn_point = $fireball_spawn_point
 @onready var sprite = $sprite
 @onready var cooldown_fireball = $cooldown_fireball
+const DEATH = preload("res://scenes/death.tscn");
 
 #Motion
 const RIGHT = 1;
@@ -16,12 +17,10 @@ var direction := RIGHT;
 
 #Combat System
 const FIREBALL = preload("res://scenes/fireball.tscn");
-var player_inattack_range = false
-var can_take_damage = true
-@export var health_points := 5;
+@export var health_points := 1;
 var can_shoot = true;
 var damage_rate = 1
-enum EnemyState {PATROL, ATTACK, HURT}
+enum EnemyState {PATROL, ATTACK, HURT, DEATH}
 var current_state := EnemyState.PATROL;
 
 #Player
@@ -35,8 +34,9 @@ func _physics_process(delta):
 	match(current_state):
 		EnemyState.PATROL : patrol_state();
 		EnemyState.ATTACK : attack_state();
+		EnemyState.DEATH : queue_free();
 		
-func enemy():
+func patrulha():
 	pass
 
 #Direction
@@ -70,15 +70,17 @@ func _on_cooldown_fireball_timeout():
 	can_shoot = true;
 
 func _on_hitbox_body_entered(body):
-	if body.has_method("player"):
-		_change_state(EnemyState.HURT);
-		player_inattack_range = true
+	if body.has_method("ovo"):
 		hurt_state();
-	
+		
+	#change_state(EnemyState.HURT);
+	#player_inattack_range = true
 
 func _on_hitbox_body_exited(body):
-	if body.has_method("player"):
-		player_inattack_range = false
+	if body.has_method("ovo"):
+		hurt_state();
+	#if body.has_method("ovo"):
+		#player_inattack_range = false
 
 func _on_detection_area_body_entered(body):
 	if(body.has_method("player")):
@@ -86,11 +88,11 @@ func _on_detection_area_body_entered(body):
 
 func _on_detection_area_body_exited(body):
 	if(body.has_method("player")):
-		_change_state(EnemyState.PATROL);
+		change_state(EnemyState.PATROL);
 
 	
 #State Machine #################################################################
-func _change_state(state : EnemyState):
+func change_state(state : EnemyState):
 	current_state = state;
 	
 func patrol_state():
@@ -103,15 +105,18 @@ func patrol_state():
 func hurt_state():
 	
 	if(health_points == 0):
-		$sprite.play("death")
-		await get_tree().create_timer(1).timeout;
 		print("No céu tem milho?");
-		queue_free();
-	
-	play_hurt_anim();
-	print("Patrulheira: Ai!")
-	health_points -= 1;
-	current_state = EnemyState.PATROL;
+		var death = DEATH.instantiate();
+		add_sibling(death);
+		death.global_position = $death_point.global_position;
+		death.play("default");
+		change_state(EnemyState.DEATH);
+		
+	else:
+		play_hurt_anim();
+		print("Patrulheira: Ai!")
+		health_points -= 1;
+		current_state = EnemyState.PATROL;
 
 func attack_state():
 	
@@ -134,7 +139,7 @@ func change_to_attack_state():
 		flip_enemy();
 
 	$exclamation.visible = true;
-	_change_state(EnemyState.ATTACK);			
+	change_state(EnemyState.ATTACK);			
 	$exclamation.flip_h = take_dir();
 	$exclamation.play("default");
 	await get_tree().create_timer(0.3).timeout;	
