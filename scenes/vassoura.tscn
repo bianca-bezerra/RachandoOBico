@@ -1,25 +1,64 @@
-[gd_scene load_steps=4 format=3 uid="uid://bw4oqjuqvioqf"]
+[gd_scene load_steps=10 format=3 uid="uid://bw4oqjuqvioqf"]
 
 [ext_resource type="Script" path="res://scripts/vassoura.gd" id="1_gaok5"]
-[ext_resource type="PackedScene" uid="uid://bu3tkle4bnw0g" path="res://scenes/batida.tscn" id="2_fvmtf"]
+[ext_resource type="Texture2D" uid="uid://drnbjxfyxmw1t" path="res://assets/vassoura_asset/IMG-2510.png" id="2_brve3"]
+[ext_resource type="Texture2D" uid="uid://b1r3dgcbuq5pk" path="res://assets/vassoura_asset/IMG-2512.png" id="3_epx87"]
+[ext_resource type="Texture2D" uid="uid://d18rdd6w60r2c" path="res://assets/vassoura_asset/IMG-2513.png" id="4_27gt1"]
+[ext_resource type="Texture2D" uid="uid://dqbb3rx8dkyud" path="res://assets/vassoura_asset/IMG-2515.png" id="5_m8u35"]
+[ext_resource type="Texture2D" uid="uid://cg4iu5ik4qanl" path="res://assets/vassoura_asset/IMG-2516.png" id="6_08yws"]
+[ext_resource type="Texture2D" uid="uid://bviuu54r71q3j" path="res://assets/vassoura_asset/IMG-2517.png" id="7_g0j84"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_xf8xl"]
-radius = 54.037
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6o38"]
+size = Vector2(192, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_er2qp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_brve3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_epx87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_27gt1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_m8u35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_08yws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_g0j84")
+}],
+"loop": true,
+"name": &"atirar",
+"speed": 7.0
+}]
 
 [node name="Vassoura" type="Area2D"]
 script = ExtResource("1_gaok5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_xf8xl")
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_k6o38")
 
-[node name="Marker2D" type="Marker2D" parent="."]
+[node name="WeaponPivot" type="Marker2D" parent="."]
 
-[node name="Batida" parent="Marker2D" instance=ExtResource("2_fvmtf")]
-unique_name_in_owner = true
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="WeaponPivot"]
+position = Vector2(23, 0)
+scale = Vector2(0.0303017, 0.0335436)
+sprite_frames = SubResource("SpriteFrames_er2qp")
+animation = &"atirar"
 frame = 4
-frame_progress = 0.627834
+frame_progress = 0.739538
+
+[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/AnimatedSprite2D"]
+position = Vector2(396.779, -352.501)
+scale = Vector2(11.0217, 10.3677)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 5.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

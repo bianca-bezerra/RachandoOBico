@@ -8,7 +8,7 @@ func fireball():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position.x += move_speed * direction * delta;
+	position.x += move_speed * direction * delta *  5;
 	#if is_on_wall():
 		#$queue_free();
 

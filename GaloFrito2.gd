@@ -6,11 +6,11 @@ extends CharacterBody2D
 @export var double_jump_force : float = -300;
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var current_direction = "none"
-#<<<<<<< HEAD
+
 var direction
-#=======
+
 var has_double_jumped : bool = false;
-#>>>>>>> f9ba8331736d95c602142faea031d475e6fe535a
+
 
 #Animation
 @onready var animation = $AnimatedSprite2D

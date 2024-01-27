@@ -6,6 +6,7 @@ var allowed_levelup = false
 @onready var portal_animation = $Portal
 @onready var cor = $ColorRect
 
+
 func _ready():
 	animation.play("fade_in")
 	portal_animation.visible = false
@@ -26,3 +27,5 @@ func _on_wait_time_timeout():
 	await tween.finished
 	get_tree().change_scene_to_file("res://levels/scenes/level2.tscn")
 		
+
+	

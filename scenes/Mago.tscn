@@ -227,41 +227,44 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45gxs"]
-size = Vector2(17, 23)
+size = Vector2(20, 35.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_55g51"]
-size = Vector2(232.196, 94)
+size = Vector2(461.268, 223.786)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kcge1"]
-radius = 18.0278
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7wqp"]
+size = Vector2(21, 37)
 
 [node name="Mago" type="CharacterBody2D"]
 script = ExtResource("1_ge886")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1.5625, 1.625)
+position = Vector2(4.25, 5.5)
+scale = Vector2(2.09375, 2.3125)
 sprite_frames = SubResource("SpriteFrames_wysyq")
-animation = &"hit"
-frame = 1
-frame_progress = 0.730952
+animation = &"idle"
+frame_progress = 0.637417
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, -1.5)
+position = Vector2(5, 5.25)
 shape = SubResource("RectangleShape2D_45gxs")
 
 [node name="Vassoura" parent="." instance=ExtResource("37_f0f4d")]
+position = Vector2(4, 3)
 
 [node name="DetectionArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
-position = Vector2(4.5, -11)
+position = Vector2(22.5, -1.96364)
 scale = Vector2(0.960396, 0.509091)
 shape = SubResource("RectangleShape2D_55g51")
 
 [node name="Hitbox" type="Area2D" parent="."]
+position = Vector2(4, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource("CircleShape2D_kcge1")
+position = Vector2(0.5, 3.5)
+shape = SubResource("RectangleShape2D_y7wqp")
 
 [node name="TakeDamageCoolDown" type="Timer" parent="."]
 

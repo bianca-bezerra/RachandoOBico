@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://i50uvivelmhf"]
+[gd_scene load_steps=60 format=3 uid="uid://i50uvivelmhf"]
 
 [ext_resource type="Script" path="res://frito_scene.gd" id="1_4i1pm"]
 [ext_resource type="Texture2D" uid="uid://3j1w52md0l2g" path="res://assets/sprite (1).png" id="1_4l3bo"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cjb6a4w2s4r1w" path="res://assets/ChickenDie-Sheet_03.png" id="17_e2vhu"]
 [ext_resource type="Texture2D" uid="uid://b0utpwrblivnb" path="res://assets/73_button UI.png" id="18_s7imk"]
 [ext_resource type="Texture2D" uid="uid://dyfxtc77jjkyh" path="res://assets/30_button UI.png" id="19_r37vm"]
+[ext_resource type="FontFile" uid="uid://da5ft7k0ubxgu" path="res://assets/monogram.ttf" id="20_3gabd"]
 
 [sub_resource type="Animation" id="Animation_4wixo"]
 length = 0.001
@@ -685,6 +686,16 @@ offset_top = -92.2513
 offset_right = -16.385
 offset_bottom = -52.2513
 scale = Vector2(9.53125, 4.57553)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 52.3311
+offset_top = -44.1359
+offset_right = 118.331
+offset_bottom = -21.1359
+theme_override_colors/font_color = Color(1, 1, 1, 0.662745)
+theme_override_fonts/font = ExtResource("20_3gabd")
+theme_override_font_sizes/font_size = 16
+text = "PRESS START"
 
 [connection signal="timeout" from="Timer1" to="." method="_on_timer_1_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

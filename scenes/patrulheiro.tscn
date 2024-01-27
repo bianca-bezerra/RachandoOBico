@@ -223,7 +223,7 @@ animations = [{
 radius = 13.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vx2ce"]
-size = Vector2(384, 42.25)
+size = Vector2(635, 91.25)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k5lf5"]
 radius = 19.105
@@ -368,7 +368,7 @@ shape = SubResource("CircleShape2D_10gx3")
 [node name="DetectionArea" type="Area2D" parent="."]
 
 [node name="detection_shape" type="CollisionShape2D" parent="DetectionArea"]
-position = Vector2(0, 21.125)
+position = Vector2(32.5, -3.375)
 shape = SubResource("RectangleShape2D_vx2ce")
 
 [node name="Hitbox" type="Area2D" parent="."]

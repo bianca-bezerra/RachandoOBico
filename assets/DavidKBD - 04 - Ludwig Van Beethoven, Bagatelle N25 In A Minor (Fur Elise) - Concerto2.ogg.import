@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://jmqvjk3swwlt"
+path="res://.godot/imported/DavidKBD - 04 - Ludwig Van Beethoven, Bagatelle N25 In A Minor (Fur Elise) - Concerto2.ogg-4af64bd6a56d965aea4cfd8b8ddc226b.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/DavidKBD - 04 - Ludwig Van Beethoven, Bagatelle N25 In A Minor (Fur Elise) - Concerto2.ogg"
+dest_files=["res://.godot/imported/DavidKBD - 04 - Ludwig Van Beethoven, Bagatelle N25 In A Minor (Fur Elise) - Concerto2.ogg-4af64bd6a56d965aea4cfd8b8ddc226b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

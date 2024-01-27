@@ -28,6 +28,7 @@ func _physics_process(delta):
 		
 	var target = player
 	var direction = (target.position - position).normalized()
+	#look_at(direction)
 	
 
 	if attack_mode:
@@ -38,13 +39,13 @@ func _physics_process(delta):
 			if velocity.x > 0.0:
 				
 				current_direction = "right"
-				animation.flip_h = true  
+				animation.flip_h = false 
 				animation.play("walk")
 				
 			elif velocity.x < 0.0:
 				
 				current_direction = "left"
-				animation.flip_h = false 
+				animation.flip_h = true 
 				animation.play("walk")
 	else:
 		velocity.x = 0

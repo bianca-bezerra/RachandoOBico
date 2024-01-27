@@ -149,7 +149,6 @@ func enemy_attack():
 			self.queue_free()
 			get_tree().change_scene_to_file("res://screens/scenes/game_over.tscn")
 		else:
-			
 			if $RayRight.is_colliding() or $Ray2.is_colliding() or $Ray3.is_colliding():
 				take_damage(Vector2(-1000,-400))
 			elif $RayLeft.is_colliding() or $Ray1.is_colliding() or $Ray4.is_colliding():
@@ -190,13 +189,14 @@ func _on_attack_deal_timeout():
 	global.player_current_attack = false
 	attack_ip = false
 
-func take_damage(knoback_force := Vector2.ZERO,duration := 0.15):
+func take_damage(knoback_force := Vector2.ZERO,duration := 0.2):
 	is_ondamage = true
 	health -= damage_rate
 	if knoback_force != Vector2.ZERO:
 		knockback_vector = knoback_force
 		var knoback_tween = get_tree().create_tween()
 		knoback_tween.tween_property(self, "knockback_vector", Vector2.ZERO, duration)
+		
 func get_player_direction():
 	if current_direction == "right":
 		return 1;

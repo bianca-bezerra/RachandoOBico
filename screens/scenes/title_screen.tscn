@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dh7s4tq7jb0xx"]
+[gd_scene load_steps=12 format=3 uid="uid://dh7s4tq7jb0xx"]
 
 [ext_resource type="Script" path="res://screens/scripts/title_screen.gd" id="1_bfma4"]
 [ext_resource type="Texture2D" uid="uid://dt6b364qbn8cm" path="res://screens/material/fundo.png" id="1_g08mb"]
@@ -6,8 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://ftcptm4u7rer" path="res://screens/material/logoaaa.png" id="2_yl6vl"]
 [ext_resource type="FontFile" uid="uid://cb64tb4mbh747" path="res://assets/m5x7.ttf" id="4_6m2m5"]
 [ext_resource type="Texture2D" uid="uid://ldt4s2h8yvv6" path="res://screens/material/galinhacortada.png" id="4_neyms"]
+[ext_resource type="AudioStream" uid="uid://jmqvjk3swwlt" path="res://assets/DavidKBD - 04 - Ludwig Van Beethoven, Bagatelle N25 In A Minor (Fur Elise) - Concerto2.ogg" id="7_6s72t"]
+[ext_resource type="AudioStream" uid="uid://bl3au3pvbiov4" path="res://assets/MI_SFX 01.wav" id="8_rso7h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wqtpp"]
+bg_color = Color(0.901961, 0.701961, 0.160784, 0.752941)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a3pcx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rveyw"]
+bg_color = Color(0.901961, 0.701961, 0.160784, 0.752941)
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -49,6 +57,7 @@ size_flags_vertical = 8
 theme = ExtResource("2_7p7fg")
 theme_override_fonts/font = ExtResource("4_6m2m5")
 theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_wqtpp")
 text = "START"
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
@@ -61,6 +70,7 @@ size_flags_horizontal = 0
 theme = ExtResource("2_7p7fg")
 theme_override_fonts/font = ExtResource("4_6m2m5")
 theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_rveyw")
 text = "QUIT GAME
 "
 
@@ -88,5 +98,18 @@ offset_bottom = 314.0
 scale = Vector2(1.14851, 1.17261)
 color = Color(0, 0, 0, 1)
 
+[node name="Musica" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_6s72t")
+volume_db = -10.667
+autoplay = true
+
+[node name="Botao" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_rso7h")
+volume_db = 1.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/start_button" to="." method="_on_start_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/start_button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/quit_button" to="." method="_on_quit_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

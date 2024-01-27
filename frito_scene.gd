@@ -11,7 +11,7 @@ var text1_instantiated = false
 @onready var texto1 = preload("res://texto_box.tscn")
 @onready var root = $"."
 @onready var cor = $ColorRect
-
+@onready var andada = $Andada
 func _ready():
 	var tween = create_tween()
 	tween.tween_property(cor,"self_modulate",Color(0,0,0,0),2)
@@ -24,6 +24,7 @@ func _ready():
 	$Morto.visible = false
 	$Button.visible = false
 	$Button2.visible = false
+	$Label.visible = false
 	
 func _physics_process(delta):
 	if !animation1_finished:
@@ -32,7 +33,7 @@ func _physics_process(delta):
 		
 func play_once_galinho():
 	$AnimationPlayer.play("frito_walk")
-	
+	var tween = create_tween()
 	animation1_finished = true
 	
 func play_reaction():
@@ -90,7 +91,9 @@ func _on_timer_3_timeout():
 		$Glow.visible = false
 		$Morto.visible = true
 		$Button.visible = true
-
+		$Button2.visible = false
+		$Label.visible = true
+  
 
 #Transition
 func _on_button_pressed():

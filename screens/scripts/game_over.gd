@@ -10,4 +10,4 @@ func _on_restart_btn_pressed():
 		get_tree().change_scene_to_file("res://levels/scenes/level1.tscn");
 	
 func _on_quit_btn_pressed():
-	get_tree().quit();
+	get_tree().change_scene_to_file("res://screens/scenes/title_screen.tscn")
