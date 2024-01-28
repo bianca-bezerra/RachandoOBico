@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://edep54brt81i"]
+[gd_scene load_steps=64 format=3 uid="uid://edep54brt81i"]
 
 [ext_resource type="Script" path="res://frito_final_scene.gd" id="1_0dkru"]
 [ext_resource type="Texture2D" uid="uid://bagdidv5w6jqb" path="res://assets/Rocky Roads/Tilesets/tileset_forest.png" id="4_w3ksg"]
@@ -16,6 +16,10 @@
 [ext_resource type="AudioStream" uid="uid://bjfwommm2rxxo" path="res://assets/00 lolurio - Everyday Life (mp3cut.net).mp3" id="15_p2ake"]
 [ext_resource type="Texture2D" uid="uid://cswmyyvhx21nj" path="res://assets/pipo-popupemotes002.png" id="16_52qvp"]
 [ext_resource type="Texture2D" uid="uid://cjb6a4w2s4r1w" path="res://assets/ChickenDie-Sheet_03.png" id="17_3ee8q"]
+[ext_resource type="Texture2D" uid="uid://ckjrn03s1vd61" path="res://assets/pipo-popupemotes018.png" id="17_40too"]
+[ext_resource type="Texture2D" uid="uid://dl7qg6cby2r4g" path="res://assets/pipo-popupemotes031.png" id="18_t742l"]
+[ext_resource type="Texture2D" uid="uid://dt1x6204xjx80" path="res://assets/37_button UI.png" id="19_4ynvk"]
+[ext_resource type="FontFile" uid="uid://cb64tb4mbh747" path="res://assets/m5x7.ttf" id="20_c7fo0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wgy6e"]
 texture = ExtResource("4_w3ksg")
@@ -423,6 +427,64 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3jnv"]
+atlas = ExtResource("17_40too")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhd3l"]
+atlas = ExtResource("17_40too")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fy00d"]
+atlas = ExtResource("17_40too")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jukfr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3jnv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhd3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fy00d")
+}],
+"loop": true,
+"name": &"fala",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tasxn"]
+atlas = ExtResource("18_t742l")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhw1h"]
+atlas = ExtResource("18_t742l")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eih0i"]
+atlas = ExtResource("18_t742l")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_icbut"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tasxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhw1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eih0i")
+}],
+"loop": true,
+"name": &"fofo",
+"speed": 5.0
+}]
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(62, 152)
 scale = Vector2(2.71349, 2.76419)
@@ -521,20 +583,60 @@ offset_bottom = -94.5783
 scale = Vector2(10.5685, 6.6842)
 
 [node name="Timer2" type="Timer" parent="."]
+wait_time = 5.0
 
 [node name="Timer3" type="Timer" parent="."]
+wait_time = 4.0
 
 [node name="Musica" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("15_p2ake")
 volume_db = -6.933
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="BalaoDuvida" type="AnimatedSprite2D" parent="."]
 position = Vector2(25.797, -22.7915)
 scale = Vector2(0.686536, 0.695494)
 sprite_frames = SubResource("SpriteFrames_o58mm")
 animation = &"duvida"
+frame_progress = 0.662326
+
+[node name="BalaoFala" type="AnimatedSprite2D" parent="."]
+position = Vector2(52.6997, -24.9621)
+scale = Vector2(0.696018, 0.667513)
+sprite_frames = SubResource("SpriteFrames_jukfr")
+animation = &"fala"
+frame_progress = 0.104161
+
+[node name="BalaoCute" type="AnimatedSprite2D" parent="."]
+position = Vector2(26.1656, -22.0679)
+scale = Vector2(0.789278, 0.770363)
+sprite_frames = SubResource("SpriteFrames_icbut")
+animation = &"fofo"
+frame_progress = 0.606271
+
+[node name="Button" type="Button" parent="."]
+offset_left = 65.9667
+offset_top = -39.4329
+offset_right = 89.9667
+offset_bottom = -15.4329
+focus_mode = 0
+action_mode = 0
+icon = ExtResource("19_4ynvk")
+flat = true
+
+[node name="Label" type="Label" parent="."]
+self_modulate = Color(1, 1, 1, 0.552941)
+offset_left = 64.1241
+offset_top = -48.8389
+offset_right = 104.124
+offset_bottom = -25.8389
+theme_override_fonts/font = ExtResource("20_c7fo0")
+text = "PRESS"
 
 [connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]
 [connection signal="animation_finished" from="Old_man" to="." method="_on_old_man_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
