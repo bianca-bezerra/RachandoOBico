@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://ctf0ge5y2jweq"]
+[gd_scene load_steps=46 format=3 uid="uid://d0ouvcd5igf6k"]
 
 [ext_resource type="Script" path="res://scripts/patrulheiro.gd" id="1_f7uim"]
 [ext_resource type="Texture2D" uid="uid://djufjkix2kru8" path="res://assets/BadChickenAssetPack/Chickens/BlueChicken-Sheet.png" id="2_6g2ja"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://gtw1dvml3fia" path="res://assets/Rocky Roads/FX/exclamation.png" id="4_1k0jd"]
 [ext_resource type="Texture2D" uid="uid://b5y8ushvpnaq7" path="res://assets/Small slash FX/small_slash_hit_1.png" id="5_ycrxf"]
 [ext_resource type="AudioStream" uid="uid://dj00t2kwkiahs" path="res://songs/556 Single WAV.wav" id="6_hl1v1"]
+[ext_resource type="PackedScene" path="res://text_box_demonio.tscn" id="6_mwhfj"]
+[ext_resource type="AudioStream" uid="uid://jowjvj4pqy2y" path="res://songs/160760__cosmicembers__object-hit.wav" id="6_qd5ag"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i1104"]
 atlas = ExtResource("2_q3hmw")
@@ -204,6 +206,32 @@ region = Rect2(64, 0, 16, 16)
 atlas = ExtResource("4_1k0jd")
 region = Rect2(80, 0, 16, 16)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_oq4u0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8f7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvlo3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4m7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdr0e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h75wu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gw8u5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_6emxj"]
 animations = [{
 "frames": [{
@@ -320,9 +348,15 @@ position = Vector2(-1, 0.999998)
 scale = Vector2(1.875, 1.4375)
 sprite_frames = SubResource("SpriteFrames_1r84m")
 
-[node name="exclamation" type="AnimatedSprite2D" parent="."]
+[node name="exclamation_left" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(-16, -8)
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_oq4u0")
+
+[node name="exclamation_right" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(16, -8)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_6emxj")
 frame_progress = 0.690959
@@ -337,10 +371,17 @@ frame_progress = 0.494363
 [node name="death_point" type="Marker2D" parent="."]
 position = Vector2(1, 11)
 
+[node name="hurt_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_qd5ag")
+volume_db = 12.0
+
 [node name="shoot_sfx" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0, 16)
 scale = Vector2(0.5, 0.416667)
 stream = ExtResource("6_hl1v1")
+
+[node name="TextBox" parent="." instance=ExtResource("6_mwhfj")]
+visible = false
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

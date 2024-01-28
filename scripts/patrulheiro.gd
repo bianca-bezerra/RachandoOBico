@@ -8,7 +8,7 @@ extends CharacterBody2D
 @onready var cooldown_fireball = $cooldown_fireball
 const DEATH = preload("res://scenes/death.tscn");
 @onready var shoot_sfx = $shoot_sfx
-
+@onready var hurt_sfx = $hurt_sfx as AudioStreamPlayer
 #Motion
 const RIGHT = 1;
 const LEFT = -1;
@@ -35,7 +35,6 @@ func _ready():
 	animation.flip_h = true;
 
 func _physics_process(delta):
-	play_piada()
 	#if !is_on_floor():
 	#	velocity.y += gravity * delta
 	match(current_state):
@@ -43,16 +42,14 @@ func _physics_process(delta):
 		EnemyState.ATTACK : attack_state();
 		EnemyState.DEATH : queue_free();
 		
-
-		
-
 func patrulha():
 	pass
-
+	
 func play_piada():
 	if health_points == 0:
 		var caixa_texto = texto.instantiate()
 		get_parent().get_parent().add_child(caixa_texto)
+
 
 #Direction
 func flip_enemy():
@@ -136,6 +133,8 @@ func hurt_state():
 		change_state(EnemyState.DEATH);
 		
 	else:
+
+		$hurt_sfx.play();
 		play_hurt_anim();
 		print("Patrulheira: Ai!")
 		health_points -= 1;
@@ -160,13 +159,26 @@ func change_to_attack_state():
 	
 	if (get_player_direction() == RIGHT and direction == LEFT) or (get_player_direction() == LEFT and direction == RIGHT):
 		flip_enemy();
-
-	$exclamation.visible = true;
-	change_state(EnemyState.ATTACK);			
-	$exclamation.flip_h = take_dir();
-	$exclamation.play("default");
-	await get_tree().create_timer(0.3).timeout;	
-	$exclamation.visible=false;
+		
+	if(get_player_direction() == RIGHT):
+		$exclamation_right.visible = true;
+		$exclamation_right.play("default");		
+		change_state(EnemyState.ATTACK);			
+		await get_tree().create_timer(0.3).timeout;	
+		$exclamation_right.visible=false;
+	else:
+	
+		$exclamation_left.visible = true;
+		$exclamation_left.play("default");
+		change_state(EnemyState.ATTACK);			
+		await get_tree().create_timer(0.3).timeout;	
+		$exclamation_left.visible=false
+	#$exclamation.visible = true;
+	#change_state(EnemyState.ATTACK);			
+	#$exclamation.flip_h = take_dir();
+	#$exclamation.play("default");
+	#await get_tree().create_timer(0.3).timeout;	
+	#$exclamation.visible=false;
 
 #Animations ####################################################################
 func play_hurt_anim():

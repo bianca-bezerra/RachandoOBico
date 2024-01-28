@@ -126,7 +126,7 @@ volume_db = -16.288
 
 [node name="lost_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_4gfwk")
-volume_db = -14.054
+volume_db = -60.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(320, 144)

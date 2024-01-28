@@ -1,13 +1,24 @@
-[gd_scene load_steps=12 format=3 uid="uid://dh7s4tq7jb0xx"]
+[gd_scene load_steps=15 format=3 uid="uid://dh7s4tq7jb0xx"]
 
 [ext_resource type="Script" path="res://screens/scripts/title_screen.gd" id="1_bfma4"]
 [ext_resource type="Theme" uid="uid://dmbl0ph8uyprm" path="res://screens/material/theme_btn.tres" id="2_7p7fg"]
-[ext_resource type="Texture2D" uid="uid://ftcptm4u7rer" path="res://screens/material/logoaaa.png" id="2_yl6vl"]
 [ext_resource type="FontFile" uid="uid://cb64tb4mbh747" path="res://assets/m5x7.ttf" id="4_6m2m5"]
 [ext_resource type="Texture2D" uid="uid://ldt4s2h8yvv6" path="res://screens/material/galinhacortada.png" id="4_neyms"]
 [ext_resource type="Texture2D" uid="uid://3iy40xk0tk5i" path="res://assets/capa1.png" id="5_0jo43"]
 [ext_resource type="AudioStream" uid="uid://jmqvjk3swwlt" path="res://assets/DavidKBD - 04 - Ludwig Van Beethoven, Bagatelle N25 In A Minor (Fur Elise) - Concerto2.ogg" id="7_6s72t"]
+[ext_resource type="Texture2D" uid="uid://c1yeps5b85cnl" path="res://assets/corn.png" id="7_7q4rd"]
 [ext_resource type="AudioStream" uid="uid://bl3au3pvbiov4" path="res://assets/MI_SFX 01.wav" id="8_rso7h"]
+[ext_resource type="FontFile" uid="uid://d3gh4koac2t4v" path="res://assets/fibberish.ttf" id="9_gx5xl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_afde1"]
+font = ExtResource("9_gx5xl")
+font_size = 120
+font_color = Color(0.988235, 0.894118, 0.0156863, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_u827v"]
+font = ExtResource("9_gx5xl")
+font_size = 70
+font_color = Color(0.47451, 0.196078, 0.12549, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wqtpp"]
 bg_color = Color(0.901961, 0.701961, 0.160784, 0.752941)
@@ -46,9 +57,16 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="game_logo" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("2_yl6vl")
+text = "CRACKING 
+"
+label_settings = SubResource("LabelSettings_afde1")
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "  THE BEAK"
+label_settings = SubResource("LabelSettings_u827v")
 
 [node name="start_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -87,6 +105,14 @@ expand_mode = 2
 position = Vector2(510, 205)
 texture = ExtResource("4_neyms")
 flip_h = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 371.0
+offset_top = 33.0
+offset_right = 502.0
+offset_bottom = 185.0
+texture = ExtResource("7_7q4rd")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false

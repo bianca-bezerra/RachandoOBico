@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://bgo55odat2te2"]
+[gd_scene load_steps=50 format=3 uid="uid://bgo55odat2te2"]
 
 [ext_resource type="Texture2D" uid="uid://drc13q37a5bug" path="res://assets/Rocky Roads/Tilesets/tileset_snow.png" id="1_08its"]
 [ext_resource type="Script" path="res://levels/scripts/level1.gd" id="1_n1v7x"]
@@ -16,10 +16,12 @@
 [ext_resource type="Texture2D" uid="uid://bk7nd65cecilj" path="res://assets/Seasonal Tilesets/4 - Winter World/Background parts/1 - Snowy_foreground_area.png" id="16_0g4l7"]
 [ext_resource type="Shader" path="res://shader/level_3.gdshader" id="17_fc51x"]
 [ext_resource type="Texture2D" uid="uid://2qfyeelq5tab" path="res://assets/Seasonal Tilesets/3 - Tropics/Background parts/3 - Floating_clouds.png" id="17_ouopn"]
-[ext_resource type="PackedScene" uid="uid://bhapp7jpo7spd" path="res://screens/scenes/pause_menu.tscn" id="19_0t8ew"]
+[ext_resource type="PackedScene" uid="uid://dqiprolge7ef7" path="res://screens/scenes/pause_menu.tscn" id="19_0t8ew"]
 [ext_resource type="PackedScene" uid="uid://c4s4qhls174ct" path="res://scenes/galo_frito.tscn" id="19_17wwo"]
 [ext_resource type="Texture2D" uid="uid://bolr7k2wveq41" path="res://assets/Purple Portal Sprite Sheet.png" id="20_732i4"]
-[ext_resource type="PackedScene" uid="uid://bf4vfnaogv7pr" path="res://descricao.tscn" id="21_mb1u4"]
+[ext_resource type="PackedScene" uid="uid://ddtp4ykut78nl" path="res://scenes/anjo_patrulha.tscn" id="21_1b0j8"]
+[ext_resource type="PackedScene" path="res://descricao.tscn" id="21_mb1u4"]
+[ext_resource type="AudioStream" uid="uid://b2e17pq7cuv5q" path="res://songs/DavidKBD - 01 - Mozart_ ALLA TURCA from Sonata No. 11 in A major, K.331 - Concerto2.ogg" id="22_nqwoi"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ih6p1"]
 tile_data = PackedInt32Array(0, 458752, 3, 1, 524288, 3, 2, 589824, 3)
@@ -1709,13 +1711,21 @@ flip_h = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 self_modulate = Color(0, 0, 0, 0)
-offset_left = -74.0
-offset_top = -206.0
-offset_right = -34.0
-offset_bottom = -166.0
+offset_left = 44.0
+offset_top = -90.0
+offset_right = 84.0
+offset_bottom = -50.0
 scale = Vector2(39.6019, 19.9664)
 
 [node name="Label" parent="." instance=ExtResource("21_mb1u4")]
+
+[node name="anjo_patrulha" parent="." node_paths=PackedStringArray("target") instance=ExtResource("21_1b0j8")]
+position = Vector2(764, 263)
+target = NodePath("../GaloFrito")
+
+[node name="music_bg" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_nqwoi")
+volume_db = -10.667
 
 [connection signal="timeout" from="WaitTime" to="." method="_on_wait_time_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

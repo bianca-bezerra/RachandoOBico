@@ -51,8 +51,7 @@ position = Vector2(23, 0)
 scale = Vector2(0.0303017, 0.0335436)
 sprite_frames = SubResource("SpriteFrames_er2qp")
 animation = &"atirar"
-frame = 4
-frame_progress = 0.739538
+frame_progress = 0.734083
 
 [node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/AnimatedSprite2D"]
 position = Vector2(396.779, -352.501)

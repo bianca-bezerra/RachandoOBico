@@ -2,6 +2,10 @@ extends CharacterBody2D
 
 var move_speed := 200;
 var direction := 1; 
+const FIREBALL : = 1;
+const SPIKES := 2;
+const BULLET := 3;
+const BOMB := 4;
 
 func fireball():
 	pass
@@ -12,16 +16,21 @@ func _process(delta):
 	#if is_on_wall():
 		#$queue_free();
 
-func set_direction(dir : int, fire = true):
+func set_direction(dir : int, gun = FIREBALL):
+	
 	direction = dir;
 	if(direction == 1):
 		$anim.flip_h = false;
 	else:
 		$anim.flip_h = true;
-	if fire:
+	if gun == FIREBALL:
 		$anim.play("default");
-	else:
+	elif gun == SPIKES:
 		$anim.play("ice");
+	elif gun == BULLET:
+		$anim.play("bullet");
+	else:
+		$anim.play("bomb");
 		
 
 
