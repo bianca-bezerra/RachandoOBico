@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ckqrdotcd0u3e" path="res://assets/Rocky Roads/Deco/lava.png" id="3_1pfws"]
 [ext_resource type="Texture2D" uid="uid://cilax841w4fyh" path="res://assets/Rocky Roads/Deco/clouds_rose.png" id="4_rydnr"]
 [ext_resource type="Texture2D" uid="uid://dtiqe7s4i0cko" path="res://assets/Rocky Roads/Tilesets/tileset_dirt.png" id="5_n0b6x"]
-[ext_resource type="PackedScene" uid="uid://c4s4qhls174ct" path="res://scenes/galo_frito.tscn" id="6_fbd6u"]
+[ext_resource type="PackedScene" uid="uid://k8mdl4o7oypu" path="res://scenes/galo_frito.tscn" id="6_fbd6u"]
 [ext_resource type="PackedScene" uid="uid://bhapp7jpo7spd" path="res://screens/scenes/pause_menu.tscn" id="13_fkdpt"]
 [ext_resource type="PackedScene" uid="uid://ctf0ge5y2jweq" path="res://scenes/patrulheiro.tscn" id="14_aqqwi"]
 [ext_resource type="Texture2D" uid="uid://cqvjdlscsdtjc" path="res://assets/Green Portal Sprite Sheet.png" id="15_do2p1"]

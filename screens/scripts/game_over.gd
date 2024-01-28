@@ -1,5 +1,11 @@
 extends Control
+@onready var music = $music as AudioStreamPlayer
+@onready var lost_sfx = $lost_sfx as AudioStreamPlayer
 
+func _ready():
+	lost_sfx.play();
+	await get_tree().create_timer(3).timeout;
+	music.play()
 func _on_restart_btn_pressed():
 	
 	if global.level1_completed == true and global.level2_completed == false:

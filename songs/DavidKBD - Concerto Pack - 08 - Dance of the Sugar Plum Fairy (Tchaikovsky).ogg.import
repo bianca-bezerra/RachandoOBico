@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b0inxd1tvxjyw"
+path="res://.godot/imported/DavidKBD - Concerto Pack - 08 - Dance of the Sugar Plum Fairy (Tchaikovsky).ogg-ddeb1176716e75ecab9da6297ec1988f.oggvorbisstr"
+
+[deps]
+
+source_file="res://songs/DavidKBD - Concerto Pack - 08 - Dance of the Sugar Plum Fairy (Tchaikovsky).ogg"
+dest_files=["res://.godot/imported/DavidKBD - Concerto Pack - 08 - Dance of the Sugar Plum Fairy (Tchaikovsky).ogg-ddeb1176716e75ecab9da6297ec1988f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

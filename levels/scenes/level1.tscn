@@ -17,7 +17,7 @@
 [ext_resource type="Shader" path="res://shader/level_3.gdshader" id="17_fc51x"]
 [ext_resource type="Texture2D" uid="uid://2qfyeelq5tab" path="res://assets/Seasonal Tilesets/3 - Tropics/Background parts/3 - Floating_clouds.png" id="17_ouopn"]
 [ext_resource type="PackedScene" uid="uid://bhapp7jpo7spd" path="res://screens/scenes/pause_menu.tscn" id="19_0t8ew"]
-[ext_resource type="PackedScene" uid="uid://c4s4qhls174ct" path="res://scenes/galo_frito.tscn" id="19_17wwo"]
+[ext_resource type="PackedScene" uid="uid://k8mdl4o7oypu" path="res://scenes/galo_frito.tscn" id="19_17wwo"]
 [ext_resource type="Texture2D" uid="uid://bolr7k2wveq41" path="res://assets/Purple Portal Sprite Sheet.png" id="20_732i4"]
 [ext_resource type="PackedScene" uid="uid://bf4vfnaogv7pr" path="res://descricao.tscn" id="21_mb1u4"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://c4s4qhls174ct"]
+[gd_scene load_steps=59 format=3 uid="uid://k8mdl4o7oypu"]
 
 [ext_resource type="Script" path="res://scripts/GaloFrito.gd" id="1_e5jvl"]
 [ext_resource type="Texture2D" uid="uid://brfwjd7p1p252" path="res://assets/ChickenPack/ChickenPack/SpriteSheet/Sprite-ChickenAttack-Sheet.png" id="2_llc33"]
@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://dvbf1stu6cusd" path="res://assets/ChickenPack/ChickenPack/SpriteSheet/ChickenJumping-Sheet.png" id="6_0m755"]
 [ext_resource type="Texture2D" uid="uid://dbeeau1kk65wh" path="res://assets/ChickenPack/ChickenPack/SpriteSheet/ChickenDamage-Sheet.png" id="7_35eyv"]
 [ext_resource type="Texture2D" uid="uid://drqmkdqaxcgtc" path="res://assets/ChickenPack/ChickenPack/SpriteSheet/ChickenWalking.png" id="8_6mwjh"]
+[ext_resource type="AudioStream" uid="uid://0grw8s2f6o7b" path="res://songs/jump.wav" id="9_e3s3n"]
+[ext_resource type="AudioStream" uid="uid://dkoqe0bo4c4nf" path="res://songs/Chicken_Sound_Effect_in_Best_Quality_320_kbps_mp3cut.net.mp3" id="10_6rejc"]
+[ext_resource type="AudioStream" uid="uid://dtb76bc0av7g6" path="res://songs/633250__aesterial-arts__arcade-shoot.wav" id="11_n5cae"]
+[ext_resource type="AudioStream" uid="uid://b4bl5rf0350j0" path="res://songs/350987__cabled_mess__lose_c_05.wav" id="12_onb1s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l8tnb"]
 atlas = ExtResource("2_llc33")
@@ -382,6 +386,7 @@ position = Vector2(-1, -1)
 shape = SubResource("CircleShape2D_0o0mx")
 
 [node name="AttackCoolDown" type="Timer" parent="."]
+wait_time = 3.0
 
 [node name="AttackDeal" type="Timer" parent="."]
 wait_time = 0.4
@@ -431,6 +436,23 @@ visible = false
 position = Vector2(-2, -4)
 scale = Vector2(1.4, 1.45238)
 sprite_frames = SubResource("SpriteFrames_4u0ov")
+
+[node name="jump_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_e3s3n")
+volume_db = -8.0
+
+[node name="shoot_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_6rejc")
+
+[node name="hit_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_n5cae")
+volume_db = -8.0
+
+[node name="lost_fx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_onb1s")
+volume_db = -5.0
+
+[node name="death_point" type="Marker2D" parent="."]
 
 [connection signal="body_entered" from="HitboxPlayer" to="." method="_on_hitbox_player_body_entered"]
 [connection signal="body_exited" from="HitboxPlayer" to="." method="_on_hitbox_player_body_exited"]

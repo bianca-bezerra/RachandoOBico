@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b2e17pq7cuv5q"
+path="res://.godot/imported/DavidKBD - 01 - Mozart_ ALLA TURCA from Sonata No. 11 in A major, K.331 - Concerto2.ogg-356e47f7b39628aa11537e312a01809e.oggvorbisstr"
+
+[deps]
+
+source_file="res://songs/DavidKBD - 01 - Mozart_ ALLA TURCA from Sonata No. 11 in A major, K.331 - Concerto2.ogg"
+dest_files=["res://.godot/imported/DavidKBD - 01 - Mozart_ ALLA TURCA from Sonata No. 11 in A major, K.331 - Concerto2.ogg-356e47f7b39628aa11537e312a01809e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

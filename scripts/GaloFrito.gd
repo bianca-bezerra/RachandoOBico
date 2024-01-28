@@ -23,16 +23,20 @@ var attack_ip = false
 var is_ondamage = false
 var can_attack := true;
 @export var target : CharacterBody2D;
+@onready var jump_sfx = $jump_sfx as AudioStreamPlayer
+@onready var shoot_sfx = $shoot_sfx as AudioStreamPlayer
+@onready var hit_sfx = $hit_sfx as AudioStreamPlayer
+@onready var lost_fx = $lost_fx as AudioStreamPlayer
 
 	
 func  _physics_process(delta):
-		
-	if not is_on_floor():
-		velocity.y += gravity * delta
-	player_movement(delta)
-	attack()
-	enemy_attack()
-	attack()
+	if is_alive:
+		if not is_on_floor():
+			velocity.y += gravity * delta
+		player_movement(delta)
+		attack()
+		enemy_attack()
+		attack()
 	
 	
 func play_animation(movement):
@@ -80,6 +84,7 @@ func player_movement(delta):
 		
 		if is_on_floor() == true:
 			velocity.y = jump_force
+			jump_sfx.play()
 			
 		elif not has_double_jumped:
 			velocity.y = double_jump_force;
@@ -125,9 +130,10 @@ func fireball_attack():
 	print("ataque fireball!")
 		
 	if health <= 0:
+		
 		is_alive = false
 		health = 0
-		self.queue_free()
+		self.queue_free()		
 		get_tree().change_scene_to_file("res://screens/scenes/game_over.tscn")
 	
 	else:
@@ -141,6 +147,7 @@ func fireball_attack():
 		elif $RayDown.is_colliding():
 			take_damage(Vector2(0,-1000))
 			
+		hit_sfx.play();
 		animation.visible = false;
 		$hurt.visible = true;
 		if(current_direction == "left"):
@@ -160,6 +167,7 @@ func enemy_attack():
 			is_alive = false
 			health = 0
 			self.queue_free()
+			
 			get_tree().change_scene_to_file("res://screens/scenes/game_over.tscn")
 		else:
 			
@@ -184,6 +192,7 @@ func attack():
 		if Input.is_action_just_pressed("attack"):
 			global.player_current_attack = true
 			attack_ip = true
+			shoot_sfx.play()
 			if dir == "right" or dir == "none":
 				animation.flip_h = false
 				animation.play("attack")

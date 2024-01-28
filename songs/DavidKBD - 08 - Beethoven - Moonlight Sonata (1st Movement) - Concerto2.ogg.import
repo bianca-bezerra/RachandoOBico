@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cy51sxc3obr5r"
+path="res://.godot/imported/DavidKBD - 08 - Beethoven - Moonlight Sonata (1st Movement) - Concerto2.ogg-af1398037cd5ba645bc8445c84544678.oggvorbisstr"
+
+[deps]
+
+source_file="res://songs/DavidKBD - 08 - Beethoven - Moonlight Sonata (1st Movement) - Concerto2.ogg"
+dest_files=["res://.godot/imported/DavidKBD - 08 - Beethoven - Moonlight Sonata (1st Movement) - Concerto2.ogg-af1398037cd5ba645bc8445c84544678.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bwghpwq333bjv"]
 
 [ext_resource type="Script" path="res://scripts/ovo.gd" id="1_gr6xa"]
-[ext_resource type="Texture2D" uid="uid://brpf00c1cbst4" path="res://assets/egg.png" id="2_ybja4"]
+[ext_resource type="Texture2D" uid="uid://brpf00c1cbst4" path="res://assets/egg.png" id="2_2va84"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ho3pt"]
 size = Vector2(17, 18)
@@ -13,9 +13,9 @@ height = 24.0
 script = ExtResource("1_gr6xa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-21, -29)
-scale = Vector2(0.0981697, 0.089811)
-texture = ExtResource("2_ybja4")
+position = Vector2(-19, -26)
+scale = Vector2(0.0855856, 0.082)
+texture = ExtResource("2_2va84")
 centered = false
 
 [node name="colision" type="CollisionShape2D" parent="."]
