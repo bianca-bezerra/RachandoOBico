@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c2h31kabj4hom" path="res://fadein.tscn" id="5_cs5i1"]
 [ext_resource type="AudioStream" uid="uid://cy51sxc3obr5r" path="res://songs/DavidKBD - 08 - Beethoven - Moonlight Sonata (1st Movement) - Concerto2.ogg" id="6_a025k"]
 [ext_resource type="AudioStream" uid="uid://b4bl5rf0350j0" path="res://songs/350987__cabled_mess__lose_c_05.wav" id="7_4gfwk"]
-[ext_resource type="Texture2D" uid="uid://5us3hopy16ea" path="res://assets/egg3_o_64x64.png" id="8_hmvav"]
+[ext_resource type="Texture2D" uid="uid://fntveqvs4xbp" path="res://assets/egg3_o_64x64.png" id="8_hmvav"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s4o5q"]
 
@@ -122,10 +122,11 @@ text = "QUIT
 
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_a025k")
-volume_db = -10.667
+volume_db = -16.288
 
 [node name="lost_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_4gfwk")
+volume_db = -14.054
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(320, 144)

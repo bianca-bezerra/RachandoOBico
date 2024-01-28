@@ -3,7 +3,7 @@ extends CharacterBody2D
 #Motion
 @export var speed = 300
 @export var jump_force = -400
-@export var double_jump_force : float = -300;
+@export var double_jump_force : float = -500;
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var current_direction = "none"
 var has_double_jumped : bool = false;
@@ -84,11 +84,11 @@ func player_movement(delta):
 		
 		if is_on_floor() == true:
 			velocity.y = jump_force
-			jump_sfx.play()
+			
 			
 		elif not has_double_jumped:
 			velocity.y = double_jump_force;
-			has_double_jumped = false;#so mudar pra true pra tirar o pulo infinito
+			has_double_jumped = true;#so mudar pra true pra tirar o pulo infinito
 
 	elif Input.is_action_pressed("ui_right"):
 		current_direction = "right"

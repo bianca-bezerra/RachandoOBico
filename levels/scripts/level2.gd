@@ -9,6 +9,7 @@ var allowed_levelup = false
 func _ready():
 	animation.play("fade_in")
 	portal_animation.visible = false
+	$Musica.play()
 	
 func _physics_process(delta):
 	if global.level2_completed == true:

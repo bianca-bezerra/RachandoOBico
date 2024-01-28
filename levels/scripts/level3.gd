@@ -8,9 +8,7 @@ var allowed_levelup = false
 func _ready():
 	animation.play("fade_in")
 	
-func _physics_process(delta):
-	if global.level3_completed == true:
-		$Label.visible = true
+	$AudioStreamPlayer.play()
 		
 func _on_area_2d_body_entered(body):
 	
