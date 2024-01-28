@@ -47,7 +47,7 @@ func patrulha():
 	pass
 
 func play_piada():
-	if health_points == 1:
+	if health_points == 0:
 		$TextBox.visible = true
 
 #Direction
@@ -123,6 +123,7 @@ func patrol_state():
 func hurt_state():
 	
 	if(health_points == 0):
+		global.level2_completed = true
 		print("No céu tem milho?");
 		var death = DEATH.instantiate();
 		add_sibling(death);

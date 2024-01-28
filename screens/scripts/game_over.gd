@@ -4,7 +4,7 @@ extends Control
 
 func _ready():
 	lost_sfx.play();
-	await get_tree().create_timer(3).timeout;
+	await get_tree().create_timer(1.5).timeout;
 	music.play()
 func _on_restart_btn_pressed():
 	

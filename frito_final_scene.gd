@@ -71,10 +71,12 @@ func _on_timer_3_timeout():
 	balao_duvida.visible = false
 	balao_fala.visible = true
 	balao_fala.play("fala")
+	await get_tree().create_timer(20).timeout
 	$Button.visible = true
 	$Label.visible = true
 
 func _on_button_pressed():
+	balao_fala.stop()
 	$Button.visible = false
 	$Label.visible = false
 	balao_duvida.visible = false

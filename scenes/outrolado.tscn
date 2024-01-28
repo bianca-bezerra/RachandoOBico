@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://0mqfoubg1yqt"]
+[gd_scene load_steps=30 format=3 uid="uid://0mqfoubg1yqt"]
 
 [ext_resource type="Script" path="res://scripts/outrolado.gd" id="1_ih3cl"]
 [ext_resource type="Texture2D" uid="uid://xjayw1if6id1" path="res://assets/CP_V1.0.4.png" id="1_wxv4y"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c1yeps5b85cnl" path="res://assets/corn.png" id="5_xnmi5"]
 [ext_resource type="PackedScene" uid="uid://bc5d8muvtght8" path="res://texto_box_final.tscn" id="8_grukd"]
 [ext_resource type="Script" path="res://texto_box_outro_lado.gd" id="9_5mg6g"]
+[ext_resource type="AudioStream" uid="uid://dj131jbmhxdvj" path="res://assets/Applause Crowd Cheering sound effect.mp3" id="11_t44py"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bs8jn"]
 texture = ExtResource("2_slsi8")
@@ -937,7 +938,7 @@ offset_right = 722.0
 offset_bottom = 389.0
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 7.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -180.0
@@ -958,5 +959,8 @@ theme_override_fonts/font = ExtResource("2_gkvfn")
 theme_override_font_sizes/font_size = 64
 text = "THE END"
 horizontal_alignment = 1
+
+[node name="Aplausos" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_t44py")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

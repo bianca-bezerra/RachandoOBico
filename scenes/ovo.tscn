@@ -4,17 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://brpf00c1cbst4" path="res://assets/egg.png" id="2_2va84"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ho3pt"]
-size = Vector2(17, 18)
+size = Vector2(12.25, 14)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8svcb"]
-height = 24.0
+radius = 9.0
+height = 22.0
 
 [node name="Ovo" type="Area2D"]
 script = ExtResource("1_gr6xa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-19, -26)
-scale = Vector2(0.0855856, 0.082)
+position = Vector2(-14, -19)
+scale = Vector2(0.0630984, 0.0599757)
 texture = ExtResource("2_2va84")
 centered = false
 

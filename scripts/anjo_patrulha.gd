@@ -17,7 +17,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 #Combat System
-const FIREBALL = preload("res://scenes/iceball.tscn");
+const FIREBALL = preload("res://scenes/fireball.tscn");
 @export var health_points := 1;
 var can_shoot = true;
 var damage_rate = 1
@@ -112,6 +112,7 @@ func patrol_state():
 func hurt_state():
 	
 	if(health_points == 0):
+		global.level1_completed = true
 		print("No céu tem milho?");
 		var death = DEATH.instantiate();
 		add_sibling(death);
