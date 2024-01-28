@@ -6,13 +6,14 @@ var animation2_finished = false
 var animation3_finished = false
 var animation4_finished = false
 var text1_instantiated = false
-
+@onready var musica = $Musica
 @onready var animation = $Transition
 @onready var texto1 = preload("res://texto_box.tscn")
 @onready var root = $"."
 @onready var cor = $ColorRect
 @onready var andada = $Andada
 func _ready():
+	musica.play()
 	var tween = create_tween()
 	tween.tween_property(cor,"self_modulate",Color(0,0,0,0),2)
 	tween.tween_property(cor,"visible",false,0.5)
@@ -25,7 +26,7 @@ func _ready():
 	$Button.visible = false
 	$Button2.visible = false
 	$Label.visible = false
-	
+
 func _physics_process(delta):
 	if !animation1_finished:
 		play_once_galinho()

@@ -31,6 +31,7 @@ func _ready():
 	animation.flip_h = true;
 
 func _physics_process(delta):
+	play_piada()
 	#if !is_on_floor():
 	#	velocity.y += gravity * delta
 	match(current_state):
@@ -38,8 +39,9 @@ func _physics_process(delta):
 		EnemyState.ATTACK : attack_state();
 		EnemyState.DEATH : queue_free();
 		
+		
 func play_piada():
-	if health_points == 0:
+	if health_points == 1:
 		$TextBox.visible = true
 	
 func patrulha():

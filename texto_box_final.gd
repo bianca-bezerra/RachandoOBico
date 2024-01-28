@@ -18,9 +18,19 @@ var texts = []
 func _ready():
 
 	hide_textbox()
-	queue_text("O homem diz: Meu deus, um galinho mortinho na porta de casa! Deus pedi uma janta, não um banquete...")
-	queue_text("Frito diz: TÔ NÃO TA MALUCO Ô SENHOR")
-	
+	queue_text("Senhor: Meu deus, um galinho mortinho na porta de casa! Deus pedi uma janta, não um banquete...")
+	queue_text("Frito: TÔ NÃO TA MALUCO Ô SENHOR")
+	queue_text("Frito: Oxe, onde foi parar o milhão que tava ali?")
+	queue_text("Senhor: Milho? Hehehehehehe")
+	queue_text("Senhor: Já esta anoitecendo, precisei colocar meu disfarce para descansar, ele ainda não é de ferro...")
+	queue_text("Frito: Disfarce? Não passava de uma miragem???")
+	queue_text("Senhor: Miragem não...é apenas um milho falso para despistar os ladrões da minha plantação")
+	queue_text("Frito: Entendo...T-T")
+	queue_text("Senhor: Você parece tão fraquinho, desmaiado por aqui...")
+	queue_text("Senhor: Vou lhe ajudar, meu milharal fica ali no Outro Lado!")
+	queue_text("Senhor: Para chegar la é só atravessar aquela rua logo ali")
+	queue_text("Frito: Sério mesmo? Posso ir?")
+	queue_text("Senhor: Sim sim, é a recompensa por ser um galinho honesto e não ter roubado meu milhão")
 	
 func _physics_process(delta):
 	

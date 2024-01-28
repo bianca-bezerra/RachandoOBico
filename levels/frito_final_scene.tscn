@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://b4m3ikqm8obbc"]
+[gd_scene load_steps=46 format=3 uid="uid://wxy8tshc8lwb"]
 
 [ext_resource type="Script" path="res://Cutscenes/scripts/frito_final_scene.gd" id="1_0dkru"]
 [ext_resource type="Texture2D" uid="uid://bagdidv5w6jqb" path="res://assets/Rocky Roads/Tilesets/tileset_forest.png" id="4_w3ksg"]

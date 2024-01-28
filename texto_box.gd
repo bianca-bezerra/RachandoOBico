@@ -20,8 +20,8 @@ func _ready():
 
 	hide_textbox()
 	queue_text("Galo Frito era um querido galinho da vizinhança Penauí, zona rural do município de Teresovo")
-	queue_text("Na sua trajetória diária até o outro lado da rua, Frito se depara com o maior milho que já viu na sua vida inteira ! ! *O*")
-	queue_text("No seu primeiro instito de galinho selvagem, pensa na possibilidade de tomá-lo para si IMEDIATAMENTE")
+	queue_text("Estava passeando pelas redondezas quando se depara com o maior milho que já viu na sua vida inteira ! ! *O*")
+	queue_text("No seu primeiro instinto de galinho selvagem, pensa na possibilidade de tomá-lo para si IMEDIATAMENTE")
 	queue_text("MAS sua mente se divide numa luta interna intensa entre duas vozes da sua cabeça")
 	queue_text("A voz do anjo e a voz do demônio, cada um tentando o convencer a fazer uma escolha sobre aquele milhão")
 	queue_text("O anjo diz: Não seja vacilão galinho! Não pegue no milhão")

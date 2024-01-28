@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://edep54brt81i"]
+[gd_scene load_steps=52 format=3 uid="uid://edep54brt81i"]
 
 [ext_resource type="Script" path="res://frito_final_scene.gd" id="1_0dkru"]
 [ext_resource type="Texture2D" uid="uid://bagdidv5w6jqb" path="res://assets/Rocky Roads/Tilesets/tileset_forest.png" id="4_w3ksg"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://bho38o5u2lhcd" path="res://assets/old_man/16x16.png" id="11_l5o5q"]
 [ext_resource type="Texture2D" uid="uid://c2bljhocno2sa" path="res://assets/ChickenPack/ChickenPack/SpriteSheet/ChickenFly-Sheet.png" id="12_wckxg"]
 [ext_resource type="Texture2D" uid="uid://dvbf1stu6cusd" path="res://assets/ChickenPack/ChickenPack/SpriteSheet/ChickenJumping-Sheet.png" id="13_c484q"]
+[ext_resource type="AudioStream" uid="uid://bjfwommm2rxxo" path="res://assets/00 lolurio - Everyday Life (mp3cut.net).mp3" id="15_p2ake"]
+[ext_resource type="Texture2D" uid="uid://cswmyyvhx21nj" path="res://assets/pipo-popupemotes002.png" id="16_52qvp"]
 [ext_resource type="Texture2D" uid="uid://cjb6a4w2s4r1w" path="res://assets/ChickenDie-Sheet_03.png" id="17_3ee8q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wgy6e"]
@@ -392,6 +394,35 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cta4"]
+atlas = ExtResource("16_52qvp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vxit"]
+atlas = ExtResource("16_52qvp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsjav"]
+atlas = ExtResource("16_52qvp")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o58mm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cta4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vxit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsjav")
+}],
+"loop": true,
+"name": &"duvida",
+"speed": 5.0
+}]
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(62, 152)
 scale = Vector2(2.71349, 2.76419)
@@ -489,6 +520,21 @@ offset_right = -67.242
 offset_bottom = -94.5783
 scale = Vector2(10.5685, 6.6842)
 
+[node name="Timer2" type="Timer" parent="."]
+
+[node name="Timer3" type="Timer" parent="."]
+
+[node name="Musica" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_p2ake")
+volume_db = -6.933
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(25.797, -22.7915)
+scale = Vector2(0.686536, 0.695494)
+sprite_frames = SubResource("SpriteFrames_o58mm")
+animation = &"duvida"
+
 [connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]
 [connection signal="animation_finished" from="Old_man" to="." method="_on_old_man_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

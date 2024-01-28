@@ -1,11 +1,11 @@
 [gd_scene load_steps=12 format=3 uid="uid://dh7s4tq7jb0xx"]
 
 [ext_resource type="Script" path="res://screens/scripts/title_screen.gd" id="1_bfma4"]
-[ext_resource type="Texture2D" uid="uid://dt6b364qbn8cm" path="res://screens/material/fundo.png" id="1_g08mb"]
 [ext_resource type="Theme" uid="uid://dmbl0ph8uyprm" path="res://screens/material/theme_btn.tres" id="2_7p7fg"]
 [ext_resource type="Texture2D" uid="uid://ftcptm4u7rer" path="res://screens/material/logoaaa.png" id="2_yl6vl"]
 [ext_resource type="FontFile" uid="uid://cb64tb4mbh747" path="res://assets/m5x7.ttf" id="4_6m2m5"]
 [ext_resource type="Texture2D" uid="uid://ldt4s2h8yvv6" path="res://screens/material/galinhacortada.png" id="4_neyms"]
+[ext_resource type="Texture2D" uid="uid://3iy40xk0tk5i" path="res://assets/capa1.png" id="5_0jo43"]
 [ext_resource type="AudioStream" uid="uid://jmqvjk3swwlt" path="res://assets/DavidKBD - 04 - Ludwig Van Beethoven, Bagatelle N25 In A Minor (Fur Elise) - Concerto2.ogg" id="7_6s72t"]
 [ext_resource type="AudioStream" uid="uid://bl3au3pvbiov4" path="res://assets/MI_SFX 01.wav" id="8_rso7h"]
 
@@ -76,9 +76,11 @@ text = "QUIT GAME
 
 [node name="bg" type="TextureRect" parent="."]
 layout_mode = 2
+offset_top = -2.0
 offset_right = 600.0
-offset_bottom = 360.0
-texture = ExtResource("1_g08mb")
+offset_bottom = 358.0
+scale = Vector2(1.06689, 0.995044)
+texture = ExtResource("5_0jo43")
 expand_mode = 2
 
 [node name="Galinhacortada" type="Sprite2D" parent="."]
