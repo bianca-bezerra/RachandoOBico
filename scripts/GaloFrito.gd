@@ -37,7 +37,9 @@ func  _physics_process(delta):
 		player_movement(delta)
 		attack()
 		enemy_attack()
-		
+	if health == 0:
+		self.queue_free()
+		get_tree().change_scene_to_file("res://screens/scenes/game_over.tscn")
 	
 func play_animation(movement):
 	var dir = current_direction
@@ -167,7 +169,6 @@ func enemy_attack():
 			is_alive = false
 			health = 0
 			self.queue_free()
-			
 			get_tree().change_scene_to_file("res://screens/scenes/game_over.tscn")
 		else:
 			
