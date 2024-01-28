@@ -26,6 +26,9 @@ var current_state := EnemyState.PATROL;
 
 #Player
 @export var target : CharacterBody2D
+
+#Text
+@onready var texto = preload("res://text_box_demonio.tscn")
 	
 #Functions #####################################################################
 func _ready():
@@ -48,7 +51,8 @@ func patrulha():
 
 func play_piada():
 	if health_points == 0:
-		$TextBox.visible = true
+		var caixa_texto = texto.instantiate()
+		get_parent().get_parent().add_child(caixa_texto)
 
 #Direction
 func flip_enemy():
