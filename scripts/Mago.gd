@@ -1,5 +1,15 @@
 extends CharacterBody2D
 
+#Bullet Hell
+const bullet_scene = preload("res://bala.tscn")
+@onready var shoot_timer = $ShootTimer
+@onready var rotater = $Rotater
+
+const rotate_speed = 30
+const shoot_timer_wait_time = 1.5
+const spawn_point_count = 10
+const radius = 20
+
 #Nodes
 @onready var animation = $sprite
 @onready var ground_detector = $ground_detector
@@ -28,7 +38,23 @@ var current_state := EnemyState.PATROL;
 @export var target : CharacterBody2D
 
 #Functions #####################################################################
+func _ready():	
+	var step = 2 * PI / spawn_point_count
+	
+	for i in range(spawn_point_count):
+		var spawn_point = Node2D.new()
+		var pos = Vector2(radius, 0).rotated(step * i)
+		spawn_point.position = pos
+		spawn_point.rotation = pos.angle()
+		rotater.add_child(spawn_point)
+		
+	shoot_timer.wait_time = shoot_timer_wait_time
+	shoot_timer.start()
+
 func _physics_process(delta):
+	var new_rotation = rotater.rotation_degrees + rotate_speed * delta
+	rotater.rotation_degrees = fmod(new_rotation, 360)
+	
 	#if !is_on_floor():
 	#	velocity.y += gravity * delta
 	match(current_state):
@@ -159,3 +185,11 @@ func play_hurt_anim():
 	$hurt.visible = false;
 	$hit.visible = false;
 	$sprite.visible=true;
+
+
+func _on_shoot_timer_timeout():
+	for s in rotater.get_children():
+		var bullet = bullet_scene.instantiate()
+		get_tree().root.add_child(bullet)
+		bullet.position = s.global_position
+		bullet.rotation = s.global_rotation	

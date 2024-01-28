@@ -36,10 +36,10 @@
 [ext_resource type="Texture2D" uid="uid://coytkw0kj74mm" path="res://assets/Little Mage1-1/Little Mage/Run/Run4.png" id="33_n7uex"]
 [ext_resource type="Texture2D" uid="uid://csphfadoa4rlc" path="res://assets/Little Mage1-1/Little Mage/Run/Run5.png" id="34_4u272"]
 [ext_resource type="Texture2D" uid="uid://bwwtvfvvq46b4" path="res://assets/Little Mage1-1/Little Mage/Run/Run6.png" id="35_v7liv"]
-[ext_resource type="PackedScene" uid="uid://bw4oqjuqvioqf" path="res://scenes/vassoura.tscn" id="37_f0f4d"]
 [ext_resource type="Texture2D" uid="uid://gtw1dvml3fia" path="res://assets/Rocky Roads/FX/exclamation.png" id="39_ac55u"]
 [ext_resource type="Texture2D" uid="uid://b5y8ushvpnaq7" path="res://assets/Small slash FX/small_slash_hit_1.png" id="40_oour6"]
 [ext_resource type="AudioStream" uid="uid://dj00t2kwkiahs" path="res://songs/556 Single WAV.wav" id="41_aae3j"]
+[ext_resource type="Texture2D" uid="uid://c1yeps5b85cnl" path="res://assets/corn.png" id="41_i1p2n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x074o"]
 animations = [{
@@ -369,9 +369,6 @@ animation = &"death"
 position = Vector2(5, 5.25)
 shape = SubResource("RectangleShape2D_45gxs")
 
-[node name="Vassoura" parent="." instance=ExtResource("37_f0f4d")]
-position = Vector2(4, 3)
-
 [node name="DetectionArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
@@ -430,6 +427,13 @@ position = Vector2(0, 16)
 scale = Vector2(0.5, 0.416667)
 stream = ExtResource("41_aae3j")
 
+[node name="Rotater" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(2, 6)
+texture = ExtResource("41_i1p2n")
+
+[node name="ShootTimer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
@@ -438,3 +442,4 @@ stream = ExtResource("41_aae3j")
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="cooldown_fireball" to="." method="_on_cooldown_fireball_timeout"]
 [connection signal="timeout" from="TimeToShine" to="." method="_on_time_to_shine_timeout"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
