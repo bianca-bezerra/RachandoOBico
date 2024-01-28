@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://s68h8r5g13gx"]
+[gd_scene load_steps=63 format=3 uid="uid://s68h8r5g13gx"]
 
 [ext_resource type="Script" path="res://scripts/Mago.gd" id="1_ge886"]
 [ext_resource type="Texture2D" uid="uid://bcxc8oy5f4w07" path="res://assets/Little Mage1-1/Little Mage/Stomping/Stomping1.png" id="1_resy4"]
@@ -38,8 +38,9 @@
 [ext_resource type="Texture2D" uid="uid://bwwtvfvvq46b4" path="res://assets/Little Mage1-1/Little Mage/Run/Run6.png" id="35_v7liv"]
 [ext_resource type="PackedScene" uid="uid://bw4oqjuqvioqf" path="res://scenes/vassoura.tscn" id="37_f0f4d"]
 [ext_resource type="Texture2D" uid="uid://gtw1dvml3fia" path="res://assets/Rocky Roads/FX/exclamation.png" id="39_ac55u"]
+[ext_resource type="AudioStream" uid="uid://bgle6y0bohnhc" path="res://songs/762x54r Single WAV.wav" id="40_i8qji"]
 [ext_resource type="Texture2D" uid="uid://b5y8ushvpnaq7" path="res://assets/Small slash FX/small_slash_hit_1.png" id="40_oour6"]
-[ext_resource type="AudioStream" uid="uid://dj00t2kwkiahs" path="res://songs/556 Single WAV.wav" id="41_aae3j"]
+[ext_resource type="AudioStream" uid="uid://jowjvj4pqy2y" path="res://songs/160760__cosmicembers__object-hit.wav" id="40_xajxr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x074o"]
 animations = [{
@@ -425,10 +426,16 @@ sprite_frames = SubResource("SpriteFrames_l1pag")
 [node name="death_point" type="Marker2D" parent="."]
 position = Vector2(1, 11)
 
+[node name="hurt_sfx" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, 25.4445)
+scale = Vector2(0.125, 0.0723381)
+stream = ExtResource("40_xajxr")
+volume_db = 12.0
+
 [node name="shoot_sfx" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0, 16)
 scale = Vector2(0.5, 0.416667)
-stream = ExtResource("41_aae3j")
+stream = ExtResource("40_i8qji")
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

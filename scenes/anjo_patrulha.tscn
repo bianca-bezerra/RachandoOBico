@@ -1,8 +1,10 @@
-[gd_scene load_steps=41 format=3 uid="uid://ist863a7maj1"]
+[gd_scene load_steps=44 format=3 uid="uid://ddtp4ykut78nl"]
 
 [ext_resource type="Script" path="res://scripts/anjo_patrulha.gd" id="1_cqnda"]
 [ext_resource type="Texture2D" uid="uid://djufjkix2kru8" path="res://assets/BadChickenAssetPack/Chickens/BlueChicken-Sheet.png" id="2_g4j4m"]
 [ext_resource type="Texture2D" uid="uid://gtw1dvml3fia" path="res://assets/Rocky Roads/FX/exclamation.png" id="4_1w0xr"]
+[ext_resource type="AudioStream" uid="uid://05xgnktq8fab" path="res://songs/762x39 Single WAV.wav" id="5_87hdj"]
+[ext_resource type="AudioStream" uid="uid://jowjvj4pqy2y" path="res://songs/160760__cosmicembers__object-hit.wav" id="5_oshen"]
 [ext_resource type="Texture2D" uid="uid://b5y8ushvpnaq7" path="res://assets/Small slash FX/small_slash_hit_1.png" id="5_w136h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_khn5l"]
@@ -201,7 +203,33 @@ region = Rect2(64, 0, 16, 16)
 atlas = ExtResource("4_1w0xr")
 region = Rect2(80, 0, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_6emxj"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ktk4y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8f7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvlo3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4m7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdr0e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h75wu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gw8u5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x0psk"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -296,6 +324,9 @@ debug_color = Color(0.835294, 0.321569, 0.564706, 0.419608)
 [node name="fireball_spawn_point" type="Marker2D" parent="."]
 position = Vector2(24, 24)
 
+[node name="death_point" type="Marker2D" parent="."]
+position = Vector2(1, 11)
+
 [node name="ground_detector" type="RayCast2D" parent="."]
 position = Vector2(0, 24)
 target_position = Vector2(0, 8)
@@ -320,12 +351,15 @@ sprite_frames = SubResource("SpriteFrames_1r84m")
 autoplay = "default"
 frame_progress = 0.37002
 
-[node name="exclamation" type="AnimatedSprite2D" parent="."]
-visible = false
+[node name="exclamation_left" type="AnimatedSprite2D" parent="."]
 position = Vector2(-16, -8)
-scale = Vector2(0.75, 0.75)
-sprite_frames = SubResource("SpriteFrames_6emxj")
-frame_progress = 0.690959
+scale = Vector2(0.5625, 0.5625)
+sprite_frames = SubResource("SpriteFrames_ktk4y")
+
+[node name="exclamation_right" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, -8)
+scale = Vector2(0.5625, 0.5625)
+sprite_frames = SubResource("SpriteFrames_x0psk")
 
 [node name="hit" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -335,8 +369,16 @@ sprite_frames = SubResource("SpriteFrames_302sh")
 autoplay = "default"
 frame_progress = 0.663003
 
-[node name="death_point" type="Marker2D" parent="."]
-position = Vector2(1, 11)
+[node name="hurt_sfx" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, 22.6667)
+scale = Vector2(0.25, 0.173611)
+stream = ExtResource("5_oshen")
+volume_db = 12.0
+
+[node name="shoot_sfx" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, 40)
+scale = Vector2(0.5, 0.416667)
+stream = ExtResource("5_87hdj")
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

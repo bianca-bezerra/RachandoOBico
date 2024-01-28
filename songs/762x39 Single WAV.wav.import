@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://05xgnktq8fab"
+path="res://.godot/imported/762x39 Single WAV.wav-11c2547e4b15a078e513cf1cb2dbddc7.sample"
+
+[deps]
+
+source_file="res://songs/762x39 Single WAV.wav"
+dest_files=["res://.godot/imported/762x39 Single WAV.wav-11c2547e4b15a078e513cf1cb2dbddc7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

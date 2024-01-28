@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var cooldown_fireball = $cooldown_fireball
 const DEATH = preload("res://scenes/death.tscn");
 @onready var shoot_sfx = $shoot_sfx
+@onready var hurt_sfx = $hurt_sfx as AudioStreamPlayer
 
 #Motion
 const RIGHT = 1;
@@ -55,10 +56,11 @@ func take_dir():
 func spawn_fireball():
 
 	var new_fireball = FIREBALL.instantiate();
+	const BOMB = 4;
 	if sign(fireball_spawn_point.position.x) == RIGHT:
-		new_fireball.set_direction(RIGHT);
+		new_fireball.set_direction(RIGHT, BOMB);
 	else:
-		new_fireball.set_direction(LEFT);
+		new_fireball.set_direction(LEFT, BOMB);
 
 	add_sibling(new_fireball);
 	shoot_sfx.global_position = fireball_spawn_point.global_position;
@@ -115,6 +117,8 @@ func hurt_state():
 		change_state(EnemyState.DEATH);
 
 	else:
+		hurt_sfx.global_popsition = $death_point.global_position;
+		hurt_sfx.play();
 		play_hurt_anim();
 		print("Patrulheira: Ai!")
 		health_points -= 1;

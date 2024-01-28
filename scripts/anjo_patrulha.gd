@@ -7,17 +7,17 @@ extends CharacterBody2D
 @onready var sprite = $sprite
 @onready var cooldown_fireball = $cooldown_fireball
 const DEATH = preload("res://scenes/death.tscn");
-
+@onready var shoot_sfx = $shoot_sfx
+@onready var hurt_sfx = $hurt_sfx as AudioStreamPlayer
 #Motion
 const RIGHT = 1;
 const LEFT = -1;
 var direction := RIGHT;
 @export var move_speed := 50;
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
+#var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 #Combat System
-const FIREBALL = preload("res://scenes/iceball.tscn");
+const FIREBALL = preload("res://scenes/fireball.tscn");
 @export var health_points := 1;
 var can_shoot = true;
 var damage_rate = 1
@@ -32,8 +32,8 @@ func _ready():
 	animation.flip_h = true;
 
 func _physics_process(delta):
-	if !is_on_floor():
-		velocity.y += gravity * delta
+	#if !is_on_floor():
+	#	velocity.y += gravity * delta
 	match(current_state):
 		EnemyState.PATROL : patrol_state();
 		EnemyState.ATTACK : attack_state();
@@ -41,7 +41,7 @@ func _physics_process(delta):
 		
 func patrulha():
 	pass
-
+	
 #Direction
 func flip_enemy():
 	direction *= -1;
@@ -59,13 +59,18 @@ func take_dir():
 func spawn_fireball():
 	
 	var new_fireball = FIREBALL.instantiate();
+	const SPIKES = 2;
+	
 	if sign(fireball_spawn_point.position.x) == RIGHT:
-		new_fireball.set_direction(RIGHT);
+		new_fireball.set_direction(RIGHT, SPIKES);
 	else:
-		new_fireball.set_direction(LEFT);
+		new_fireball.set_direction(LEFT, SPIKES);
 		
 	add_sibling(new_fireball);
+	shoot_sfx.global_position = fireball_spawn_point.global_position;
+	shoot_sfx.play();
 	new_fireball.global_position = fireball_spawn_point.global_position;
+	
 	
 
 #Triggers ######################################################################
@@ -120,6 +125,8 @@ func hurt_state():
 		change_state(EnemyState.DEATH);
 		
 	else:
+
+		$hurt_sfx.play();
 		play_hurt_anim();
 		print("Patrulheira: Ai!")
 		health_points -= 1;
@@ -144,16 +151,24 @@ func change_to_attack_state():
 	
 	if (get_player_direction() == RIGHT and direction == LEFT) or (get_player_direction() == LEFT and direction == RIGHT):
 		flip_enemy();
-
-	$exclamation.visible = true;
-	change_state(EnemyState.ATTACK);			
-	$exclamation.flip_h = take_dir();
-	$exclamation.play("default");
-	await get_tree().create_timer(0.3).timeout;	
-	$exclamation.visible=false;
-
+		
+	if(get_player_direction() == RIGHT):
+		$exclamation_right.visible = true;
+		$exclamation.play("default");		
+		change_state(EnemyState.ATTACK);			
+		await get_tree().create_timer(0.3).timeout;	
+		$exclamation.visible=false;
+	else:
+	
+		$exclamation_left.visible = true;
+		$exclamation_left.play("default");
+		change_state(EnemyState.ATTACK);			
+		await get_tree().create_timer(0.3).timeout;	
+		$exclamation_left.visible=false
+		
 #Animations ####################################################################
 func play_hurt_anim():
+	
 	$hit.visible = true;
 	$hit.flip_h = take_dir();
 	$hit.play("default");
