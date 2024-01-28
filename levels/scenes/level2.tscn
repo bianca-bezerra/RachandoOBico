@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dd4b52212fpja"]
+[gd_scene load_steps=35 format=3 uid="uid://dd4b52212fpja"]
 
 [ext_resource type="Script" path="res://levels/scripts/level2.gd" id="1_pr4l3"]
 [ext_resource type="Texture2D" uid="uid://blqfcvnfnn6ei" path="res://assets/Rocky Roads/Tilesets/tileset_lava.png" id="1_xlml7"]
@@ -8,8 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://dtiqe7s4i0cko" path="res://assets/Rocky Roads/Tilesets/tileset_dirt.png" id="5_n0b6x"]
 [ext_resource type="PackedScene" uid="uid://c4s4qhls174ct" path="res://scenes/galo_frito.tscn" id="6_fbd6u"]
 [ext_resource type="AudioStream" uid="uid://buq5wlk63s2p7" path="res://songs/DavidKBD - Concerto Pack - 02 - In the Hall of the Mountain King (Grieg).ogg" id="11_hj6c4"]
-[ext_resource type="PackedScene" uid="uid://bhapp7jpo7spd" path="res://screens/scenes/pause_menu.tscn" id="13_fkdpt"]
-[ext_resource type="PackedScene" uid="uid://ctf0ge5y2jweq" path="res://scenes/patrulheiro.tscn" id="14_aqqwi"]
+[ext_resource type="PackedScene" uid="uid://s68h8r5g13gx" path="res://scenes/Mago.tscn" id="12_xhoc2"]
+[ext_resource type="PackedScene" path="res://screens/scenes/pause_menu.tscn" id="13_fkdpt"]
+[ext_resource type="PackedScene" path="res://scenes/patrulheiro.tscn" id="14_aqqwi"]
 [ext_resource type="Texture2D" uid="uid://cqvjdlscsdtjc" path="res://assets/Green Portal Sprite Sheet.png" id="15_do2p1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xfdfw"]
@@ -544,6 +545,10 @@ visible = false
 [node name="Musica" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_hj6c4")
 volume_db = -10.08
+
+[node name="Mago" parent="." node_paths=PackedStringArray("target") instance=ExtResource("12_xhoc2")]
+position = Vector2(1929, -10)
+target = NodePath("../GaloFrito")
 
 [connection signal="timeout" from="WaitTime" to="." method="_on_wait_time_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
