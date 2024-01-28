@@ -22,7 +22,7 @@ var direction := RIGHT;
 const FIREBALL = preload("res://scenes/fireball.tscn");
 @export var health_points := 90;
 var can_shoot = true;
-var damage_rate = 15
+var damage_rate = 10
 enum EnemyState {PATROL, ATTACK, HURT, DEATH}
 var current_state := EnemyState.PATROL;
 
@@ -134,7 +134,7 @@ func hurt_state():
 		$hurt_sfx.play();
 		play_hurt_anim();
 		print("Patrulheira: Ai!")
-		health_points -= 1;
+		health_points -= damage_rate;
 		current_state = EnemyState.PATROL;
 
 func attack_state():
@@ -159,10 +159,10 @@ func change_to_attack_state():
 		
 	if(get_player_direction() == RIGHT):
 		$exclamation_right.visible = true;
-		$exclamation.play("default");		
+		$exclamation_right.play("default");		
 		change_state(EnemyState.ATTACK);			
 		await get_tree().create_timer(0.3).timeout;	
-		$exclamation.visible=false;
+		$exclamation_right.visible=false;
 	else:
 	
 		$exclamation_left.visible = true;

@@ -30,7 +30,7 @@ var direction := RIGHT;
 const FIREBALL = preload("res://scenes/fireball.tscn");
 @export var health_points := 150;
 var can_shoot = true;
-var damage_rate = 15
+var damage_rate = 10
 enum EnemyState {PATROL, ATTACK, HURT, DEATH}
 var current_state := EnemyState.PATROL;
 
@@ -146,7 +146,7 @@ func hurt_state():
 		$hurt_sfx.play();
 		play_hurt_anim();
 		print("Patrulheira: Ai!")
-		health_points -= 1;
+		health_points -= damage_rate;
 		current_state = EnemyState.PATROL;
 
 func attack_state():

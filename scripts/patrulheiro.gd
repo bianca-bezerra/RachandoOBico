@@ -21,7 +21,7 @@ var direction := RIGHT;
 const FIREBALL = preload("res://scenes/fireball.tscn");
 @export var health_points := 100;
 var can_shoot = true;
-var damage_rate = 10
+var damage_rate = 5
 enum EnemyState {PATROL, ATTACK, HURT, DEATH}
 var current_state := EnemyState.PATROL;
 
@@ -36,12 +36,14 @@ func _ready():
 	animation.flip_h = true;
 	
 func _physics_process(delta):
-	if !played:
-		play_piada()
+	
 	match(current_state):
 		EnemyState.PATROL : patrol_state();
 		EnemyState.ATTACK : attack_state();
 		EnemyState.DEATH : queue_free();
+	
+	if !played:
+		play_piada()
 		
 func patrulha():
 	pass
@@ -140,7 +142,7 @@ func hurt_state():
 		$hurt_sfx.play();
 		play_hurt_anim();
 		print("Patrulheira: Ai!")
-		health_points -= 1;
+		health_points -= damage_rate;
 		current_state = EnemyState.PATROL;
 
 func attack_state():

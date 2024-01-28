@@ -37,9 +37,7 @@ func  _physics_process(delta):
 		player_movement(delta)
 		attack()
 		enemy_attack()
-		attack()
 		
-	
 	
 func play_animation(movement):
 	var dir = current_direction
@@ -245,8 +243,8 @@ func _on_attack_cool_down_extra_timeout():
 
 func update_life():
 	if global.level1_completed:
-		health = 40
+		health = 75
 	elif global.level2_completed:
-		health = 60
+		health = 70
 	else:
 		health = 80
