@@ -109,6 +109,7 @@ func patrol_state():
 func hurt_state():
 
 	if(health_points == 0):
+		global.level3_completed = true
 		print("No céu tem milho?");
 		var death = DEATH.instantiate();
 		add_sibling(death);

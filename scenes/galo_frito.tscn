@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://c4s4qhls174ct"]
+[gd_scene load_steps=60 format=3 uid="uid://c4s4qhls174ct"]
 
 [ext_resource type="Script" path="res://scripts/GaloFrito.gd" id="1_e5jvl"]
 [ext_resource type="Texture2D" uid="uid://brfwjd7p1p252" path="res://assets/ChickenPack/ChickenPack/SpriteSheet/Sprite-ChickenAttack-Sheet.png" id="2_llc33"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://dkoqe0bo4c4nf" path="res://songs/Chicken_Sound_Effect_in_Best_Quality_320_kbps_mp3cut.net.mp3" id="10_6rejc"]
 [ext_resource type="AudioStream" uid="uid://dtb76bc0av7g6" path="res://songs/633250__aesterial-arts__arcade-shoot.wav" id="11_n5cae"]
 [ext_resource type="AudioStream" uid="uid://b4bl5rf0350j0" path="res://songs/350987__cabled_mess__lose_c_05.wav" id="12_onb1s"]
+[ext_resource type="FontFile" uid="uid://cb64tb4mbh747" path="res://assets/m5x7.ttf" id="12_uim4b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l8tnb"]
 atlas = ExtResource("2_llc33")
@@ -363,6 +364,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jxju"]
+bg_color = Color(0.00784314, 0.533333, 0.309804, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
 [node name="GaloFrito" type="CharacterBody2D"]
 position = Vector2(146, 100)
 script = ExtResource("1_e5jvl")
@@ -449,6 +457,36 @@ stream = ExtResource("12_onb1s")
 volume_db = -9.685
 
 [node name="death_point" type="Marker2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 40.0
+offset_top = 15.0
+offset_right = 128.0
+offset_bottom = 38.0
+scale = Vector2(0.839769, 0.456584)
+theme_override_styles/background = SubResource("StyleBoxFlat_7jxju")
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 13.0
+offset_top = 5.0
+offset_right = 53.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("12_uim4b")
+theme_override_font_sizes/font_size = 32
+text = "HP"
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 56.0
+offset_top = 8.0
+offset_right = 96.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("12_uim4b")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="body_entered" from="HitboxPlayer" to="." method="_on_hitbox_player_body_entered"]
 [connection signal="body_exited" from="HitboxPlayer" to="." method="_on_hitbox_player_body_exited"]

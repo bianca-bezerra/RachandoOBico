@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://cj3yo7lg2nnfw"]
+[gd_scene load_steps=52 format=3 uid="uid://c0icu2vkei1kc"]
 
 [ext_resource type="Texture2D" uid="uid://brfwjd7p1p252" path="res://assets/ChickenPack/ChickenPack/SpriteSheet/Sprite-ChickenAttack-Sheet.png" id="2_7cbfe"]
 [ext_resource type="Texture2D" uid="uid://c80c2eiwkyhbl" path="res://assets/ChickenPack/ChickenPack/SpriteSheet/ChickenDie-Sheet.png" id="3_7pk0n"]

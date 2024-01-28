@@ -15,10 +15,10 @@ var has_double_jumped : bool = false;
 @onready var BULLET = preload("res://scenes/ovo.tscn")
 var enemy_inattack_range = false
 var enemy_attack_cooldown = true
-var health = 5
+var health
 var knockback_vector := Vector2.ZERO
 var is_alive = true
-var damage_rate = 1
+var damage_rate = 5
 var attack_ip = false
 var is_ondamage = false
 var can_attack := true;
@@ -28,6 +28,8 @@ var can_attack := true;
 @onready var hit_sfx = $hit_sfx as AudioStreamPlayer
 @onready var lost_fx = $lost_fx as AudioStreamPlayer
 
+func _ready():
+	update_life()
 	
 func  _physics_process(delta):
 	if is_alive:
@@ -37,6 +39,7 @@ func  _physics_process(delta):
 		attack()
 		enemy_attack()
 		attack()
+		
 	
 	
 func play_animation(movement):
@@ -215,6 +218,8 @@ func _on_attack_deal_timeout():
 func take_damage(knoback_force := Vector2.ZERO,duration := 0.15):
 	is_ondamage = true
 	health -= damage_rate
+	$CanvasLayer/ProgressBar.value = health
+	$CanvasLayer/Label2.text = str(health)
 	if knoback_force != Vector2.ZERO:
 		knockback_vector = knoback_force
 		var knoback_tween = get_tree().create_tween()
@@ -238,3 +243,11 @@ func shoot():
 
 func _on_attack_cool_down_extra_timeout():
 	can_attack = true;
+
+func update_life():
+	if global.level1_completed:
+		health = 40
+	elif global.level2_completed:
+		health = 60
+	else:
+		health = 80

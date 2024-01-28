@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://dsjhplmjq2n6x"]
+[gd_scene load_steps=46 format=3 uid="uid://d0ouvcd5igf6k"]
 
 [ext_resource type="Script" path="res://scripts/patrulheiro.gd" id="1_f7uim"]
 [ext_resource type="Texture2D" uid="uid://djufjkix2kru8" path="res://assets/BadChickenAssetPack/Chickens/BlueChicken-Sheet.png" id="2_6g2ja"]

@@ -20,7 +20,7 @@ func _ready():
 
 	hide_textbox()    
 	queue_text("GALINHO DEMONIO:
-								Por que mirou logo na minha cabeca? De galo na minha vida ja basta lidar com voce")
+								Por que mirou logo na minha cabeca? De galo na minha vida ja basta voce...")
 	
 func _physics_process(delta):
 	

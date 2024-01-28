@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dj131jbmhxdvj"
+path="res://.godot/imported/Applause Crowd Cheering sound effect.mp3-7fc04ade1d9f4ecf781aa917c2836a6c.mp3str"
+
+[deps]
+
+source_file="res://assets/Applause Crowd Cheering sound effect.mp3"
+dest_files=["res://.godot/imported/Applause Crowd Cheering sound effect.mp3-7fc04ade1d9f4ecf781aa917c2836a6c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
