@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://buq5wlk63s2p7" path="res://songs/DavidKBD - Concerto Pack - 02 - In the Hall of the Mountain King (Grieg).ogg" id="11_hj6c4"]
 [ext_resource type="PackedScene" path="res://screens/scenes/pause_menu.tscn" id="13_fkdpt"]
 [ext_resource type="Texture2D" uid="uid://dtjyisyu1k7fy" path="res://assets/Seasonal Tilesets/2 - Autumn Forest/Background parts/6 - Distant_trees.png" id="13_r3aja"]
-[ext_resource type="PackedScene" path="res://scenes/patrulheiro.tscn" id="14_aqqwi"]
+[ext_resource type="PackedScene" uid="uid://m5lu1t3yghgr" path="res://scenes/patrulheiro.tscn" id="14_aqqwi"]
 [ext_resource type="Texture2D" uid="uid://vw28uj1evu2e" path="res://assets/Seasonal Tilesets/2 - Autumn Forest/Background parts/5 - Tree_row_BG_2.png" id="14_ulq3s"]
 [ext_resource type="Texture2D" uid="uid://cqvjdlscsdtjc" path="res://assets/Green Portal Sprite Sheet.png" id="15_do2p1"]
 [ext_resource type="Texture2D" uid="uid://6guqvu3yttnc" path="res://assets/Seasonal Tilesets/2 - Autumn Forest/Background parts/4 - Tree_row_BG_1.png" id="15_gkg8d"]
