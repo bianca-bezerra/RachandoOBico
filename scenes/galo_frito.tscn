@@ -393,7 +393,7 @@ position = Vector2(-1, -1)
 shape = SubResource("CircleShape2D_0o0mx")
 
 [node name="AttackCoolDown" type="Timer" parent="."]
-wait_time = 0.4
+wait_time = 0.07
 
 [node name="AttackDeal" type="Timer" parent="."]
 wait_time = 0.4
@@ -436,7 +436,6 @@ wait_time = 5.0
 position = Vector2(25, -1)
 
 [node name="AttackCoolDownExtra" type="Timer" parent="."]
-wait_time = 1.5
 
 [node name="hurt" type="AnimatedSprite2D" parent="."]
 visible = false

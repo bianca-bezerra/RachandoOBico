@@ -16,11 +16,11 @@
 [ext_resource type="Texture2D" uid="uid://bk7nd65cecilj" path="res://assets/Seasonal Tilesets/4 - Winter World/Background parts/1 - Snowy_foreground_area.png" id="16_0g4l7"]
 [ext_resource type="Shader" path="res://shader/level_3.gdshader" id="17_fc51x"]
 [ext_resource type="Texture2D" uid="uid://2qfyeelq5tab" path="res://assets/Seasonal Tilesets/3 - Tropics/Background parts/3 - Floating_clouds.png" id="17_ouopn"]
-[ext_resource type="PackedScene" uid="uid://dqiprolge7ef7" path="res://screens/scenes/pause_menu.tscn" id="19_0t8ew"]
+[ext_resource type="PackedScene" uid="uid://bhapp7jpo7spd" path="res://screens/scenes/pause_menu.tscn" id="19_0t8ew"]
 [ext_resource type="PackedScene" uid="uid://c4s4qhls174ct" path="res://scenes/galo_frito.tscn" id="19_17wwo"]
 [ext_resource type="Texture2D" uid="uid://bolr7k2wveq41" path="res://assets/Purple Portal Sprite Sheet.png" id="20_732i4"]
 [ext_resource type="PackedScene" uid="uid://ddtp4ykut78nl" path="res://scenes/anjo_patrulha.tscn" id="21_1b0j8"]
-[ext_resource type="PackedScene" path="res://descricao.tscn" id="21_mb1u4"]
+[ext_resource type="PackedScene" uid="uid://bf4vfnaogv7pr" path="res://descricao.tscn" id="21_mb1u4"]
 [ext_resource type="AudioStream" uid="uid://b2e17pq7cuv5q" path="res://songs/DavidKBD - 01 - Mozart_ ALLA TURCA from Sonata No. 11 in A major, K.331 - Concerto2.ogg" id="22_nqwoi"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ih6p1"]
@@ -1725,7 +1725,7 @@ target = NodePath("../GaloFrito")
 
 [node name="music_bg" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_nqwoi")
-volume_db = -10.667
+volume_db = -19.099
 
 [connection signal="timeout" from="WaitTime" to="." method="_on_wait_time_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

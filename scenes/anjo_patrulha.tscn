@@ -136,12 +136,13 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_10gx3"]
+radius = 17.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vx2ce"]
-size = Vector2(384, 42.25)
+size = Vector2(388, 55.25)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k5lf5"]
-radius = 19.105
+radius = 25.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dwuvi"]
 atlas = ExtResource("2_g4j4m")
@@ -296,20 +297,20 @@ position = Vector2(0, -24)
 script = ExtResource("1_cqnda")
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1.94804, 1.51132)
+scale = Vector2(2.47284, 2.09404)
 sprite_frames = SubResource("SpriteFrames_t4am2")
 animation = &"side_walk"
 autoplay = "side_walk"
 
 [node name="colision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 10)
+position = Vector2(-1, 11)
 shape = SubResource("CircleShape2D_10gx3")
 debug_color = Color(0, 0, 0, 0.419608)
 
 [node name="DetectionArea" type="Area2D" parent="."]
 
 [node name="detection_shape" type="CollisionShape2D" parent="DetectionArea"]
-position = Vector2(0, 21.125)
+position = Vector2(2, 14.625)
 shape = SubResource("RectangleShape2D_vx2ce")
 
 [node name="Hitbox" type="Area2D" parent="."]

@@ -6,7 +6,7 @@ extends Control
 func _ready():
 	restart_btn.grab_focus();
 	lost_sfx.play();
-	await get_tree().create_timer(1.5).timeout;
+	await get_tree().create_timer(1).timeout;
 	music.play()
 	
 func _on_restart_btn_pressed():

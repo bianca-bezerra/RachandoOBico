@@ -9,6 +9,8 @@ extends CharacterBody2D
 const DEATH = preload("res://scenes/death.tscn");
 @onready var shoot_sfx = $shoot_sfx
 @onready var hurt_sfx = $hurt_sfx as AudioStreamPlayer
+@onready var played = false
+
 #Motion
 const RIGHT = 1;
 const LEFT = -1;
@@ -18,22 +20,24 @@ var direction := RIGHT;
 
 #Combat System
 const FIREBALL = preload("res://scenes/fireball.tscn");
-@export var health_points := 1;
+@export var health_points := 90;
 var can_shoot = true;
-var damage_rate = 1
+var damage_rate = 15
 enum EnemyState {PATROL, ATTACK, HURT, DEATH}
 var current_state := EnemyState.PATROL;
 
 #Player
 @export var target : CharacterBody2D
-	
+
+#Text
+@onready var texto = preload("res://texto_box_anjo.tscn")
+
 #Functions #####################################################################
 func _ready():
 	animation.flip_h = true;
 
 func _physics_process(delta):
-	#if !is_on_floor():
-	#	velocity.y += gravity * delta
+	play_piada()
 	match(current_state):
 		EnemyState.PATROL : patrol_state();
 		EnemyState.ATTACK : attack_state();
@@ -41,6 +45,13 @@ func _physics_process(delta):
 		
 func patrulha():
 	pass
+	
+func play_piada():
+	if health_points == 0:
+		print("aqui")
+		var caixa_texto = texto.instantiate()
+		get_parent().get_parent().add_child(caixa_texto)
+		played = true
 	
 #Direction
 func flip_enemy():
@@ -80,19 +91,12 @@ func _on_cooldown_fireball_timeout():
 func _on_hitbox_body_entered(body):
 	if body.has_method("ovo"):
 		hurt_state();
-	#if body.has_method("player"):
-		#body.fireball_attack();
-		
-	#change_state(EnemyState.HURT);
-	#player_inattack_range = true
+
 
 func _on_hitbox_body_exited(body):
 	if body.has_method("ovo"):
 		hurt_state();
-	#if body.has_method("player"):
-		#body.fireball_attack();
-	#if body.has_method("ovo"):
-		#player_inattack_range = false
+
 
 func _on_detection_area_body_entered(body):
 	if(body.has_method("player")):

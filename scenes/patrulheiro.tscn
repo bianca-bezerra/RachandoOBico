@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://d0ouvcd5igf6k"]
+[gd_scene load_steps=46 format=3 uid="uid://ctf0ge5y2jweq"]
 
 [ext_resource type="Script" path="res://scripts/patrulheiro.gd" id="1_f7uim"]
 [ext_resource type="Texture2D" uid="uid://djufjkix2kru8" path="res://assets/BadChickenAssetPack/Chickens/BlueChicken-Sheet.png" id="2_6g2ja"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://gtw1dvml3fia" path="res://assets/Rocky Roads/FX/exclamation.png" id="4_1k0jd"]
 [ext_resource type="Texture2D" uid="uid://b5y8ushvpnaq7" path="res://assets/Small slash FX/small_slash_hit_1.png" id="5_ycrxf"]
 [ext_resource type="AudioStream" uid="uid://dj00t2kwkiahs" path="res://songs/556 Single WAV.wav" id="6_hl1v1"]
-[ext_resource type="PackedScene" path="res://text_box_demonio.tscn" id="6_mwhfj"]
+[ext_resource type="PackedScene" uid="uid://b5nmosgemej8p" path="res://text_box_demonio.tscn" id="6_mwhfj"]
 [ext_resource type="AudioStream" uid="uid://jowjvj4pqy2y" path="res://songs/160760__cosmicembers__object-hit.wav" id="6_qd5ag"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i1104"]
@@ -141,7 +141,7 @@ animations = [{
 radius = 13.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vx2ce"]
-size = Vector2(384, 42.25)
+size = Vector2(340, 42.25)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k5lf5"]
 radius = 19.105
@@ -312,7 +312,7 @@ debug_color = Color(0, 0, 0, 0.419608)
 [node name="DetectionArea" type="Area2D" parent="."]
 
 [node name="detection_shape" type="CollisionShape2D" parent="DetectionArea"]
-position = Vector2(0, 21.125)
+position = Vector2(-5, 21.125)
 shape = SubResource("RectangleShape2D_vx2ce")
 
 [node name="Hitbox" type="Area2D" parent="."]

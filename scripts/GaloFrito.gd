@@ -23,7 +23,6 @@ var attack_ip = false
 var is_ondamage = false
 var can_attack := true;
 @export var target : CharacterBody2D;
-@onready var jump_sfx = $jump_sfx as AudioStreamPlayer
 @onready var shoot_sfx = $shoot_sfx as AudioStreamPlayer
 @onready var hit_sfx = $hit_sfx as AudioStreamPlayer
 @onready var lost_fx = $lost_fx as AudioStreamPlayer

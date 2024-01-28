@@ -39,11 +39,8 @@
 [ext_resource type="Texture2D" uid="uid://gtw1dvml3fia" path="res://assets/Rocky Roads/FX/exclamation.png" id="39_ac55u"]
 [ext_resource type="AudioStream" uid="uid://bgle6y0bohnhc" path="res://songs/762x54r Single WAV.wav" id="40_i8qji"]
 [ext_resource type="Texture2D" uid="uid://b5y8ushvpnaq7" path="res://assets/Small slash FX/small_slash_hit_1.png" id="40_oour6"]
-
-[ext_resource type="AudioStream" uid="uid://dj00t2kwkiahs" path="res://songs/556 Single WAV.wav" id="41_aae3j"]
-[ext_resource type="Texture2D" uid="uid://c1yeps5b85cnl" path="res://assets/corn.png" id="41_i1p2n"]
-
 [ext_resource type="AudioStream" uid="uid://jowjvj4pqy2y" path="res://songs/160760__cosmicembers__object-hit.wav" id="40_xajxr"]
+[ext_resource type="Texture2D" uid="uid://c1yeps5b85cnl" path="res://assets/corn.png" id="41_i1p2n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x074o"]
 animations = [{

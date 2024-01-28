@@ -8,6 +8,7 @@ var allowed_levelup = false
 
 
 func _ready():
+	$music_bg.play()
 	animation.play("fade_in")
 	portal_animation.visible = false
 	

@@ -6,7 +6,7 @@ const bullet_scene = preload("res://bala.tscn")
 @onready var rotater = $Rotater
 
 const rotate_speed = 30
-const shoot_timer_wait_time = 1.5
+const shoot_timer_wait_time = 2
 const spawn_point_count = 10
 const radius = 20
 
@@ -25,13 +25,12 @@ const RIGHT = 1;
 const LEFT = -1;
 var direction := RIGHT;
 @export var move_speed := 50;
-#var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 #Combat System
 const FIREBALL = preload("res://scenes/fireball.tscn");
-@export var health_points := 1;
+@export var health_points := 150;
 var can_shoot = true;
-var damage_rate = 1
+var damage_rate = 15
 enum EnemyState {PATROL, ATTACK, HURT, DEATH}
 var current_state := EnemyState.PATROL;
 
@@ -56,8 +55,7 @@ func _physics_process(delta):
 	var new_rotation = rotater.rotation_degrees + rotate_speed * delta
 	rotater.rotation_degrees = fmod(new_rotation, 360)
 	
-	#if !is_on_floor():
-	#	velocity.y += gravity * delta
+
 	match(current_state):
 		EnemyState.PATROL : patrol_state();
 		EnemyState.ATTACK : attack_state();
@@ -144,8 +142,8 @@ func hurt_state():
 		change_state(EnemyState.DEATH);
 
 	else:
-		hurt_sfx.global_popsition = $death_point.global_position;
-		hurt_sfx.play();
+		#hurt_sfx.global_position = $death_point.global_position;
+		$hurt_sfx.play();
 		play_hurt_anim();
 		print("Patrulheira: Ai!")
 		health_points -= 1;
