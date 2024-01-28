@@ -8,9 +8,14 @@ var allowed_levelup = false
 func _ready():
 	animation.play("fade_in")
 	
+func _physics_process(delta):
+	if global.level3_completed == true:
+		$Label.visible = true
+		
 func _on_area_2d_body_entered(body):
 	
 	if body.has_method("player") and global.level3_completed == true:
+		
 		allowed_levelup = true
 		$WaitTime.start()
 

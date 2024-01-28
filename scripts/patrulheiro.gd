@@ -38,6 +38,10 @@ func _physics_process(delta):
 		EnemyState.ATTACK : attack_state();
 		EnemyState.DEATH : queue_free();
 		
+func play_piada():
+	if health_points == 0:
+		$TextBox.visible = true
+	
 func patrulha():
 	pass
 
@@ -117,6 +121,7 @@ func hurt_state():
 		death.global_position = $death_point.global_position;
 		death.play("default");
 		change_state(EnemyState.DEATH);
+		global.level2_completed = true
 		
 	else:
 		play_hurt_anim();

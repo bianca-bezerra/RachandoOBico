@@ -22,11 +22,11 @@ func _ready():
 	queue_text("Galo Frito era um querido galinho da vizinhança Penauí, zona rural do município de Teresovo")
 	queue_text("Na sua trajetória diária até o outro lado da rua, Frito se depara com o maior milho que já viu na sua vida inteira ! ! *O*")
 	queue_text("No seu primeiro instito de galinho selvagem, pensa na possibilidade de tomá-lo para si IMEDIATAMENTE")
-	queue_text("MÂS, sua mente se divide numa luta interna intensa entre duas (de muitas) vozes da sua cabeça")
-	queue_text("A voz do anjo (que sussurrou no ouvido dele) e a voz do demônio, cada um tentando o convencer a fazer uma escolha sobre aquele milhão")
+	queue_text("MAS sua mente se divide numa luta interna intensa entre duas vozes da sua cabeça")
+	queue_text("A voz do anjo e a voz do demônio, cada um tentando o convencer a fazer uma escolha sobre aquele milhão")
 	queue_text("O anjo diz: Não seja vacilão galinho! Não pegue no milhão")
 	queue_text("O demônio diz: Não seja um frango! É só pegar e sair correndo. Tá com pena?")
-	queue_text("Frito não tanka a dualidade de sua mente e vai com Deus...")
+	queue_text("Frito não tanka a dualidade de sua mente e desmaia...")
 	
 	
 func _physics_process(delta):

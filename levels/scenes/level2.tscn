@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dd4b52212fpja"]
+[gd_scene load_steps=33 format=3 uid="uid://dd4b52212fpja"]
 
 [ext_resource type="Script" path="res://levels/scripts/level2.gd" id="1_pr4l3"]
 [ext_resource type="Texture2D" uid="uid://blqfcvnfnn6ei" path="res://assets/Rocky Roads/Tilesets/tileset_lava.png" id="1_xlml7"]
@@ -7,9 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://cilax841w4fyh" path="res://assets/Rocky Roads/Deco/clouds_rose.png" id="4_rydnr"]
 [ext_resource type="Texture2D" uid="uid://dtiqe7s4i0cko" path="res://assets/Rocky Roads/Tilesets/tileset_dirt.png" id="5_n0b6x"]
 [ext_resource type="PackedScene" uid="uid://c4s4qhls174ct" path="res://scenes/galo_frito.tscn" id="6_fbd6u"]
-[ext_resource type="PackedScene" uid="uid://jwivbp0tr6bm" path="res://scenes/galinho_demonio.tscn" id="8_mh4bj"]
-[ext_resource type="PackedScene" uid="uid://bf4vfnaogv7pr" path="res://descricao.tscn" id="10_0im1e"]
-[ext_resource type="Script" path="res://descricao2.gd" id="11_ejnd5"]
 [ext_resource type="PackedScene" uid="uid://bhapp7jpo7spd" path="res://screens/scenes/pause_menu.tscn" id="13_fkdpt"]
 [ext_resource type="PackedScene" uid="uid://ctf0ge5y2jweq" path="res://scenes/patrulheiro.tscn" id="14_aqqwi"]
 [ext_resource type="Texture2D" uid="uid://cqvjdlscsdtjc" path="res://assets/Green Portal Sprite Sheet.png" id="15_do2p1"]
@@ -493,9 +490,6 @@ one_way_collision_margin = 0.0
 [node name="GaloFrito" parent="." instance=ExtResource("6_fbd6u")]
 position = Vector2(120, -122)
 
-[node name="GalinhoDemonio4" parent="." instance=ExtResource("8_mh4bj")]
-position = Vector2(1200, -238)
-
 [node name="WaitTime" type="Timer" parent="."]
 wait_time = 2.0
 
@@ -538,13 +532,6 @@ offset_top = -501.0
 offset_right = 1264.0
 offset_bottom = -461.0
 scale = Vector2(30.437, 18.2276)
-
-[node name="Label" parent="." instance=ExtResource("10_0im1e")]
-offset_left = 63.0
-offset_top = 9.0
-offset_right = 363.0
-offset_bottom = 209.0
-script = ExtResource("11_ejnd5")
 
 [node name="patrulheiro" parent="." node_paths=PackedStringArray("target") instance=ExtResource("14_aqqwi")]
 position = Vector2(1529, -11)

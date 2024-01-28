@@ -1,10 +1,11 @@
-[gd_scene load_steps=42 format=3 uid="uid://ctf0ge5y2jweq"]
+[gd_scene load_steps=43 format=3 uid="uid://ctf0ge5y2jweq"]
 
 [ext_resource type="Script" path="res://scripts/patrulheiro.gd" id="1_f7uim"]
 [ext_resource type="Texture2D" uid="uid://djufjkix2kru8" path="res://assets/BadChickenAssetPack/Chickens/BlueChicken-Sheet.png" id="2_6g2ja"]
 [ext_resource type="Texture2D" uid="uid://dnmv3ldti7bqi" path="res://assets/BadChickenAssetPack/Chickens/RedChicken-Sheet.png" id="2_q3hmw"]
 [ext_resource type="Texture2D" uid="uid://gtw1dvml3fia" path="res://assets/Rocky Roads/FX/exclamation.png" id="4_1k0jd"]
 [ext_resource type="Texture2D" uid="uid://b5y8ushvpnaq7" path="res://assets/Small slash FX/small_slash_hit_1.png" id="5_ycrxf"]
+[ext_resource type="PackedScene" uid="uid://b5nmosgemej8p" path="res://text_box_demonio.tscn" id="6_mwhfj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i1104"]
 atlas = ExtResource("2_q3hmw")
@@ -335,6 +336,9 @@ frame_progress = 0.494363
 
 [node name="death_point" type="Marker2D" parent="."]
 position = Vector2(1, 11)
+
+[node name="TextBox" parent="." instance=ExtResource("6_mwhfj")]
+visible = false
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

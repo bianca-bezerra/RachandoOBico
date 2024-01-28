@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://i50uvivelmhf"]
+[gd_scene load_steps=60 format=3 uid="uid://dls1ooy83luw8"]
 
 [ext_resource type="Script" path="res://frito_scene.gd" id="1_4i1pm"]
 [ext_resource type="Texture2D" uid="uid://3j1w52md0l2g" path="res://assets/sprite (1).png" id="1_4l3bo"]

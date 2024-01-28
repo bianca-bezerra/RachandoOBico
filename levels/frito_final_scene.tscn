@@ -1,6 +1,6 @@
-[gd_scene load_steps=46 format=3 uid="uid://edep54brt81i"]
+[gd_scene load_steps=46 format=3 uid="uid://b4m3ikqm8obbc"]
 
-[ext_resource type="Script" path="res://frito_final_scene.gd" id="1_0dkru"]
+[ext_resource type="Script" path="res://Cutscenes/scripts/frito_final_scene.gd" id="1_0dkru"]
 [ext_resource type="Texture2D" uid="uid://bagdidv5w6jqb" path="res://assets/Rocky Roads/Tilesets/tileset_forest.png" id="4_w3ksg"]
 [ext_resource type="Texture2D" uid="uid://hshamq1hcsuu" path="res://assets/Seasonal Tilesets/5 - Misc. universal tiles/House (112 x 96).png" id="5_hqw31"]
 [ext_resource type="Texture2D" uid="uid://c1yeps5b85cnl" path="res://assets/corn.png" id="6_i3ix8"]
