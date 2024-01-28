@@ -15,10 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://dlt6fmv5cq22v" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="12_ssyn6"]
 [ext_resource type="Texture2D" uid="uid://cqkdedjp0dbvn" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/2 - Hills.png" id="13_xs3cj"]
 [ext_resource type="Texture2D" uid="uid://bsccwwmh5y0tn" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="14_lx4wq"]
-[ext_resource type="PackedScene" uid="uid://c4s4qhls174ct" path="res://scenes/galo_frito.tscn" id="15_j8yu4"]
+[ext_resource type="PackedScene" uid="uid://k8mdl4o7oypu" path="res://scenes/galo_frito.tscn" id="15_j8yu4"]
 [ext_resource type="PackedScene" uid="uid://s68h8r5g13gx" path="res://scenes/Mago.tscn" id="16_hg52q"]
 [ext_resource type="PackedScene" uid="uid://bhapp7jpo7spd" path="res://screens/scenes/pause_menu.tscn" id="18_ihp35"]
-[ext_resource type="FontFile" uid="uid://cb64tb4mbh747" path="res://assets/m5x7.ttf" id="19_1pchn"]
+[ext_resource type="AudioStream" uid="uid://b0inxd1tvxjyw" path="res://songs/DavidKBD - Concerto Pack - 08 - Dance of the Sugar Plum Fairy (Tchaikovsky).ogg" id="19_rol1w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ea1ms"]
 texture = ExtResource("1_3tje3")
@@ -951,21 +951,14 @@ offset_left = -49.0
 offset_top = -347.0
 offset_right = 684.0
 offset_bottom = 78.0
-scale = Vector2(1.06663, 2.13416)
 
 [node name="pause_menu" parent="." instance=ExtResource("18_ihp35")]
 visible = false
 
-[node name="Label" type="Label" parent="."]
-visible = false
-offset_left = 219.0
-offset_top = 177.0
-offset_right = 271.0
-offset_bottom = 203.0
-theme_override_colors/font_color = Color(0, 0, 0, 0.6)
-theme_override_fonts/font = ExtResource("19_1pchn")
-theme_override_font_sizes/font_size = 32
-text = "SUBA!"
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_rol1w")
+volume_db = -10.667
+autoplay = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="WaitTime" to="." method="_on_wait_time_timeout"]

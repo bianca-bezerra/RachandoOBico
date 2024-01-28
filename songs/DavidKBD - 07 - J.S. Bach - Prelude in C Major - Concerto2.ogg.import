@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ddwmdip75gymc"
+path="res://.godot/imported/DavidKBD - 07 - J.S. Bach - Prelude in C Major - Concerto2.ogg-d67ea21f8b07474a847835c39f5c2d5c.oggvorbisstr"
+
+[deps]
+
+source_file="res://songs/DavidKBD - 07 - J.S. Bach - Prelude in C Major - Concerto2.ogg"
+dest_files=["res://.godot/imported/DavidKBD - 07 - J.S. Bach - Prelude in C Major - Concerto2.ogg-d67ea21f8b07474a847835c39f5c2d5c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

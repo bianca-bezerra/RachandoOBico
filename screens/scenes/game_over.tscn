@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://5odj8qtn14tx"]
+[gd_scene load_steps=10 format=3 uid="uid://5odj8qtn14tx"]
 
 [ext_resource type="Texture2D" uid="uid://dlbunm1hdj6cd" path="res://screens/material/game_over.png" id="1_fag16"]
 [ext_resource type="Script" path="res://screens/scripts/game_over.gd" id="1_kjs1y"]
 [ext_resource type="Theme" uid="uid://dmbl0ph8uyprm" path="res://screens/material/theme_btn.tres" id="2_jtmbi"]
 [ext_resource type="FontFile" uid="uid://cb64tb4mbh747" path="res://assets/m5x7.ttf" id="4_3lci1"]
 [ext_resource type="PackedScene" uid="uid://c2h31kabj4hom" path="res://fadein.tscn" id="5_cs5i1"]
+[ext_resource type="AudioStream" uid="uid://cy51sxc3obr5r" path="res://songs/DavidKBD - 08 - Beethoven - Moonlight Sonata (1st Movement) - Concerto2.ogg" id="6_a025k"]
+[ext_resource type="AudioStream" uid="uid://b4bl5rf0350j0" path="res://songs/350987__cabled_mess__lose_c_05.wav" id="7_4gfwk"]
+[ext_resource type="Texture2D" uid="uid://5us3hopy16ea" path="res://assets/egg3_o_64x64.png" id="8_hmvav"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s4o5q"]
 
@@ -44,7 +47,51 @@ grow_vertical = 2
 layout_mode = 2
 texture = ExtResource("1_fag16")
 
-[node name="HSeparator3" type="HSeparator" parent="VBoxContainer"]
+[node name="HSeparator4" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_s4o5q")
+
+[node name="HSeparator5" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_s4o5q")
+
+[node name="HSeparator6" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_s4o5q")
+
+[node name="HSeparator7" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_s4o5q")
+
+[node name="HSeparator8" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_s4o5q")
+
+[node name="HSeparator9" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_s4o5q")
+
+[node name="HSeparator10" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_s4o5q")
+
+[node name="HSeparator11" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_s4o5q")
+
+[node name="HSeparator12" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_s4o5q")
+
+[node name="HSeparator13" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_s4o5q")
+
+[node name="HSeparator14" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_s4o5q")
+
+[node name="HSeparator16" type="HSeparator" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_s4o5q")
 
@@ -72,6 +119,17 @@ text = "QUIT
 "
 
 [node name="anim" parent="." instance=ExtResource("5_cs5i1")]
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_a025k")
+volume_db = -10.667
+
+[node name="lost_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_4gfwk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(320, 144)
+texture = ExtResource("8_hmvav")
 
 [connection signal="pressed" from="VBoxContainer/restart_btn" to="." method="_on_restart_btn_pressed"]
 [connection signal="pressed" from="VBoxContainer/quit_btn" to="." method="_on_quit_btn_pressed"]

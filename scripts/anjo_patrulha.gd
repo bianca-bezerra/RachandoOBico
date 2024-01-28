@@ -17,7 +17,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 #Combat System
-const FIREBALL = preload("res://scenes/fireball.tscn");
+const FIREBALL = preload("res://scenes/iceball.tscn");
 @export var health_points := 1;
 var can_shoot = true;
 var damage_rate = 1

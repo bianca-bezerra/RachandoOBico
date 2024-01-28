@@ -1,6 +1,6 @@
 [gd_scene load_steps=41 format=3 uid="uid://ist863a7maj1"]
 
-[ext_resource type="Script" path="res://scripts/anjo_patrulha.gd" id="1_cqnda"]
+[ext_resource type="Script" path="res://anjo_patrulha.gd" id="1_cqnda"]
 [ext_resource type="Texture2D" uid="uid://djufjkix2kru8" path="res://assets/BadChickenAssetPack/Chickens/BlueChicken-Sheet.png" id="2_g4j4m"]
 [ext_resource type="Texture2D" uid="uid://gtw1dvml3fia" path="res://assets/Rocky Roads/FX/exclamation.png" id="4_1w0xr"]
 [ext_resource type="Texture2D" uid="uid://b5y8ushvpnaq7" path="res://assets/Small slash FX/small_slash_hit_1.png" id="5_w136h"]

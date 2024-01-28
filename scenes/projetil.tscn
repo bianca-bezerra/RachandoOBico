@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dkq8kxmku7odg"]
+[gd_scene load_steps=9 format=3 uid="uid://dphar1cyirtdo"]
 
 [ext_resource type="Script" path="res://scripts/projetil.gd" id="1_k66u2"]
 [ext_resource type="Texture2D" uid="uid://d16yfgdrbek5b" path="res://assets/Small slash FX/small_sting_hit.png" id="2_8vok1"]

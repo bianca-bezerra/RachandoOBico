@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var sprite = $sprite
 @onready var cooldown_fireball = $cooldown_fireball
 const DEATH = preload("res://scenes/death.tscn");
+@onready var shoot_sfx = $shoot_sfx
 
 #Motion
 const RIGHT = 1;
@@ -38,12 +39,12 @@ func _physics_process(delta):
 		EnemyState.ATTACK : attack_state();
 		EnemyState.DEATH : queue_free();
 		
+func patrulha():
+	pass
+
 func play_piada():
 	if health_points == 0:
 		$TextBox.visible = true
-	
-func patrulha():
-	pass
 
 #Direction
 func flip_enemy():
@@ -68,7 +69,10 @@ func spawn_fireball():
 		new_fireball.set_direction(LEFT);
 		
 	add_sibling(new_fireball);
+	shoot_sfx.global_position = fireball_spawn_point.global_position;
+	shoot_sfx.play();
 	new_fireball.global_position = fireball_spawn_point.global_position;
+	
 	
 
 #Triggers ######################################################################
@@ -121,7 +125,6 @@ func hurt_state():
 		death.global_position = $death_point.global_position;
 		death.play("default");
 		change_state(EnemyState.DEATH);
-		global.level2_completed = true
 		
 	else:
 		play_hurt_anim();
